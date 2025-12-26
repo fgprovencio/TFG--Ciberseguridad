@@ -1,0 +1,3639 @@
+@prefix onto: <http://www.tfguoc.org/ontologia/ciberseguridad/vulnerabilidades/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+onto:Command_and_Control a onto:TacticaAtaque ;
+    rdfs:label "Command and Control" .
+
+onto:T1001 a onto:TecnicaAtaque ;
+    rdfs:label "Data Obfuscation" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1001.001 a onto:TecnicaAtaque ;
+    rdfs:label "Junk Data" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1001.002 a onto:TecnicaAtaque ;
+    rdfs:label "Steganography" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1001.003 a onto:TecnicaAtaque ;
+    rdfs:label "Protocol or Service Impersonation" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1002 a onto:TecnicaAtaque ;
+    rdfs:label "Data Compressed" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1003 a onto:TecnicaAtaque ;
+    rdfs:label "OS Credential Dumping" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.001 a onto:TecnicaAtaque ;
+    rdfs:label "LSASS Memory" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.002 a onto:TecnicaAtaque ;
+    rdfs:label "Security Account Manager" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.003 a onto:TecnicaAtaque ;
+    rdfs:label "NTDS" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.004 a onto:TecnicaAtaque ;
+    rdfs:label "LSA Secrets" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.005 a onto:TecnicaAtaque ;
+    rdfs:label "Cached Domain Credentials" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.006 a onto:TecnicaAtaque ;
+    rdfs:label "DCSync" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.007 a onto:TecnicaAtaque ;
+    rdfs:label "Proc Filesystem" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1003.008 a onto:TecnicaAtaque ;
+    rdfs:label "/etc/passwd and /etc/shadow" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1004 a onto:TecnicaAtaque ;
+    rdfs:label "Winlogon Helper DLL" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1005 a onto:TecnicaAtaque ;
+    rdfs:label "Data from Local System" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1006 a onto:TecnicaAtaque ;
+    rdfs:label "Direct Volume Access" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1007 a onto:TecnicaAtaque ;
+    rdfs:label "System Service Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1008 a onto:TecnicaAtaque ;
+    rdfs:label "Fallback Channels" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1009 a onto:TecnicaAtaque ;
+    rdfs:label "Binary Padding" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1010 a onto:TecnicaAtaque ;
+    rdfs:label "Application Window Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1011 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Other Network Medium" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1011.001 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Bluetooth" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1012 a onto:TecnicaAtaque ;
+    rdfs:label "Query Registry" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1013 a onto:TecnicaAtaque ;
+    rdfs:label "Port Monitors" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1014 a onto:TecnicaAtaque ;
+    rdfs:label "Rootkit" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1015 a onto:TecnicaAtaque ;
+    rdfs:label "Accessibility Features" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1016 a onto:TecnicaAtaque ;
+    rdfs:label "System Network Configuration Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1016.001 a onto:TecnicaAtaque ;
+    rdfs:label "Internet Connection Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1016.002 a onto:TecnicaAtaque ;
+    rdfs:label "Wi-Fi Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1017 a onto:TecnicaAtaque ;
+    rdfs:label "Application Deployment Software" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1018 a onto:TecnicaAtaque ;
+    rdfs:label "Remote System Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1019 a onto:TecnicaAtaque ;
+    rdfs:label "System Firmware" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1020 a onto:TecnicaAtaque ;
+    rdfs:label "Automated Exfiltration" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1020.001 a onto:TecnicaAtaque ;
+    rdfs:label "Traffic Duplication" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1021 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Services" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.001 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Desktop Protocol" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.002 a onto:TecnicaAtaque ;
+    rdfs:label "SMB/Windows Admin Shares" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.003 a onto:TecnicaAtaque ;
+    rdfs:label "Distributed Component Object Model" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.004 a onto:TecnicaAtaque ;
+    rdfs:label "SSH" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.005 a onto:TecnicaAtaque ;
+    rdfs:label "VNC" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.006 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Remote Management" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.007 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Services" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1021.008 a onto:TecnicaAtaque ;
+    rdfs:label "Direct Cloud VM Connections" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1022 a onto:TecnicaAtaque ;
+    rdfs:label "Data Encrypted" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1023 a onto:TecnicaAtaque ;
+    rdfs:label "Shortcut Modification" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1024 a onto:TecnicaAtaque ;
+    rdfs:label "Custom Cryptographic Protocol" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1025 a onto:TecnicaAtaque ;
+    rdfs:label "Data from Removable Media" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1026 a onto:TecnicaAtaque ;
+    rdfs:label "Multiband Communication" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1027 a onto:TecnicaAtaque ;
+    rdfs:label "Obfuscated Files or Information" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.001 a onto:TecnicaAtaque ;
+    rdfs:label "Binary Padding" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.002 a onto:TecnicaAtaque ;
+    rdfs:label "Software Packing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.003 a onto:TecnicaAtaque ;
+    rdfs:label "Steganography" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.004 a onto:TecnicaAtaque ;
+    rdfs:label "Compile After Delivery" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.005 a onto:TecnicaAtaque ;
+    rdfs:label "Indicator Removal from Tools" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.006 a onto:TecnicaAtaque ;
+    rdfs:label "HTML Smuggling" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.007 a onto:TecnicaAtaque ;
+    rdfs:label "Dynamic API Resolution" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.008 a onto:TecnicaAtaque ;
+    rdfs:label "Stripped Payloads" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.009 a onto:TecnicaAtaque ;
+    rdfs:label "Embedded Payloads" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.010 a onto:TecnicaAtaque ;
+    rdfs:label "Command Obfuscation" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.011 a onto:TecnicaAtaque ;
+    rdfs:label "Fileless Storage" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.012 a onto:TecnicaAtaque ;
+    rdfs:label "LNK Icon Smuggling" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.013 a onto:TecnicaAtaque ;
+    rdfs:label "Encrypted/Encoded File" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.014 a onto:TecnicaAtaque ;
+    rdfs:label "Polymorphic Code" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.015 a onto:TecnicaAtaque ;
+    rdfs:label "Compression" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.016 a onto:TecnicaAtaque ;
+    rdfs:label "Junk Code Insertion" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1027.017 a onto:TecnicaAtaque ;
+    rdfs:label "SVG Smuggling" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1028 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Remote Management" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Lateral_Movement .
+
+onto:T1029 a onto:TecnicaAtaque ;
+    rdfs:label "Scheduled Transfer" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1030 a onto:TecnicaAtaque ;
+    rdfs:label "Data Transfer Size Limits" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1031 a onto:TecnicaAtaque ;
+    rdfs:label "Modify Existing Service" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1032 a onto:TecnicaAtaque ;
+    rdfs:label "Standard Cryptographic Protocol" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1033 a onto:TecnicaAtaque ;
+    rdfs:label "System Owner/User Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1034 a onto:TecnicaAtaque ;
+    rdfs:label "Path Interception" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1035 a onto:TecnicaAtaque ;
+    rdfs:label "Service Execution" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1036 a onto:TecnicaAtaque ;
+    rdfs:label "Masquerading" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.001 a onto:TecnicaAtaque ;
+    rdfs:label "Invalid Code Signature" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.002 a onto:TecnicaAtaque ;
+    rdfs:label "Right-to-Left Override" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.003 a onto:TecnicaAtaque ;
+    rdfs:label "Rename Legitimate Utilities" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.004 a onto:TecnicaAtaque ;
+    rdfs:label "Masquerade Task or Service" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.005 a onto:TecnicaAtaque ;
+    rdfs:label "Match Legitimate Resource Name or Location" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.006 a onto:TecnicaAtaque ;
+    rdfs:label "Space after Filename" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.007 a onto:TecnicaAtaque ;
+    rdfs:label "Double File Extension" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.008 a onto:TecnicaAtaque ;
+    rdfs:label "Masquerade File Type" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.009 a onto:TecnicaAtaque ;
+    rdfs:label "Break Process Trees" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.010 a onto:TecnicaAtaque ;
+    rdfs:label "Masquerade Account Name" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.011 a onto:TecnicaAtaque ;
+    rdfs:label "Overwrite Process Arguments" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1036.012 a onto:TecnicaAtaque ;
+    rdfs:label "Browser Fingerprint" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1037 a onto:TecnicaAtaque ;
+    rdfs:label "Boot or Logon Initialization Scripts" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1037.001 a onto:TecnicaAtaque ;
+    rdfs:label "Logon Script (Windows)" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1037.002 a onto:TecnicaAtaque ;
+    rdfs:label "Login Hook" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1037.003 a onto:TecnicaAtaque ;
+    rdfs:label "Network Logon Script" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1037.004 a onto:TecnicaAtaque ;
+    rdfs:label "RC Scripts" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1037.005 a onto:TecnicaAtaque ;
+    rdfs:label "Startup Items" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1038 a onto:TecnicaAtaque ;
+    rdfs:label "DLL Search Order Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1039 a onto:TecnicaAtaque ;
+    rdfs:label "Data from Network Shared Drive" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1040 a onto:TecnicaAtaque ;
+    rdfs:label "Network Sniffing" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Discovery .
+
+onto:T1041 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over C2 Channel" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1042 a onto:TecnicaAtaque ;
+    rdfs:label "Change Default File Association" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1043 a onto:TecnicaAtaque ;
+    rdfs:label "Commonly Used Port" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1044 a onto:TecnicaAtaque ;
+    rdfs:label "File System Permissions Weakness" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1045 a onto:TecnicaAtaque ;
+    rdfs:label "Software Packing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1046 a onto:TecnicaAtaque ;
+    rdfs:label "Network Service Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1047 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Management Instrumentation" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1048 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Alternative Protocol" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1048.001 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Symmetric Encrypted Non-C2 Protocol" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1048.002 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1048.003 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Unencrypted Non-C2 Protocol" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1049 a onto:TecnicaAtaque ;
+    rdfs:label "System Network Connections Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1050 a onto:TecnicaAtaque ;
+    rdfs:label "New Service" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1051 a onto:TecnicaAtaque ;
+    rdfs:label "Shared Webroot" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1052 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Physical Medium" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1052.001 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration over USB" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1053 a onto:TecnicaAtaque ;
+    rdfs:label "Scheduled Task/Job" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1053.001 a onto:TecnicaAtaque ;
+    rdfs:label "At (Linux)" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1053.002 a onto:TecnicaAtaque ;
+    rdfs:label "At" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1053.003 a onto:TecnicaAtaque ;
+    rdfs:label "Cron" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1053.004 a onto:TecnicaAtaque ;
+    rdfs:label "Launchd" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1053.005 a onto:TecnicaAtaque ;
+    rdfs:label "Scheduled Task" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1053.006 a onto:TecnicaAtaque ;
+    rdfs:label "Systemd Timers" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1053.007 a onto:TecnicaAtaque ;
+    rdfs:label "Container Orchestration Job" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1054 a onto:TecnicaAtaque ;
+    rdfs:label "Indicator Blocking" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1055 a onto:TecnicaAtaque ;
+    rdfs:label "Process Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.001 a onto:TecnicaAtaque ;
+    rdfs:label "Dynamic-link Library Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.002 a onto:TecnicaAtaque ;
+    rdfs:label "Portable Executable Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.003 a onto:TecnicaAtaque ;
+    rdfs:label "Thread Execution Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.004 a onto:TecnicaAtaque ;
+    rdfs:label "Asynchronous Procedure Call" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.005 a onto:TecnicaAtaque ;
+    rdfs:label "Thread Local Storage" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.008 a onto:TecnicaAtaque ;
+    rdfs:label "Ptrace System Calls" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.009 a onto:TecnicaAtaque ;
+    rdfs:label "Proc Memory" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.011 a onto:TecnicaAtaque ;
+    rdfs:label "Extra Window Memory Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.012 a onto:TecnicaAtaque ;
+    rdfs:label "Process Hollowing" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.013 a onto:TecnicaAtaque ;
+    rdfs:label "Process Doppelgänging" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.014 a onto:TecnicaAtaque ;
+    rdfs:label "VDSO Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1055.015 a onto:TecnicaAtaque ;
+    rdfs:label "ListPlanting" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1056 a onto:TecnicaAtaque ;
+    rdfs:label "Input Capture" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1056.001 a onto:TecnicaAtaque ;
+    rdfs:label "Keylogging" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1056.002 a onto:TecnicaAtaque ;
+    rdfs:label "GUI Input Capture" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1056.003 a onto:TecnicaAtaque ;
+    rdfs:label "Web Portal Capture" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1056.004 a onto:TecnicaAtaque ;
+    rdfs:label "Credential API Hooking" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1057 a onto:TecnicaAtaque ;
+    rdfs:label "Process Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1058 a onto:TecnicaAtaque ;
+    rdfs:label "Service Registry Permissions Weakness" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1059 a onto:TecnicaAtaque ;
+    rdfs:label "Command and Scripting Interpreter" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.001 a onto:TecnicaAtaque ;
+    rdfs:label "PowerShell" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.002 a onto:TecnicaAtaque ;
+    rdfs:label "AppleScript" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.003 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Command Shell" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.004 a onto:TecnicaAtaque ;
+    rdfs:label "Unix Shell" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.005 a onto:TecnicaAtaque ;
+    rdfs:label "Visual Basic" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.006 a onto:TecnicaAtaque ;
+    rdfs:label "Python" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.007 a onto:TecnicaAtaque ;
+    rdfs:label "JavaScript" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.008 a onto:TecnicaAtaque ;
+    rdfs:label "Network Device CLI" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.009 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud API" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.010 a onto:TecnicaAtaque ;
+    rdfs:label "AutoHotKey & AutoIT" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.011 a onto:TecnicaAtaque ;
+    rdfs:label "Lua" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.012 a onto:TecnicaAtaque ;
+    rdfs:label "Hypervisor CLI" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1059.013 a onto:TecnicaAtaque ;
+    rdfs:label "Container CLI/API" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1060 a onto:TecnicaAtaque ;
+    rdfs:label "Registry Run Keys / Startup Folder" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1061 a onto:TecnicaAtaque ;
+    rdfs:label "Graphical User Interface" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1062 a onto:TecnicaAtaque ;
+    rdfs:label "Hypervisor" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1063 a onto:TecnicaAtaque ;
+    rdfs:label "Security Software Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1064 a onto:TecnicaAtaque ;
+    rdfs:label "Scripting" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1065 a onto:TecnicaAtaque ;
+    rdfs:label "Uncommonly Used Port" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1066 a onto:TecnicaAtaque ;
+    rdfs:label "Indicator Removal from Tools" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1067 a onto:TecnicaAtaque ;
+    rdfs:label "Bootkit" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1068 a onto:TecnicaAtaque ;
+    rdfs:label "Exploitation for Privilege Escalation" ;
+    onto:perteneceTactica onto:Privilege_Escalation .
+
+onto:T1069 a onto:TecnicaAtaque ;
+    rdfs:label "Permission Groups Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1069.001 a onto:TecnicaAtaque ;
+    rdfs:label "Local Groups" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1069.002 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Groups" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1069.003 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Groups" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1070 a onto:TecnicaAtaque ;
+    rdfs:label "Indicator Removal" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.001 a onto:TecnicaAtaque ;
+    rdfs:label "Clear Windows Event Logs" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.002 a onto:TecnicaAtaque ;
+    rdfs:label "Clear Linux or Mac System Logs" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.003 a onto:TecnicaAtaque ;
+    rdfs:label "Clear Command History" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.004 a onto:TecnicaAtaque ;
+    rdfs:label "File Deletion" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.005 a onto:TecnicaAtaque ;
+    rdfs:label "Network Share Connection Removal" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.006 a onto:TecnicaAtaque ;
+    rdfs:label "Timestomp" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.007 a onto:TecnicaAtaque ;
+    rdfs:label "Clear Network Connection History and Configurations" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.008 a onto:TecnicaAtaque ;
+    rdfs:label "Clear Mailbox Data" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.009 a onto:TecnicaAtaque ;
+    rdfs:label "Clear Persistence" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1070.010 a onto:TecnicaAtaque ;
+    rdfs:label "Relocate Malware" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1071 a onto:TecnicaAtaque ;
+    rdfs:label "Application Layer Protocol" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1071.001 a onto:TecnicaAtaque ;
+    rdfs:label "Web Protocols" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1071.002 a onto:TecnicaAtaque ;
+    rdfs:label "File Transfer Protocols" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1071.003 a onto:TecnicaAtaque ;
+    rdfs:label "Mail Protocols" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1071.004 a onto:TecnicaAtaque ;
+    rdfs:label "DNS" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1071.005 a onto:TecnicaAtaque ;
+    rdfs:label "Publish/Subscribe Protocols" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1072 a onto:TecnicaAtaque ;
+    rdfs:label "Software Deployment Tools" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Lateral_Movement .
+
+onto:T1073 a onto:TecnicaAtaque ;
+    rdfs:label "DLL Side-Loading" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1074 a onto:TecnicaAtaque ;
+    rdfs:label "Data Staged" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1074.001 a onto:TecnicaAtaque ;
+    rdfs:label "Local Data Staging" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1074.002 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Data Staging" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1075 a onto:TecnicaAtaque ;
+    rdfs:label "Pass the Hash" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1076 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Desktop Protocol" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1077 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Admin Shares" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1078 a onto:TecnicaAtaque ;
+    rdfs:label "Valid Accounts" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Initial_Access,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1078.001 a onto:TecnicaAtaque ;
+    rdfs:label "Default Accounts" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Initial_Access,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1078.002 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Accounts" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Initial_Access,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1078.003 a onto:TecnicaAtaque ;
+    rdfs:label "Local Accounts" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Initial_Access,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1078.004 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Accounts" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Initial_Access,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1079 a onto:TecnicaAtaque ;
+    rdfs:label "Multilayer Encryption" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1080 a onto:TecnicaAtaque ;
+    rdfs:label "Taint Shared Content" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1081 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials in Files" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1082 a onto:TecnicaAtaque ;
+    rdfs:label "System Information Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1083 a onto:TecnicaAtaque ;
+    rdfs:label "File and Directory Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1084 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Management Instrumentation Event Subscription" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1085 a onto:TecnicaAtaque ;
+    rdfs:label "Rundll32" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1086 a onto:TecnicaAtaque ;
+    rdfs:label "PowerShell" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1087 a onto:TecnicaAtaque ;
+    rdfs:label "Account Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1087.001 a onto:TecnicaAtaque ;
+    rdfs:label "Local Account" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1087.002 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Account" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1087.003 a onto:TecnicaAtaque ;
+    rdfs:label "Email Account" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1087.004 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Account" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1088 a onto:TecnicaAtaque ;
+    rdfs:label "Bypass User Account Control" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1089 a onto:TecnicaAtaque ;
+    rdfs:label "Disabling Security Tools" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1090 a onto:TecnicaAtaque ;
+    rdfs:label "Proxy" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1090.001 a onto:TecnicaAtaque ;
+    rdfs:label "Internal Proxy" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1090.002 a onto:TecnicaAtaque ;
+    rdfs:label "External Proxy" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1090.003 a onto:TecnicaAtaque ;
+    rdfs:label "Multi-hop Proxy" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1090.004 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Fronting" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1091 a onto:TecnicaAtaque ;
+    rdfs:label "Replication Through Removable Media" ;
+    onto:perteneceTactica onto:Initial_Access,
+        onto:Lateral_Movement .
+
+onto:T1092 a onto:TecnicaAtaque ;
+    rdfs:label "Communication Through Removable Media" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1093 a onto:TecnicaAtaque ;
+    rdfs:label "Process Hollowing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1094 a onto:TecnicaAtaque ;
+    rdfs:label "Custom Command and Control Protocol" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1095 a onto:TecnicaAtaque ;
+    rdfs:label "Non-Application Layer Protocol" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1096 a onto:TecnicaAtaque ;
+    rdfs:label "NTFS File Attributes" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1097 a onto:TecnicaAtaque ;
+    rdfs:label "Pass the Ticket" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1098 a onto:TecnicaAtaque ;
+    rdfs:label "Account Manipulation" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1098.001 a onto:TecnicaAtaque ;
+    rdfs:label "Additional Cloud Credentials" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1098.002 a onto:TecnicaAtaque ;
+    rdfs:label "Additional Email Delegate Permissions" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1098.003 a onto:TecnicaAtaque ;
+    rdfs:label "Additional Cloud Roles" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1098.004 a onto:TecnicaAtaque ;
+    rdfs:label "SSH Authorized Keys" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1098.005 a onto:TecnicaAtaque ;
+    rdfs:label "Device Registration" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1098.006 a onto:TecnicaAtaque ;
+    rdfs:label "Additional Container Cluster Roles" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1098.007 a onto:TecnicaAtaque ;
+    rdfs:label "Additional Local or Domain Groups" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1099 a onto:TecnicaAtaque ;
+    rdfs:label "Timestomp" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1100 a onto:TecnicaAtaque ;
+    rdfs:label "Web Shell" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1101 a onto:TecnicaAtaque ;
+    rdfs:label "Security Support Provider" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1102 a onto:TecnicaAtaque ;
+    rdfs:label "Web Service" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1102.001 a onto:TecnicaAtaque ;
+    rdfs:label "Dead Drop Resolver" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1102.002 a onto:TecnicaAtaque ;
+    rdfs:label "Bidirectional Communication" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1102.003 a onto:TecnicaAtaque ;
+    rdfs:label "One-Way Communication" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1103 a onto:TecnicaAtaque ;
+    rdfs:label "AppInit DLLs" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1104 a onto:TecnicaAtaque ;
+    rdfs:label "Multi-Stage Channels" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1105 a onto:TecnicaAtaque ;
+    rdfs:label "Ingress Tool Transfer" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1106 a onto:TecnicaAtaque ;
+    rdfs:label "Native API" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1107 a onto:TecnicaAtaque ;
+    rdfs:label "File Deletion" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1108 a onto:TecnicaAtaque ;
+    rdfs:label "Redundant Access" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1109 a onto:TecnicaAtaque ;
+    rdfs:label "Component Firmware" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1110 a onto:TecnicaAtaque ;
+    rdfs:label "Brute Force" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1110.001 a onto:TecnicaAtaque ;
+    rdfs:label "Password Guessing" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1110.002 a onto:TecnicaAtaque ;
+    rdfs:label "Password Cracking" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1110.003 a onto:TecnicaAtaque ;
+    rdfs:label "Password Spraying" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1110.004 a onto:TecnicaAtaque ;
+    rdfs:label "Credential Stuffing" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1111 a onto:TecnicaAtaque ;
+    rdfs:label "Multi-Factor Authentication Interception" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1112 a onto:TecnicaAtaque ;
+    rdfs:label "Modify Registry" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1113 a onto:TecnicaAtaque ;
+    rdfs:label "Screen Capture" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1114 a onto:TecnicaAtaque ;
+    rdfs:label "Email Collection" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1114.001 a onto:TecnicaAtaque ;
+    rdfs:label "Local Email Collection" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1114.002 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Email Collection" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1114.003 a onto:TecnicaAtaque ;
+    rdfs:label "Email Forwarding Rule" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1115 a onto:TecnicaAtaque ;
+    rdfs:label "Clipboard Data" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1116 a onto:TecnicaAtaque ;
+    rdfs:label "Code Signing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1117 a onto:TecnicaAtaque ;
+    rdfs:label "Regsvr32" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1118 a onto:TecnicaAtaque ;
+    rdfs:label "InstallUtil" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1119 a onto:TecnicaAtaque ;
+    rdfs:label "Automated Collection" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1120 a onto:TecnicaAtaque ;
+    rdfs:label "Peripheral Device Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1121 a onto:TecnicaAtaque ;
+    rdfs:label "Regsvcs/Regasm" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1122 a onto:TecnicaAtaque ;
+    rdfs:label "Component Object Model Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1123 a onto:TecnicaAtaque ;
+    rdfs:label "Audio Capture" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1124 a onto:TecnicaAtaque ;
+    rdfs:label "System Time Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1125 a onto:TecnicaAtaque ;
+    rdfs:label "Video Capture" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1126 a onto:TecnicaAtaque ;
+    rdfs:label "Network Share Connection Removal" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1127 a onto:TecnicaAtaque ;
+    rdfs:label "Trusted Developer Utilities Proxy Execution" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1127.001 a onto:TecnicaAtaque ;
+    rdfs:label "MSBuild" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1127.002 a onto:TecnicaAtaque ;
+    rdfs:label "ClickOnce" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1127.003 a onto:TecnicaAtaque ;
+    rdfs:label "JamPlus" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1128 a onto:TecnicaAtaque ;
+    rdfs:label "Netsh Helper DLL" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1129 a onto:TecnicaAtaque ;
+    rdfs:label "Shared Modules" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1130 a onto:TecnicaAtaque ;
+    rdfs:label "Install Root Certificate" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1131 a onto:TecnicaAtaque ;
+    rdfs:label "Authentication Package" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1132 a onto:TecnicaAtaque ;
+    rdfs:label "Data Encoding" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1132.001 a onto:TecnicaAtaque ;
+    rdfs:label "Standard Encoding" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1132.002 a onto:TecnicaAtaque ;
+    rdfs:label "Non-Standard Encoding" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1133 a onto:TecnicaAtaque ;
+    rdfs:label "External Remote Services" ;
+    onto:perteneceTactica onto:Initial_Access,
+        onto:Persistence .
+
+onto:T1134 a onto:TecnicaAtaque ;
+    rdfs:label "Access Token Manipulation" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1134.001 a onto:TecnicaAtaque ;
+    rdfs:label "Token Impersonation/Theft" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1134.002 a onto:TecnicaAtaque ;
+    rdfs:label "Create Process with Token" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1134.003 a onto:TecnicaAtaque ;
+    rdfs:label "Make and Impersonate Token" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1134.004 a onto:TecnicaAtaque ;
+    rdfs:label "Parent PID Spoofing" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1134.005 a onto:TecnicaAtaque ;
+    rdfs:label "SID-History Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1135 a onto:TecnicaAtaque ;
+    rdfs:label "Network Share Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1136 a onto:TecnicaAtaque ;
+    rdfs:label "Create Account" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1136.001 a onto:TecnicaAtaque ;
+    rdfs:label "Local Account" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1136.002 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Account" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1136.003 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Account" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1137 a onto:TecnicaAtaque ;
+    rdfs:label "Office Application Startup" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1137.001 a onto:TecnicaAtaque ;
+    rdfs:label "Office Template Macros" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1137.002 a onto:TecnicaAtaque ;
+    rdfs:label "Office Test" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1137.003 a onto:TecnicaAtaque ;
+    rdfs:label "Outlook Forms" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1137.004 a onto:TecnicaAtaque ;
+    rdfs:label "Outlook Home Page" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1137.005 a onto:TecnicaAtaque ;
+    rdfs:label "Outlook Rules" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1137.006 a onto:TecnicaAtaque ;
+    rdfs:label "Add-ins" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1138 a onto:TecnicaAtaque ;
+    rdfs:label "Application Shimming" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1139 a onto:TecnicaAtaque ;
+    rdfs:label "Bash History" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1140 a onto:TecnicaAtaque ;
+    rdfs:label "Deobfuscate/Decode Files or Information" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1141 a onto:TecnicaAtaque ;
+    rdfs:label "Input Prompt" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1142 a onto:TecnicaAtaque ;
+    rdfs:label "Keychain" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1143 a onto:TecnicaAtaque ;
+    rdfs:label "Hidden Window" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1144 a onto:TecnicaAtaque ;
+    rdfs:label "Gatekeeper Bypass" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1145 a onto:TecnicaAtaque ;
+    rdfs:label "Private Keys" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1146 a onto:TecnicaAtaque ;
+    rdfs:label "Clear Command History" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1147 a onto:TecnicaAtaque ;
+    rdfs:label "Hidden Users" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1148 a onto:TecnicaAtaque ;
+    rdfs:label "HISTCONTROL" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1149 a onto:TecnicaAtaque ;
+    rdfs:label "LC_MAIN Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1150 a onto:TecnicaAtaque ;
+    rdfs:label "Plist Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1151 a onto:TecnicaAtaque ;
+    rdfs:label "Space after Filename" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1152 a onto:TecnicaAtaque ;
+    rdfs:label "Launchctl" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution,
+        onto:Persistence .
+
+onto:T1153 a onto:TecnicaAtaque ;
+    rdfs:label "Source" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1154 a onto:TecnicaAtaque ;
+    rdfs:label "Trap" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence .
+
+onto:T1155 a onto:TecnicaAtaque ;
+    rdfs:label "AppleScript" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1156 a onto:TecnicaAtaque ;
+    rdfs:label "Malicious Shell Modification" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1157 a onto:TecnicaAtaque ;
+    rdfs:label "Dylib Hijacking" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1158 a onto:TecnicaAtaque ;
+    rdfs:label "Hidden Files and Directories" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1159 a onto:TecnicaAtaque ;
+    rdfs:label "Launch Agent" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1160 a onto:TecnicaAtaque ;
+    rdfs:label "Launch Daemon" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1161 a onto:TecnicaAtaque ;
+    rdfs:label "LC_LOAD_DYLIB Addition" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1162 a onto:TecnicaAtaque ;
+    rdfs:label "Login Item" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1163 a onto:TecnicaAtaque ;
+    rdfs:label "Rc.common" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1164 a onto:TecnicaAtaque ;
+    rdfs:label "Re-opened Applications" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1165 a onto:TecnicaAtaque ;
+    rdfs:label "Startup Items" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1166 a onto:TecnicaAtaque ;
+    rdfs:label "Setuid and Setgid" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1167 a onto:TecnicaAtaque ;
+    rdfs:label "Securityd Memory" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1168 a onto:TecnicaAtaque ;
+    rdfs:label "Local Job Scheduling" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence .
+
+onto:T1169 a onto:TecnicaAtaque ;
+    rdfs:label "Sudo" ;
+    onto:perteneceTactica onto:Privilege_Escalation .
+
+onto:T1170 a onto:TecnicaAtaque ;
+    rdfs:label "Mshta" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1171 a onto:TecnicaAtaque ;
+    rdfs:label "LLMNR/NBT-NS Poisoning and Relay" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1172 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Fronting" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1173 a onto:TecnicaAtaque ;
+    rdfs:label "Dynamic Data Exchange" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1174 a onto:TecnicaAtaque ;
+    rdfs:label "Password Filter DLL" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1175 a onto:TecnicaAtaque ;
+    rdfs:label "Component Object Model and Distributed COM" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Lateral_Movement .
+
+onto:T1176 a onto:TecnicaAtaque ;
+    rdfs:label "Software Extensions" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1176.001 a onto:TecnicaAtaque ;
+    rdfs:label "Browser Extensions" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1176.002 a onto:TecnicaAtaque ;
+    rdfs:label "IDE Extensions" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1177 a onto:TecnicaAtaque ;
+    rdfs:label "LSASS Driver" ;
+    onto:perteneceTactica onto:Execution,
+        onto:Persistence .
+
+onto:T1178 a onto:TecnicaAtaque ;
+    rdfs:label "SID-History Injection" ;
+    onto:perteneceTactica onto:Privilege_Escalation .
+
+onto:T1179 a onto:TecnicaAtaque ;
+    rdfs:label "Hooking" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1180 a onto:TecnicaAtaque ;
+    rdfs:label "Screensaver" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1181 a onto:TecnicaAtaque ;
+    rdfs:label "Extra Window Memory Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1182 a onto:TecnicaAtaque ;
+    rdfs:label "AppCert DLLs" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1183 a onto:TecnicaAtaque ;
+    rdfs:label "Image File Execution Options Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1184 a onto:TecnicaAtaque ;
+    rdfs:label "SSH Hijacking" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1185 a onto:TecnicaAtaque ;
+    rdfs:label "Browser Session Hijacking" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1186 a onto:TecnicaAtaque ;
+    rdfs:label "Process Doppelgänging" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1187 a onto:TecnicaAtaque ;
+    rdfs:label "Forced Authentication" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1188 a onto:TecnicaAtaque ;
+    rdfs:label "Multi-hop Proxy" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1189 a onto:TecnicaAtaque ;
+    rdfs:label "Drive-by Compromise" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1190 a onto:TecnicaAtaque ;
+    rdfs:label "Exploit Public-Facing Application" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1191 a onto:TecnicaAtaque ;
+    rdfs:label "CMSTP" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1192 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Link" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1193 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Attachment" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1194 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing via Service" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1195 a onto:TecnicaAtaque ;
+    rdfs:label "Supply Chain Compromise" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1195.001 a onto:TecnicaAtaque ;
+    rdfs:label "Compromise Software Dependencies and Development Tools" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1195.002 a onto:TecnicaAtaque ;
+    rdfs:label "Compromise Software Supply Chain" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1195.003 a onto:TecnicaAtaque ;
+    rdfs:label "Compromise Hardware Supply Chain" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1196 a onto:TecnicaAtaque ;
+    rdfs:label "Control Panel Items" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1197 a onto:TecnicaAtaque ;
+    rdfs:label "BITS Jobs" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1198 a onto:TecnicaAtaque ;
+    rdfs:label "SIP and Trust Provider Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1199 a onto:TecnicaAtaque ;
+    rdfs:label "Trusted Relationship" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1200 a onto:TecnicaAtaque ;
+    rdfs:label "Hardware Additions" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1201 a onto:TecnicaAtaque ;
+    rdfs:label "Password Policy Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1202 a onto:TecnicaAtaque ;
+    rdfs:label "Indirect Command Execution" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1203 a onto:TecnicaAtaque ;
+    rdfs:label "Exploitation for Client Execution" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1204 a onto:TecnicaAtaque ;
+    rdfs:label "User Execution" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1204.001 a onto:TecnicaAtaque ;
+    rdfs:label "Malicious Link" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1204.002 a onto:TecnicaAtaque ;
+    rdfs:label "Malicious File" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1204.003 a onto:TecnicaAtaque ;
+    rdfs:label "Malicious Image" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1204.004 a onto:TecnicaAtaque ;
+    rdfs:label "Malicious Copy and Paste" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1204.005 a onto:TecnicaAtaque ;
+    rdfs:label "Malicious Library" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1205 a onto:TecnicaAtaque ;
+    rdfs:label "Traffic Signaling" ;
+    onto:perteneceTactica onto:Command_And_Control,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1205.001 a onto:TecnicaAtaque ;
+    rdfs:label "Port Knocking" ;
+    onto:perteneceTactica onto:Command_And_Control,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1205.002 a onto:TecnicaAtaque ;
+    rdfs:label "Socket Filters" ;
+    onto:perteneceTactica onto:Command_And_Control,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1206 a onto:TecnicaAtaque ;
+    rdfs:label "Sudo Caching" ;
+    onto:perteneceTactica onto:Privilege_Escalation .
+
+onto:T1207 a onto:TecnicaAtaque ;
+    rdfs:label "Rogue Domain Controller" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1208 a onto:TecnicaAtaque ;
+    rdfs:label "Kerberoasting" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1209 a onto:TecnicaAtaque ;
+    rdfs:label "Time Providers" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1210 a onto:TecnicaAtaque ;
+    rdfs:label "Exploitation of Remote Services" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1211 a onto:TecnicaAtaque ;
+    rdfs:label "Exploitation for Defense Evasion" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1212 a onto:TecnicaAtaque ;
+    rdfs:label "Exploitation for Credential Access" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1213 a onto:TecnicaAtaque ;
+    rdfs:label "Data from Information Repositories" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1213.001 a onto:TecnicaAtaque ;
+    rdfs:label "Confluence" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1213.002 a onto:TecnicaAtaque ;
+    rdfs:label "Sharepoint" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1213.003 a onto:TecnicaAtaque ;
+    rdfs:label "Code Repositories" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1213.004 a onto:TecnicaAtaque ;
+    rdfs:label "Customer Relationship Management Software" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1213.005 a onto:TecnicaAtaque ;
+    rdfs:label "Messaging Applications" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1213.006 a onto:TecnicaAtaque ;
+    rdfs:label "Databases" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1214 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials in Registry" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1215 a onto:TecnicaAtaque ;
+    rdfs:label "Kernel Modules and Extensions" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1216 a onto:TecnicaAtaque ;
+    rdfs:label "System Script Proxy Execution" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1216.001 a onto:TecnicaAtaque ;
+    rdfs:label "PubPrn" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1216.002 a onto:TecnicaAtaque ;
+    rdfs:label "SyncAppvPublishingServer" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1217 a onto:TecnicaAtaque ;
+    rdfs:label "Browser Information Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1218 a onto:TecnicaAtaque ;
+    rdfs:label "System Binary Proxy Execution" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.001 a onto:TecnicaAtaque ;
+    rdfs:label "Compiled HTML File" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.002 a onto:TecnicaAtaque ;
+    rdfs:label "Control Panel" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.003 a onto:TecnicaAtaque ;
+    rdfs:label "CMSTP" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.004 a onto:TecnicaAtaque ;
+    rdfs:label "InstallUtil" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.005 a onto:TecnicaAtaque ;
+    rdfs:label "Mshta" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.007 a onto:TecnicaAtaque ;
+    rdfs:label "Msiexec" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.008 a onto:TecnicaAtaque ;
+    rdfs:label "Odbcconf" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.009 a onto:TecnicaAtaque ;
+    rdfs:label "Regsvcs/Regasm" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.010 a onto:TecnicaAtaque ;
+    rdfs:label "Regsvr32" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.011 a onto:TecnicaAtaque ;
+    rdfs:label "Rundll32" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.012 a onto:TecnicaAtaque ;
+    rdfs:label "Verclsid" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.013 a onto:TecnicaAtaque ;
+    rdfs:label "Mavinject" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.014 a onto:TecnicaAtaque ;
+    rdfs:label "MMC" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1218.015 a onto:TecnicaAtaque ;
+    rdfs:label "Electron Applications" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1219 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Access Tools" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1219.001 a onto:TecnicaAtaque ;
+    rdfs:label "IDE Tunneling" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1219.002 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Desktop Software" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1219.003 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Access Hardware" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1220 a onto:TecnicaAtaque ;
+    rdfs:label "XSL Script Processing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1221 a onto:TecnicaAtaque ;
+    rdfs:label "Template Injection" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1222 a onto:TecnicaAtaque ;
+    rdfs:label "File and Directory Permissions Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1222.001 a onto:TecnicaAtaque ;
+    rdfs:label "Windows File and Directory Permissions Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1222.002 a onto:TecnicaAtaque ;
+    rdfs:label "Linux and Mac File and Directory Permissions Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1223 a onto:TecnicaAtaque ;
+    rdfs:label "Compiled HTML File" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1480 a onto:TecnicaAtaque ;
+    rdfs:label "Execution Guardrails" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1480.001 a onto:TecnicaAtaque ;
+    rdfs:label "Environmental Keying" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1480.002 a onto:TecnicaAtaque ;
+    rdfs:label "Mutual Exclusion" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1482 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Trust Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1483 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Generation Algorithms" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1484 a onto:TecnicaAtaque ;
+    rdfs:label "Domain or Tenant Policy Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1484.001 a onto:TecnicaAtaque ;
+    rdfs:label "Group Policy Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1484.002 a onto:TecnicaAtaque ;
+    rdfs:label "Trust Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1485 a onto:TecnicaAtaque ;
+    rdfs:label "Data Destruction" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1485.001 a onto:TecnicaAtaque ;
+    rdfs:label "Lifecycle-Triggered Deletion" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1486 a onto:TecnicaAtaque ;
+    rdfs:label "Data Encrypted for Impact" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1487 a onto:TecnicaAtaque ;
+    rdfs:label "Disk Structure Wipe" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1488 a onto:TecnicaAtaque ;
+    rdfs:label "Disk Content Wipe" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1489 a onto:TecnicaAtaque ;
+    rdfs:label "Service Stop" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1490 a onto:TecnicaAtaque ;
+    rdfs:label "Inhibit System Recovery" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1491 a onto:TecnicaAtaque ;
+    rdfs:label "Defacement" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1491.001 a onto:TecnicaAtaque ;
+    rdfs:label "Internal Defacement" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1491.002 a onto:TecnicaAtaque ;
+    rdfs:label "External Defacement" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1492 a onto:TecnicaAtaque ;
+    rdfs:label "Stored Data Manipulation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1493 a onto:TecnicaAtaque ;
+    rdfs:label "Transmitted Data Manipulation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1494 a onto:TecnicaAtaque ;
+    rdfs:label "Runtime Data Manipulation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1495 a onto:TecnicaAtaque ;
+    rdfs:label "Firmware Corruption" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1496 a onto:TecnicaAtaque ;
+    rdfs:label "Resource Hijacking" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1496.001 a onto:TecnicaAtaque ;
+    rdfs:label "Compute Hijacking" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1496.002 a onto:TecnicaAtaque ;
+    rdfs:label "Bandwidth Hijacking" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1496.003 a onto:TecnicaAtaque ;
+    rdfs:label "SMS Pumping" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1496.004 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Service Hijacking" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1497 a onto:TecnicaAtaque ;
+    rdfs:label "Virtualization/Sandbox Evasion" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Discovery .
+
+onto:T1497.001 a onto:TecnicaAtaque ;
+    rdfs:label "System Checks" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Discovery .
+
+onto:T1497.002 a onto:TecnicaAtaque ;
+    rdfs:label "User Activity Based Checks" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Discovery .
+
+onto:T1497.003 a onto:TecnicaAtaque ;
+    rdfs:label "Time Based Checks" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Discovery .
+
+onto:T1498 a onto:TecnicaAtaque ;
+    rdfs:label "Network Denial of Service" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1498.001 a onto:TecnicaAtaque ;
+    rdfs:label "Direct Network Flood" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1498.002 a onto:TecnicaAtaque ;
+    rdfs:label "Reflection Amplification" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1499 a onto:TecnicaAtaque ;
+    rdfs:label "Endpoint Denial of Service" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1499.001 a onto:TecnicaAtaque ;
+    rdfs:label "OS Exhaustion Flood" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1499.002 a onto:TecnicaAtaque ;
+    rdfs:label "Service Exhaustion Flood" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1499.003 a onto:TecnicaAtaque ;
+    rdfs:label "Application Exhaustion Flood" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1499.004 a onto:TecnicaAtaque ;
+    rdfs:label "Application or System Exploitation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1500 a onto:TecnicaAtaque ;
+    rdfs:label "Compile After Delivery" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1501 a onto:TecnicaAtaque ;
+    rdfs:label "Systemd Service" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1502 a onto:TecnicaAtaque ;
+    rdfs:label "Parent PID Spoofing" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1503 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials from Web Browsers" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1504 a onto:TecnicaAtaque ;
+    rdfs:label "PowerShell Profile" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1505 a onto:TecnicaAtaque ;
+    rdfs:label "Server Software Component" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1505.001 a onto:TecnicaAtaque ;
+    rdfs:label "SQL Stored Procedures" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1505.002 a onto:TecnicaAtaque ;
+    rdfs:label "Transport Agent" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1505.003 a onto:TecnicaAtaque ;
+    rdfs:label "Web Shell" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1505.004 a onto:TecnicaAtaque ;
+    rdfs:label "IIS Components" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1505.005 a onto:TecnicaAtaque ;
+    rdfs:label "Terminal Services DLL" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1505.006 a onto:TecnicaAtaque ;
+    rdfs:label "vSphere Installation Bundles" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1506 a onto:TecnicaAtaque ;
+    rdfs:label "Web Session Cookie" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Lateral_Movement .
+
+onto:T1514 a onto:TecnicaAtaque ;
+    rdfs:label "Elevated Execution with Prompt" ;
+    onto:perteneceTactica onto:Privilege_Escalation .
+
+onto:T1518 a onto:TecnicaAtaque ;
+    rdfs:label "Software Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1518.001 a onto:TecnicaAtaque ;
+    rdfs:label "Security Software Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1518.002 a onto:TecnicaAtaque ;
+    rdfs:label "Backup Software Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1519 a onto:TecnicaAtaque ;
+    rdfs:label "Emond" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1522 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Instance Metadata API" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1525 a onto:TecnicaAtaque ;
+    rdfs:label "Implant Internal Image" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1526 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Service Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1527 a onto:TecnicaAtaque ;
+    rdfs:label "Application Access Token" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Lateral_Movement .
+
+onto:T1528 a onto:TecnicaAtaque ;
+    rdfs:label "Steal Application Access Token" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1529 a onto:TecnicaAtaque ;
+    rdfs:label "System Shutdown/Reboot" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1530 a onto:TecnicaAtaque ;
+    rdfs:label "Data from Cloud Storage" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1531 a onto:TecnicaAtaque ;
+    rdfs:label "Account Access Removal" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1534 a onto:TecnicaAtaque ;
+    rdfs:label "Internal Spearphishing" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1535 a onto:TecnicaAtaque ;
+    rdfs:label "Unused/Unsupported Cloud Regions" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1536 a onto:TecnicaAtaque ;
+    rdfs:label "Revert Cloud Instance" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1537 a onto:TecnicaAtaque ;
+    rdfs:label "Transfer Data to Cloud Account" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1538 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Service Dashboard" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1539 a onto:TecnicaAtaque ;
+    rdfs:label "Steal Web Session Cookie" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1542 a onto:TecnicaAtaque ;
+    rdfs:label "Pre-OS Boot" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1542.001 a onto:TecnicaAtaque ;
+    rdfs:label "System Firmware" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1542.002 a onto:TecnicaAtaque ;
+    rdfs:label "Component Firmware" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1542.003 a onto:TecnicaAtaque ;
+    rdfs:label "Bootkit" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1542.004 a onto:TecnicaAtaque ;
+    rdfs:label "ROMMONkit" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1542.005 a onto:TecnicaAtaque ;
+    rdfs:label "TFTP Boot" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1543 a onto:TecnicaAtaque ;
+    rdfs:label "Create or Modify System Process" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1543.001 a onto:TecnicaAtaque ;
+    rdfs:label "Launch Agent" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1543.002 a onto:TecnicaAtaque ;
+    rdfs:label "Systemd Service" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1543.003 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Service" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1543.004 a onto:TecnicaAtaque ;
+    rdfs:label "Launch Daemon" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1543.005 a onto:TecnicaAtaque ;
+    rdfs:label "Container Service" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546 a onto:TecnicaAtaque ;
+    rdfs:label "Event Triggered Execution" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.001 a onto:TecnicaAtaque ;
+    rdfs:label "Change Default File Association" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.002 a onto:TecnicaAtaque ;
+    rdfs:label "Screensaver" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.003 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Management Instrumentation Event Subscription" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.004 a onto:TecnicaAtaque ;
+    rdfs:label "Unix Shell Configuration Modification" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.005 a onto:TecnicaAtaque ;
+    rdfs:label "Trap" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.006 a onto:TecnicaAtaque ;
+    rdfs:label "LC_LOAD_DYLIB Addition" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.007 a onto:TecnicaAtaque ;
+    rdfs:label "Netsh Helper DLL" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.008 a onto:TecnicaAtaque ;
+    rdfs:label "Accessibility Features" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.009 a onto:TecnicaAtaque ;
+    rdfs:label "AppCert DLLs" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.010 a onto:TecnicaAtaque ;
+    rdfs:label "AppInit DLLs" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.011 a onto:TecnicaAtaque ;
+    rdfs:label "Application Shimming" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.012 a onto:TecnicaAtaque ;
+    rdfs:label "Image File Execution Options Injection" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.013 a onto:TecnicaAtaque ;
+    rdfs:label "PowerShell Profile" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.014 a onto:TecnicaAtaque ;
+    rdfs:label "Emond" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.015 a onto:TecnicaAtaque ;
+    rdfs:label "Component Object Model Hijacking" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.016 a onto:TecnicaAtaque ;
+    rdfs:label "Installer Packages" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.017 a onto:TecnicaAtaque ;
+    rdfs:label "Udev Rules" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1546.018 a onto:TecnicaAtaque ;
+    rdfs:label "Python Startup Hooks" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547 a onto:TecnicaAtaque ;
+    rdfs:label "Boot or Logon Autostart Execution" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.001 a onto:TecnicaAtaque ;
+    rdfs:label "Registry Run Keys / Startup Folder" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.002 a onto:TecnicaAtaque ;
+    rdfs:label "Authentication Package" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.003 a onto:TecnicaAtaque ;
+    rdfs:label "Time Providers" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.004 a onto:TecnicaAtaque ;
+    rdfs:label "Winlogon Helper DLL" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.005 a onto:TecnicaAtaque ;
+    rdfs:label "Security Support Provider" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.006 a onto:TecnicaAtaque ;
+    rdfs:label "Kernel Modules and Extensions" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.007 a onto:TecnicaAtaque ;
+    rdfs:label "Re-opened Applications" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.008 a onto:TecnicaAtaque ;
+    rdfs:label "LSASS Driver" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.009 a onto:TecnicaAtaque ;
+    rdfs:label "Shortcut Modification" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.010 a onto:TecnicaAtaque ;
+    rdfs:label "Port Monitors" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.011 a onto:TecnicaAtaque ;
+    rdfs:label "Plist Modification" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.012 a onto:TecnicaAtaque ;
+    rdfs:label "Print Processors" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.013 a onto:TecnicaAtaque ;
+    rdfs:label "XDG Autostart Entries" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.014 a onto:TecnicaAtaque ;
+    rdfs:label "Active Setup" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1547.015 a onto:TecnicaAtaque ;
+    rdfs:label "Login Items" ;
+    onto:perteneceTactica onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1548 a onto:TecnicaAtaque ;
+    rdfs:label "Abuse Elevation Control Mechanism" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1548.001 a onto:TecnicaAtaque ;
+    rdfs:label "Setuid and Setgid" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1548.002 a onto:TecnicaAtaque ;
+    rdfs:label "Bypass User Account Control" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1548.003 a onto:TecnicaAtaque ;
+    rdfs:label "Sudo and Sudo Caching" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1548.004 a onto:TecnicaAtaque ;
+    rdfs:label "Elevated Execution with Prompt" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1548.005 a onto:TecnicaAtaque ;
+    rdfs:label "Temporary Elevated Cloud Access" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1548.006 a onto:TecnicaAtaque ;
+    rdfs:label "TCC Manipulation" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Privilege_Escalation .
+
+onto:T1550 a onto:TecnicaAtaque ;
+    rdfs:label "Use Alternate Authentication Material" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Lateral_Movement .
+
+onto:T1550.001 a onto:TecnicaAtaque ;
+    rdfs:label "Application Access Token" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Lateral_Movement .
+
+onto:T1550.002 a onto:TecnicaAtaque ;
+    rdfs:label "Pass the Hash" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Lateral_Movement .
+
+onto:T1550.003 a onto:TecnicaAtaque ;
+    rdfs:label "Pass the Ticket" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Lateral_Movement .
+
+onto:T1550.004 a onto:TecnicaAtaque ;
+    rdfs:label "Web Session Cookie" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Lateral_Movement .
+
+onto:T1552 a onto:TecnicaAtaque ;
+    rdfs:label "Unsecured Credentials" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.001 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials In Files" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.002 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials in Registry" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.003 a onto:TecnicaAtaque ;
+    rdfs:label "Shell History" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.004 a onto:TecnicaAtaque ;
+    rdfs:label "Private Keys" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.005 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Instance Metadata API" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.006 a onto:TecnicaAtaque ;
+    rdfs:label "Group Policy Preferences" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.007 a onto:TecnicaAtaque ;
+    rdfs:label "Container API" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1552.008 a onto:TecnicaAtaque ;
+    rdfs:label "Chat Messages" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1553 a onto:TecnicaAtaque ;
+    rdfs:label "Subvert Trust Controls" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1553.001 a onto:TecnicaAtaque ;
+    rdfs:label "Gatekeeper Bypass" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1553.002 a onto:TecnicaAtaque ;
+    rdfs:label "Code Signing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1553.003 a onto:TecnicaAtaque ;
+    rdfs:label "SIP and Trust Provider Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1553.004 a onto:TecnicaAtaque ;
+    rdfs:label "Install Root Certificate" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1553.005 a onto:TecnicaAtaque ;
+    rdfs:label "Mark-of-the-Web Bypass" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1553.006 a onto:TecnicaAtaque ;
+    rdfs:label "Code Signing Policy Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1554 a onto:TecnicaAtaque ;
+    rdfs:label "Compromise Host Software Binary" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1555 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials from Password Stores" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1555.001 a onto:TecnicaAtaque ;
+    rdfs:label "Keychain" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1555.002 a onto:TecnicaAtaque ;
+    rdfs:label "Securityd Memory" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1555.003 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials from Web Browsers" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1555.004 a onto:TecnicaAtaque ;
+    rdfs:label "Windows Credential Manager" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1555.005 a onto:TecnicaAtaque ;
+    rdfs:label "Password Managers" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1555.006 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Secrets Management Stores" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1556 a onto:TecnicaAtaque ;
+    rdfs:label "Modify Authentication Process" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.001 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Controller Authentication" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.002 a onto:TecnicaAtaque ;
+    rdfs:label "Password Filter DLL" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.003 a onto:TecnicaAtaque ;
+    rdfs:label "Pluggable Authentication Modules" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.004 a onto:TecnicaAtaque ;
+    rdfs:label "Network Device Authentication" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.005 a onto:TecnicaAtaque ;
+    rdfs:label "Reversible Encryption" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.006 a onto:TecnicaAtaque ;
+    rdfs:label "Multi-Factor Authentication" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.007 a onto:TecnicaAtaque ;
+    rdfs:label "Hybrid Identity" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.008 a onto:TecnicaAtaque ;
+    rdfs:label "Network Provider DLL" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1556.009 a onto:TecnicaAtaque ;
+    rdfs:label "Conditional Access Policies" ;
+    onto:perteneceTactica onto:Credential_Access,
+        onto:Defense_Evasion,
+        onto:Persistence .
+
+onto:T1557 a onto:TecnicaAtaque ;
+    rdfs:label "Adversary-in-the-Middle" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1557.001 a onto:TecnicaAtaque ;
+    rdfs:label "LLMNR/NBT-NS Poisoning and SMB Relay" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1557.002 a onto:TecnicaAtaque ;
+    rdfs:label "ARP Cache Poisoning" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1557.003 a onto:TecnicaAtaque ;
+    rdfs:label "DHCP Spoofing" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1557.004 a onto:TecnicaAtaque ;
+    rdfs:label "Evil Twin" ;
+    onto:perteneceTactica onto:Collection,
+        onto:Credential_Access .
+
+onto:T1558 a onto:TecnicaAtaque ;
+    rdfs:label "Steal or Forge Kerberos Tickets" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1558.001 a onto:TecnicaAtaque ;
+    rdfs:label "Golden Ticket" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1558.002 a onto:TecnicaAtaque ;
+    rdfs:label "Silver Ticket" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1558.003 a onto:TecnicaAtaque ;
+    rdfs:label "Kerberoasting" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1558.004 a onto:TecnicaAtaque ;
+    rdfs:label "AS-REP Roasting" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1558.005 a onto:TecnicaAtaque ;
+    rdfs:label "Ccache Files" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1559 a onto:TecnicaAtaque ;
+    rdfs:label "Inter-Process Communication" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1559.001 a onto:TecnicaAtaque ;
+    rdfs:label "Component Object Model" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1559.002 a onto:TecnicaAtaque ;
+    rdfs:label "Dynamic Data Exchange" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1559.003 a onto:TecnicaAtaque ;
+    rdfs:label "XPC Services" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1560 a onto:TecnicaAtaque ;
+    rdfs:label "Archive Collected Data" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1560.001 a onto:TecnicaAtaque ;
+    rdfs:label "Archive via Utility" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1560.002 a onto:TecnicaAtaque ;
+    rdfs:label "Archive via Library" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1560.003 a onto:TecnicaAtaque ;
+    rdfs:label "Archive via Custom Method" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1561 a onto:TecnicaAtaque ;
+    rdfs:label "Disk Wipe" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1561.001 a onto:TecnicaAtaque ;
+    rdfs:label "Disk Content Wipe" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1561.002 a onto:TecnicaAtaque ;
+    rdfs:label "Disk Structure Wipe" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1562 a onto:TecnicaAtaque ;
+    rdfs:label "Impair Defenses" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.001 a onto:TecnicaAtaque ;
+    rdfs:label "Disable or Modify Tools" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.002 a onto:TecnicaAtaque ;
+    rdfs:label "Disable Windows Event Logging" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.003 a onto:TecnicaAtaque ;
+    rdfs:label "Impair Command History Logging" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.004 a onto:TecnicaAtaque ;
+    rdfs:label "Disable or Modify System Firewall" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.006 a onto:TecnicaAtaque ;
+    rdfs:label "Indicator Blocking" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.007 a onto:TecnicaAtaque ;
+    rdfs:label "Disable or Modify Cloud Firewall" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.008 a onto:TecnicaAtaque ;
+    rdfs:label "Disable or Modify Cloud Logs" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.009 a onto:TecnicaAtaque ;
+    rdfs:label "Safe Mode Boot" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.010 a onto:TecnicaAtaque ;
+    rdfs:label "Downgrade Attack" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.011 a onto:TecnicaAtaque ;
+    rdfs:label "Spoof Security Alerting" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.012 a onto:TecnicaAtaque ;
+    rdfs:label "Disable or Modify Linux Audit System" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1562.013 a onto:TecnicaAtaque ;
+    rdfs:label "Disable or Modify Network Device Firewall" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1563 a onto:TecnicaAtaque ;
+    rdfs:label "Remote Service Session Hijacking" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1563.001 a onto:TecnicaAtaque ;
+    rdfs:label "SSH Hijacking" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1563.002 a onto:TecnicaAtaque ;
+    rdfs:label "RDP Hijacking" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1564 a onto:TecnicaAtaque ;
+    rdfs:label "Hide Artifacts" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.001 a onto:TecnicaAtaque ;
+    rdfs:label "Hidden Files and Directories" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.002 a onto:TecnicaAtaque ;
+    rdfs:label "Hidden Users" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.003 a onto:TecnicaAtaque ;
+    rdfs:label "Hidden Window" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.004 a onto:TecnicaAtaque ;
+    rdfs:label "NTFS File Attributes" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.005 a onto:TecnicaAtaque ;
+    rdfs:label "Hidden File System" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.006 a onto:TecnicaAtaque ;
+    rdfs:label "Run Virtual Instance" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.007 a onto:TecnicaAtaque ;
+    rdfs:label "VBA Stomping" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.008 a onto:TecnicaAtaque ;
+    rdfs:label "Email Hiding Rules" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.009 a onto:TecnicaAtaque ;
+    rdfs:label "Resource Forking" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.010 a onto:TecnicaAtaque ;
+    rdfs:label "Process Argument Spoofing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.011 a onto:TecnicaAtaque ;
+    rdfs:label "Ignore Process Interrupts" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.012 a onto:TecnicaAtaque ;
+    rdfs:label "File/Path Exclusions" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.013 a onto:TecnicaAtaque ;
+    rdfs:label "Bind Mounts" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1564.014 a onto:TecnicaAtaque ;
+    rdfs:label "Extended Attributes" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1565 a onto:TecnicaAtaque ;
+    rdfs:label "Data Manipulation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1565.001 a onto:TecnicaAtaque ;
+    rdfs:label "Stored Data Manipulation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1565.002 a onto:TecnicaAtaque ;
+    rdfs:label "Transmitted Data Manipulation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1565.003 a onto:TecnicaAtaque ;
+    rdfs:label "Runtime Data Manipulation" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1566 a onto:TecnicaAtaque ;
+    rdfs:label "Phishing" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1566.001 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Attachment" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1566.002 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Link" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1566.003 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing via Service" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1566.004 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Voice" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1567 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Web Service" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1567.001 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration to Code Repository" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1567.002 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration to Cloud Storage" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1567.003 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration to Text Storage Sites" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1567.004 a onto:TecnicaAtaque ;
+    rdfs:label "Exfiltration Over Webhook" ;
+    onto:perteneceTactica onto:Exfiltration .
+
+onto:T1568 a onto:TecnicaAtaque ;
+    rdfs:label "Dynamic Resolution" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1568.001 a onto:TecnicaAtaque ;
+    rdfs:label "Fast Flux DNS" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1568.002 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Generation Algorithms" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1568.003 a onto:TecnicaAtaque ;
+    rdfs:label "DNS Calculation" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1569 a onto:TecnicaAtaque ;
+    rdfs:label "System Services" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1569.001 a onto:TecnicaAtaque ;
+    rdfs:label "Launchctl" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1569.002 a onto:TecnicaAtaque ;
+    rdfs:label "Service Execution" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1569.003 a onto:TecnicaAtaque ;
+    rdfs:label "Systemctl" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1570 a onto:TecnicaAtaque ;
+    rdfs:label "Lateral Tool Transfer" ;
+    onto:perteneceTactica onto:Lateral_Movement .
+
+onto:T1571 a onto:TecnicaAtaque ;
+    rdfs:label "Non-Standard Port" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1572 a onto:TecnicaAtaque ;
+    rdfs:label "Protocol Tunneling" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1573 a onto:TecnicaAtaque ;
+    rdfs:label "Encrypted Channel" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1573.001 a onto:TecnicaAtaque ;
+    rdfs:label "Symmetric Cryptography" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1573.002 a onto:TecnicaAtaque ;
+    rdfs:label "Asymmetric Cryptography" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1574 a onto:TecnicaAtaque ;
+    rdfs:label "Hijack Execution Flow" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.001 a onto:TecnicaAtaque ;
+    rdfs:label "DLL" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.002 a onto:TecnicaAtaque ;
+    rdfs:label "DLL Side-Loading" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.004 a onto:TecnicaAtaque ;
+    rdfs:label "Dylib Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.005 a onto:TecnicaAtaque ;
+    rdfs:label "Executable Installer File Permissions Weakness" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.006 a onto:TecnicaAtaque ;
+    rdfs:label "Dynamic Linker Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.007 a onto:TecnicaAtaque ;
+    rdfs:label "Path Interception by PATH Environment Variable" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.008 a onto:TecnicaAtaque ;
+    rdfs:label "Path Interception by Search Order Hijacking" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.009 a onto:TecnicaAtaque ;
+    rdfs:label "Path Interception by Unquoted Path" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.010 a onto:TecnicaAtaque ;
+    rdfs:label "Services File Permissions Weakness" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.011 a onto:TecnicaAtaque ;
+    rdfs:label "Services Registry Permissions Weakness" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.012 a onto:TecnicaAtaque ;
+    rdfs:label "COR_PROFILER" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.013 a onto:TecnicaAtaque ;
+    rdfs:label "KernelCallbackTable" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1574.014 a onto:TecnicaAtaque ;
+    rdfs:label "AppDomainManager" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Persistence,
+        onto:Privilege_Escalation .
+
+onto:T1578 a onto:TecnicaAtaque ;
+    rdfs:label "Modify Cloud Compute Infrastructure" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1578.001 a onto:TecnicaAtaque ;
+    rdfs:label "Create Snapshot" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1578.002 a onto:TecnicaAtaque ;
+    rdfs:label "Create Cloud Instance" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1578.003 a onto:TecnicaAtaque ;
+    rdfs:label "Delete Cloud Instance" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1578.004 a onto:TecnicaAtaque ;
+    rdfs:label "Revert Cloud Instance" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1578.005 a onto:TecnicaAtaque ;
+    rdfs:label "Modify Cloud Compute Configurations" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1580 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Infrastructure Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1583 a onto:TecnicaAtaque ;
+    rdfs:label "Acquire Infrastructure" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.001 a onto:TecnicaAtaque ;
+    rdfs:label "Domains" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.002 a onto:TecnicaAtaque ;
+    rdfs:label "DNS Server" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.003 a onto:TecnicaAtaque ;
+    rdfs:label "Virtual Private Server" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.004 a onto:TecnicaAtaque ;
+    rdfs:label "Server" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.005 a onto:TecnicaAtaque ;
+    rdfs:label "Botnet" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.006 a onto:TecnicaAtaque ;
+    rdfs:label "Web Services" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.007 a onto:TecnicaAtaque ;
+    rdfs:label "Serverless" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1583.008 a onto:TecnicaAtaque ;
+    rdfs:label "Malvertising" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584 a onto:TecnicaAtaque ;
+    rdfs:label "Compromise Infrastructure" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.001 a onto:TecnicaAtaque ;
+    rdfs:label "Domains" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.002 a onto:TecnicaAtaque ;
+    rdfs:label "DNS Server" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.003 a onto:TecnicaAtaque ;
+    rdfs:label "Virtual Private Server" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.004 a onto:TecnicaAtaque ;
+    rdfs:label "Server" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.005 a onto:TecnicaAtaque ;
+    rdfs:label "Botnet" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.006 a onto:TecnicaAtaque ;
+    rdfs:label "Web Services" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.007 a onto:TecnicaAtaque ;
+    rdfs:label "Serverless" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1584.008 a onto:TecnicaAtaque ;
+    rdfs:label "Network Devices" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1585 a onto:TecnicaAtaque ;
+    rdfs:label "Establish Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1585.001 a onto:TecnicaAtaque ;
+    rdfs:label "Social Media Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1585.002 a onto:TecnicaAtaque ;
+    rdfs:label "Email Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1585.003 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1586 a onto:TecnicaAtaque ;
+    rdfs:label "Compromise Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1586.001 a onto:TecnicaAtaque ;
+    rdfs:label "Social Media Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1586.002 a onto:TecnicaAtaque ;
+    rdfs:label "Email Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1586.003 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Accounts" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1587 a onto:TecnicaAtaque ;
+    rdfs:label "Develop Capabilities" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1587.001 a onto:TecnicaAtaque ;
+    rdfs:label "Malware" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1587.002 a onto:TecnicaAtaque ;
+    rdfs:label "Code Signing Certificates" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1587.003 a onto:TecnicaAtaque ;
+    rdfs:label "Digital Certificates" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1587.004 a onto:TecnicaAtaque ;
+    rdfs:label "Exploits" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588 a onto:TecnicaAtaque ;
+    rdfs:label "Obtain Capabilities" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588.001 a onto:TecnicaAtaque ;
+    rdfs:label "Malware" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588.002 a onto:TecnicaAtaque ;
+    rdfs:label "Tool" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588.003 a onto:TecnicaAtaque ;
+    rdfs:label "Code Signing Certificates" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588.004 a onto:TecnicaAtaque ;
+    rdfs:label "Digital Certificates" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588.005 a onto:TecnicaAtaque ;
+    rdfs:label "Exploits" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588.006 a onto:TecnicaAtaque ;
+    rdfs:label "Vulnerabilities" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1588.007 a onto:TecnicaAtaque ;
+    rdfs:label "Artificial Intelligence" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1589 a onto:TecnicaAtaque ;
+    rdfs:label "Gather Victim Identity Information" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1589.001 a onto:TecnicaAtaque ;
+    rdfs:label "Credentials" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1589.002 a onto:TecnicaAtaque ;
+    rdfs:label "Email Addresses" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1589.003 a onto:TecnicaAtaque ;
+    rdfs:label "Employee Names" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1590 a onto:TecnicaAtaque ;
+    rdfs:label "Gather Victim Network Information" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1590.001 a onto:TecnicaAtaque ;
+    rdfs:label "Domain Properties" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1590.002 a onto:TecnicaAtaque ;
+    rdfs:label "DNS" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1590.003 a onto:TecnicaAtaque ;
+    rdfs:label "Network Trust Dependencies" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1590.004 a onto:TecnicaAtaque ;
+    rdfs:label "Network Topology" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1590.005 a onto:TecnicaAtaque ;
+    rdfs:label "IP Addresses" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1590.006 a onto:TecnicaAtaque ;
+    rdfs:label "Network Security Appliances" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1591 a onto:TecnicaAtaque ;
+    rdfs:label "Gather Victim Org Information" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1591.001 a onto:TecnicaAtaque ;
+    rdfs:label "Determine Physical Locations" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1591.002 a onto:TecnicaAtaque ;
+    rdfs:label "Business Relationships" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1591.003 a onto:TecnicaAtaque ;
+    rdfs:label "Identify Business Tempo" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1591.004 a onto:TecnicaAtaque ;
+    rdfs:label "Identify Roles" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1592 a onto:TecnicaAtaque ;
+    rdfs:label "Gather Victim Host Information" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1592.001 a onto:TecnicaAtaque ;
+    rdfs:label "Hardware" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1592.002 a onto:TecnicaAtaque ;
+    rdfs:label "Software" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1592.003 a onto:TecnicaAtaque ;
+    rdfs:label "Firmware" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1592.004 a onto:TecnicaAtaque ;
+    rdfs:label "Client Configurations" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1593 a onto:TecnicaAtaque ;
+    rdfs:label "Search Open Websites/Domains" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1593.001 a onto:TecnicaAtaque ;
+    rdfs:label "Social Media" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1593.002 a onto:TecnicaAtaque ;
+    rdfs:label "Search Engines" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1593.003 a onto:TecnicaAtaque ;
+    rdfs:label "Code Repositories" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1594 a onto:TecnicaAtaque ;
+    rdfs:label "Search Victim-Owned Websites" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1595 a onto:TecnicaAtaque ;
+    rdfs:label "Active Scanning" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1595.001 a onto:TecnicaAtaque ;
+    rdfs:label "Scanning IP Blocks" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1595.002 a onto:TecnicaAtaque ;
+    rdfs:label "Vulnerability Scanning" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1595.003 a onto:TecnicaAtaque ;
+    rdfs:label "Wordlist Scanning" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1596 a onto:TecnicaAtaque ;
+    rdfs:label "Search Open Technical Databases" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1596.001 a onto:TecnicaAtaque ;
+    rdfs:label "DNS/Passive DNS" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1596.002 a onto:TecnicaAtaque ;
+    rdfs:label "WHOIS" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1596.003 a onto:TecnicaAtaque ;
+    rdfs:label "Digital Certificates" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1596.004 a onto:TecnicaAtaque ;
+    rdfs:label "CDNs" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1596.005 a onto:TecnicaAtaque ;
+    rdfs:label "Scan Databases" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1597 a onto:TecnicaAtaque ;
+    rdfs:label "Search Closed Sources" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1597.001 a onto:TecnicaAtaque ;
+    rdfs:label "Threat Intel Vendors" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1597.002 a onto:TecnicaAtaque ;
+    rdfs:label "Purchase Technical Data" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1598 a onto:TecnicaAtaque ;
+    rdfs:label "Phishing for Information" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1598.001 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Service" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1598.002 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Attachment" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1598.003 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Link" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1598.004 a onto:TecnicaAtaque ;
+    rdfs:label "Spearphishing Voice" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:T1599 a onto:TecnicaAtaque ;
+    rdfs:label "Network Boundary Bridging" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1599.001 a onto:TecnicaAtaque ;
+    rdfs:label "Network Address Translation Traversal" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1600 a onto:TecnicaAtaque ;
+    rdfs:label "Weaken Encryption" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1600.001 a onto:TecnicaAtaque ;
+    rdfs:label "Reduce Key Space" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1600.002 a onto:TecnicaAtaque ;
+    rdfs:label "Disable Crypto Hardware" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1601 a onto:TecnicaAtaque ;
+    rdfs:label "Modify System Image" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1601.001 a onto:TecnicaAtaque ;
+    rdfs:label "Patch System Image" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1601.002 a onto:TecnicaAtaque ;
+    rdfs:label "Downgrade System Image" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1602 a onto:TecnicaAtaque ;
+    rdfs:label "Data from Configuration Repository" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1602.001 a onto:TecnicaAtaque ;
+    rdfs:label "SNMP (MIB Dump)" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1602.002 a onto:TecnicaAtaque ;
+    rdfs:label "Network Device Configuration Dump" ;
+    onto:perteneceTactica onto:Collection .
+
+onto:T1606 a onto:TecnicaAtaque ;
+    rdfs:label "Forge Web Credentials" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1606.001 a onto:TecnicaAtaque ;
+    rdfs:label "Web Cookies" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1606.002 a onto:TecnicaAtaque ;
+    rdfs:label "SAML Tokens" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1608 a onto:TecnicaAtaque ;
+    rdfs:label "Stage Capabilities" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1608.001 a onto:TecnicaAtaque ;
+    rdfs:label "Upload Malware" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1608.002 a onto:TecnicaAtaque ;
+    rdfs:label "Upload Tool" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1608.003 a onto:TecnicaAtaque ;
+    rdfs:label "Install Digital Certificate" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1608.004 a onto:TecnicaAtaque ;
+    rdfs:label "Drive-by Target" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1608.005 a onto:TecnicaAtaque ;
+    rdfs:label "Link Target" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1608.006 a onto:TecnicaAtaque ;
+    rdfs:label "SEO Poisoning" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1609 a onto:TecnicaAtaque ;
+    rdfs:label "Container Administration Command" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1610 a onto:TecnicaAtaque ;
+    rdfs:label "Deploy Container" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Execution .
+
+onto:T1611 a onto:TecnicaAtaque ;
+    rdfs:label "Escape to Host" ;
+    onto:perteneceTactica onto:Privilege_Escalation .
+
+onto:T1612 a onto:TecnicaAtaque ;
+    rdfs:label "Build Image on Host" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1613 a onto:TecnicaAtaque ;
+    rdfs:label "Container and Resource Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1614 a onto:TecnicaAtaque ;
+    rdfs:label "System Location Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1614.001 a onto:TecnicaAtaque ;
+    rdfs:label "System Language Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1615 a onto:TecnicaAtaque ;
+    rdfs:label "Group Policy Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1619 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Storage Object Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1620 a onto:TecnicaAtaque ;
+    rdfs:label "Reflective Code Loading" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1621 a onto:TecnicaAtaque ;
+    rdfs:label "Multi-Factor Authentication Request Generation" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1622 a onto:TecnicaAtaque ;
+    rdfs:label "Debugger Evasion" ;
+    onto:perteneceTactica onto:Defense_Evasion,
+        onto:Discovery .
+
+onto:T1647 a onto:TecnicaAtaque ;
+    rdfs:label "Plist File Modification" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1648 a onto:TecnicaAtaque ;
+    rdfs:label "Serverless Execution" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1649 a onto:TecnicaAtaque ;
+    rdfs:label "Steal or Forge Authentication Certificates" ;
+    onto:perteneceTactica onto:Credential_Access .
+
+onto:T1650 a onto:TecnicaAtaque ;
+    rdfs:label "Acquire Access" ;
+    onto:perteneceTactica onto:Resource_Development .
+
+onto:T1651 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Administration Command" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1652 a onto:TecnicaAtaque ;
+    rdfs:label "Device Driver Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1653 a onto:TecnicaAtaque ;
+    rdfs:label "Power Settings" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1654 a onto:TecnicaAtaque ;
+    rdfs:label "Log Enumeration" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1656 a onto:TecnicaAtaque ;
+    rdfs:label "Impersonation" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1657 a onto:TecnicaAtaque ;
+    rdfs:label "Financial Theft" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1659 a onto:TecnicaAtaque ;
+    rdfs:label "Content Injection" ;
+    onto:perteneceTactica onto:Command_And_Control,
+        onto:Initial_Access .
+
+onto:T1665 a onto:TecnicaAtaque ;
+    rdfs:label "Hide Infrastructure" ;
+    onto:perteneceTactica onto:Command_And_Control .
+
+onto:T1666 a onto:TecnicaAtaque ;
+    rdfs:label "Modify Cloud Resource Hierarchy" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1667 a onto:TecnicaAtaque ;
+    rdfs:label "Email Bombing" ;
+    onto:perteneceTactica onto:Impact .
+
+onto:T1668 a onto:TecnicaAtaque ;
+    rdfs:label "Exclusive Control" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1669 a onto:TecnicaAtaque ;
+    rdfs:label "Wi-Fi Networks" ;
+    onto:perteneceTactica onto:Initial_Access .
+
+onto:T1671 a onto:TecnicaAtaque ;
+    rdfs:label "Cloud Application Integration" ;
+    onto:perteneceTactica onto:Persistence .
+
+onto:T1672 a onto:TecnicaAtaque ;
+    rdfs:label "Email Spoofing" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1673 a onto:TecnicaAtaque ;
+    rdfs:label "Virtual Machine Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1674 a onto:TecnicaAtaque ;
+    rdfs:label "Input Injection" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1675 a onto:TecnicaAtaque ;
+    rdfs:label "ESXi Administration Command" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1677 a onto:TecnicaAtaque ;
+    rdfs:label "Poisoned Pipeline Execution" ;
+    onto:perteneceTactica onto:Execution .
+
+onto:T1678 a onto:TecnicaAtaque ;
+    rdfs:label "Delay Execution" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1679 a onto:TecnicaAtaque ;
+    rdfs:label "Selective Exclusion" ;
+    onto:perteneceTactica onto:Defense_Evasion .
+
+onto:T1680 a onto:TecnicaAtaque ;
+    rdfs:label "Local Storage Discovery" ;
+    onto:perteneceTactica onto:Discovery .
+
+onto:T1681 a onto:TecnicaAtaque ;
+    rdfs:label "Search Threat Vendor Data" ;
+    onto:perteneceTactica onto:Reconnaissance .
+
+onto:Exfiltration a onto:TacticaAtaque ;
+    rdfs:label "Exfiltration" .
+
+onto:Initial_Access a onto:TacticaAtaque ;
+    rdfs:label "Initial Access" .
+
+onto:Lateral_Movement a onto:TacticaAtaque ;
+    rdfs:label "Lateral Movement" .
+
+onto:Impact a onto:TacticaAtaque ;
+    rdfs:label "Impact" .
+
+onto:Collection a onto:TacticaAtaque ;
+    rdfs:label "Collection" .
+
+onto:Reconnaissance a onto:TacticaAtaque ;
+    rdfs:label "Reconnaissance" .
+
+onto:Resource_Development a onto:TacticaAtaque ;
+    rdfs:label "Resource Development" .
+
+onto:Discovery a onto:TacticaAtaque ;
+    rdfs:label "Discovery" .
+
+onto:Execution a onto:TacticaAtaque ;
+    rdfs:label "Execution" .
+
+onto:Credential_Access a onto:TacticaAtaque ;
+    rdfs:label "Credential Access" .
+
+onto:Privilege_Escalation a onto:TacticaAtaque ;
+    rdfs:label "Privilege Escalation" .
+
+onto:Persistence a onto:TacticaAtaque ;
+    rdfs:label "Persistence" .
+
+onto:Defense_Evasion a onto:TacticaAtaque ;
+    rdfs:label "Defense Evasion" .
+

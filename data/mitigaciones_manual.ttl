@@ -1,0 +1,51 @@
+@prefix onto: <http://www.tfguoc.org/ontologia/ciberseguridad/vulnerabilidades/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### === MITIGACIONES ===
+
+onto:ParcheSeguridad a onto:Mitigacion ;
+    rdfs:label "Aplicación de parches de seguridad"@es .
+
+onto:Firewall a onto:Mitigacion ;
+    rdfs:label "Uso de firewall"@es .
+
+onto:DobleFactorAutenticacion a onto:Mitigacion ;
+    rdfs:label "Autenticación multifactor (MFA)"@es .
+
+onto:FiltradoCorreo a onto:Mitigacion ;
+    rdfs:label "Filtrado de correos maliciosos"@es .
+
+onto:SegmentacionRed a onto:Mitigacion ;
+    rdfs:label "Segmentación de red"@es .
+
+onto:ActualizacionSistema a onto:Mitigacion ;
+    rdfs:label "Actualización del sistema"@es .
+
+onto:MonitorizacionLogs a onto:Mitigacion ;
+    rdfs:label "Monitorización de logs"@es .
+
+onto:PoliticaContrasenas a onto:Mitigacion ;
+    rdfs:label "Política de contraseñas robustas"@es .
+
+
+### === RELACIONES CVE → MITIGACION ===
+
+onto:CVE_2023_23397
+    onto:mitigadaPor onto:ParcheSeguridad ;
+    onto:mitigadaPor onto:DobleFactorAutenticacion .
+
+onto:CVE_2024_0001
+    onto:mitigadaPor onto:Firewall ;
+    onto:mitigadaPor onto:SegmentacionRed .
+
+onto:CVE_2024_0002
+    onto:mitigadaPor onto:PoliticaContrasenas ;
+    onto:mitigadaPor onto:MonitorizacionLogs .
+
+onto:CVE_2024_0003
+    onto:mitigadaPor onto:ActualizacionSistema ;
+    onto:mitigadaPor onto:ParcheSeguridad .
+
+onto:CVE_2024_0004
+    onto:mitigadaPor onto:FiltradoCorreo ;
+    onto:mitigadaPor onto:DobleFactorAutenticacion .
