@@ -151,7 +151,7 @@
             } 
             else if (queryID === 4) {
                 html = `<h3 style="color:#0056b3; margin:0;">${d.id}</h3>
-                        <p style="color:black;"><strong>Puntuación:</strong> ${d.score || 'N/A'}</p>
+                        <p style="color:black;"><strong>CVSS:</strong> ${d.score || 'N/A'}</p>
                         <p style="color:black;"><strong>Descripción:</strong> ${d.desc || 'Sin descripción'}</p>`;
             }
             else if (queryID === 2) {
@@ -169,4 +169,5 @@
     }
 
     window.onload = inicializarSistema;
+
 }
