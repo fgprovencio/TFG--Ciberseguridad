@@ -59,7 +59,7 @@ Todos los resultados se presentan en un **panel unificado**, facilitando la nave
 ### 💻 Desarrollo Web
 - **HTML5**
 - **CSS3**
-- **JavaScript (Vanilla JS)**
+- **JavaScript**
 
 ---
 
