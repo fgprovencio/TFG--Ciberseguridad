@@ -14,7 +14,7 @@ La creciente cantidad de información sobre vulnerabilidades, ataques y técnica
 Este proyecto propone:
 - Una **ontología OWL** que modela vulnerabilidades, técnicas de ataque, mitigaciones y activos afectados.
 - Una **web semántica** que permite realizar consultas SPARQL de forma visual e intuitiva.
-- Datos RDF (TTL), transformados desde NVD y MITRE ATT&CK, para poblar la ontologia de datos reales.
+- Datos RDF (TTL), transformados desde NVD y MITRE ATT&CK, para poblar la ontologia con datos reales.
 - Un enfoque orientado al **análisis preventivo de amenazas** y a la reutilización del conocimiento.
 
 ---
