@@ -1,0 +1,451 @@
+@prefix : <http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/> .
+
+<http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_can_exploit
+:actor_can_exploit rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Threat_Actor ;
+                   rdfs:range :Vulnerability .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_deploys_malware
+:actor_deploys_malware rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Threat_Actor ;
+                       rdfs:range :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_targets_identity
+:actor_targets_identity rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Threat_Actor ;
+                        rdfs:range :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_uses_technique
+:actor_uses_technique rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :technique_uses_actor ;
+                      rdfs:domain :Threat_Actor ;
+                      rdfs:range :Attack_Technique .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/attack_pattern_targets_weakness
+:attack_pattern_targets_weakness rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :Attack_Pattern ;
+                                 rdfs:range :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/course_of_action_mitigates_vulnerability
+:course_of_action_mitigates_vulnerability rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf :vulnerability_mitigated_course_of_action ;
+                                          rdfs:domain :Course_of_Action ;
+                                          rdfs:range :Vulnerability .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/malware_exploits_vulnerability
+:malware_exploits_vulnerability rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Malware ;
+                                rdfs:range :Vulnerability .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/malware_uses_technique
+:malware_uses_technique rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Malware ;
+                        rdfs:range :Attack_Technique .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/technique_implemented_by_pattern
+:technique_implemented_by_pattern rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :Attack_Technique ;
+                                  rdfs:range :Attack_Pattern .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/technique_targets_identity
+:technique_targets_identity rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Attack_Technique ;
+                            rdfs:range :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/technique_uses_actor
+:technique_uses_actor rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Attack_Technique ;
+                      rdfs:range :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_affects_software
+:vulnerability_affects_software rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Vulnerability ;
+                                rdfs:range :Software_Asset .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_classified_by_weakness
+:vulnerability_classified_by_weakness rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :Vulnerability ;
+                                      rdfs:range :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_found_in_identity
+:vulnerability_found_in_identity rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :Vulnerability ;
+                                 rdfs:range :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_mitigated_course_of_action
+:vulnerability_mitigated_course_of_action rdf:type owl:ObjectProperty ;
+                                          rdfs:domain :Vulnerability ;
+                                          rdfs:range :Course_of_Action .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasAbstractionLevel
+:hasAbstractionLevel rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Attack_Pattern ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasActorName
+:hasActorName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Threat_Actor ;
+              rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasCVEID
+:hasCVEID rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Vulnerability ;
+          rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasCVSSScore
+:hasCVSSScore rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Vulnerability ;
+              rdfs:range xsd:decimal .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasCapecID
+:hasCapecID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Attack_Pattern ;
+            rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Vulnerability ;
+                rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasMotivation
+:hasMotivation rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Threat_Actor ;
+               rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/isDetectionPossible
+:isDetectionPossible rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Attack_Technique ;
+                     rdfs:range xsd:boolean .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/publishedDate
+:publishedDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Vulnerability ;
+               rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Attack_Pattern
+:Attack_Pattern rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :attack_pattern_targets_weakness ;
+                                  owl:someValuesFrom :Weakness
+                                ] .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Attack_Technique
+:Attack_Technique rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Cities
+:Cities rdf:type owl:Class ;
+        rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Course_of_Action
+:Course_of_Action rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Critical_Infrastructure
+:Critical_Infrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Cyber_Criminal_Group
+:Cyber_Criminal_Group rdf:type owl:Class ;
+                      rdfs:subClassOf :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Financial_Sector
+:Financial_Sector rdf:type owl:Class ;
+                  rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Goverment_Body
+:Goverment_Body rdf:type owl:Class ;
+                rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Identity
+:Identity rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Insider_Threat
+:Insider_Threat rdf:type owl:Class ;
+                rdfs:subClassOf :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Malware
+:Malware rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Ransomware
+:Ransomware rdf:type owl:Class ;
+            rdfs:subClassOf :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Software_Asset
+:Software_Asset rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Spyware
+:Spyware rdf:type owl:Class ;
+         rdfs:subClassOf :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/State_Sponsored_Group
+:State_Sponsored_Group rdf:type owl:Class ;
+                       rdfs:subClassOf :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Threat_Actor
+:Threat_Actor rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Trojan_Horse
+:Trojan_Horse rdf:type owl:Class ;
+              rdfs:subClassOf :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Vulnerability
+:Vulnerability rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :vulnerability_classified_by_weakness ;
+                                 owl:someValuesFrom :Weakness
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :vulnerability_affects_software ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Software_Asset
+                               ] .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Weakness
+:Weakness rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/APT28
+:APT28 rdf:type owl:NamedIndividual ,
+                :Threat_Actor ;
+       :hasActorName "Fancy Bear" ;
+       :hasMotivation "Espionage" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CAPEC-123
+:CAPEC-123 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :hasAbstractionLevel "Standard" ;
+           :hasCapecID "CAPEC-123" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CAPEC-242
+:CAPEC-242 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CAPEC-633
+:CAPEC-633 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CVE-2023-0669
+:CVE-2023-0669 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-20 ;
+               :hasCVEID "CVE-2023-0669" ;
+               :hasCVSSScore 7.2 ;
+               :hasDescription "Remote Code Execution vulnerability in GoAnywhere MFT" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CVE-2023-41064
+:CVE-2023-41064 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_affects_software :iOS_16 ;
+                :hasCVEID "CVE-2023-41064" ;
+                :hasCVSSScore 8.8 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CVE-2024-21413
+:CVE-2024-21413 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :hasCVEID "CVE-2024-21413" ;
+                :hasCVSSScore 9.8 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CVE-2024-38112
+:CVE-2024-38112 rdf:type owl:NamedIndividual ,
+                         :Vulnerability .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CWE-20
+:CWE-20 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CWE-94
+:CWE-94 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Journalists_Sector
+:Journalists_Sector rdf:type owl:NamedIndividual ,
+                             :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/LockBit_Group
+:LockBit_Group rdf:type owl:NamedIndividual ,
+                        :Threat_Actor ;
+               :actor_uses_technique :T1059 ;
+               :hasActorName "LockBit 3.0" ;
+               :hasMotivation "Financial Gain" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Patch_Update_iOS_16_1
+:Patch_Update_iOS_16_1 rdf:type owl:NamedIndividual ,
+                                :Course_of_Action .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Pegasus_Spyware
+:Pegasus_Spyware rdf:type owl:NamedIndividual ,
+                          :Malware ;
+                 :malware_exploits_vulnerability :CVE-2023-41064 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/T1059
+:T1059 rdf:type owl:NamedIndividual ,
+                :Attack_Technique ;
+       :technique_implemented_by_pattern :CAPEC-242 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/T1566
+:T1566 rdf:type owl:NamedIndividual ,
+                :Attack_Technique ;
+       :technique_implemented_by_pattern :CAPEC-123 ;
+       :isDetectionPossible "true"^^xsd:boolean .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/iOS_16
+:iOS_16 rdf:type owl:NamedIndividual ,
+                 :Software_Asset .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:a rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:t rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:p rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:w rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:v rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Threat_Actor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :actor_uses_technique ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :t
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :technique_implemented_by_pattern ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :t ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :p
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :attack_pattern_targets_weakness ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :p ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :w
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :vulnerability_classified_by_weakness ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :v ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :w
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :actor_can_exploit ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :v
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
