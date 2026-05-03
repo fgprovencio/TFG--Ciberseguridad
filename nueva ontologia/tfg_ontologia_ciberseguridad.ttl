@@ -1,0 +1,3212 @@
+@prefix : <http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/> .
+
+<http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_can_exploit
+:actor_can_exploit rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Threat_Actor ;
+                   rdfs:range :Vulnerability .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_deploys_malware
+:actor_deploys_malware rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Threat_Actor ;
+                       rdfs:range :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_targets_identity
+:actor_targets_identity rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Threat_Actor ;
+                        rdfs:range :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/actor_uses_technique
+:actor_uses_technique rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :technique_uses_actor ;
+                      rdfs:domain :Threat_Actor ;
+                      rdfs:range :Attack_Technique .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/attack_pattern_targets_weakness
+:attack_pattern_targets_weakness rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :Attack_Pattern ;
+                                 rdfs:range :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/course_of_action_mitigates_vulnerability
+:course_of_action_mitigates_vulnerability rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf :vulnerability_mitigated_course_of_action ;
+                                          rdfs:domain :Course_of_Action ;
+                                          rdfs:range :Vulnerability .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/malware_exploits_vulnerability
+:malware_exploits_vulnerability rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Malware ;
+                                rdfs:range :Vulnerability .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/malware_uses_technique
+:malware_uses_technique rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Malware ;
+                        rdfs:range :Attack_Technique .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/technique_implemented_by_pattern
+:technique_implemented_by_pattern rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :Attack_Technique ;
+                                  rdfs:range :Attack_Pattern .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/technique_targets_identity
+:technique_targets_identity rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Attack_Technique ;
+                            rdfs:range :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/technique_uses_actor
+:technique_uses_actor rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Attack_Technique ;
+                      rdfs:range :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_affects_software
+:vulnerability_affects_software rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Vulnerability ;
+                                rdfs:range :Software_Asset .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_classified_by_weakness
+:vulnerability_classified_by_weakness rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :Vulnerability ;
+                                      rdfs:range :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_found_in_identity
+:vulnerability_found_in_identity rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :Vulnerability ;
+                                 rdfs:range :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/vulnerability_mitigated_course_of_action
+:vulnerability_mitigated_course_of_action rdf:type owl:ObjectProperty ;
+                                          rdfs:domain :Vulnerability ;
+                                          rdfs:range :Course_of_Action .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasAbstractionLevel
+:hasAbstractionLevel rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Attack_Pattern ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasActorName
+:hasActorName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Threat_Actor ;
+              rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasCVEID
+:hasCVEID rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Vulnerability ;
+          rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasCVSSScore
+:hasCVSSScore rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Vulnerability ;
+              rdfs:range xsd:decimal .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasCapecID
+:hasCapecID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Attack_Pattern ;
+            rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Vulnerability ;
+                rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/hasMotivation
+:hasMotivation rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Threat_Actor ;
+               rdfs:range xsd:string .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/isDetectionPossible
+:isDetectionPossible rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Attack_Technique ;
+                     rdfs:range xsd:boolean .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/publishedDate
+:publishedDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Vulnerability ;
+               rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Attack_Pattern
+:Attack_Pattern rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :attack_pattern_targets_weakness ;
+                                  owl:someValuesFrom :Weakness
+                                ] .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Attack_Technique
+:Attack_Technique rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Cities
+:Cities rdf:type owl:Class ;
+        rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Course_of_Action
+:Course_of_Action rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Critical_Infrastructure
+:Critical_Infrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Cyber_Criminal_Group
+:Cyber_Criminal_Group rdf:type owl:Class ;
+                      rdfs:subClassOf :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Financial_Sector
+:Financial_Sector rdf:type owl:Class ;
+                  rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Goverment_Body
+:Goverment_Body rdf:type owl:Class ;
+                rdfs:subClassOf :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Identity
+:Identity rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Insider_Threat
+:Insider_Threat rdf:type owl:Class ;
+                rdfs:subClassOf :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Malware
+:Malware rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Ransomware
+:Ransomware rdf:type owl:Class ;
+            rdfs:subClassOf :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Software_Asset
+:Software_Asset rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Spyware
+:Spyware rdf:type owl:Class ;
+         rdfs:subClassOf :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/State_Sponsored_Group
+:State_Sponsored_Group rdf:type owl:Class ;
+                       rdfs:subClassOf :Threat_Actor .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Threat_Actor
+:Threat_Actor rdf:type owl:Class .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Trojan_Horse
+:Trojan_Horse rdf:type owl:Class ;
+              rdfs:subClassOf :Malware .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Vulnerability
+:Vulnerability rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :vulnerability_classified_by_weakness ;
+                                 owl:someValuesFrom :Weakness
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :vulnerability_affects_software ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Software_Asset
+                               ] .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Weakness
+:Weakness rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-0
+:CAPEC-0 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-144 ,
+                                          :CWE-155 ,
+                                          :CWE-266 ,
+                                          :CWE-540 ,
+                                          :CWE-547 ,
+                                          :CWE-598 ,
+                                          :CWE-639 ,
+                                          :CWE-863 ,
+                                          :CWE-922 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-1
+:CAPEC-1 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-285 ,
+                                          :CWE-434 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-10
+:CAPEC-10 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-101
+:CAPEC-101 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-74 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-102
+:CAPEC-102 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-104
+:CAPEC-104 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-285 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-105
+:CAPEC-105 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-436 ,
+                                            :CWE-74 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-108
+:CAPEC-108 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-74 ,
+                                            :CWE-78 ,
+                                            :CWE-89 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-109
+:CAPEC-109 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-89 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-110
+:CAPEC-110 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-89 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-111
+:CAPEC-111 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-352 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-116
+:CAPEC-116 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-120
+:CAPEC-120 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-74 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-125
+:CAPEC-125 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-126
+:CAPEC-126 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-22 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-127
+:CAPEC-127 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-13
+:CAPEC-13 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-200 ,
+                                           :CWE-285 ,
+                                           :CWE-73 ,
+                                           :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-130
+:CAPEC-130 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-135
+:CAPEC-135 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-74 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-136
+:CAPEC-136 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-139
+:CAPEC-139 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-23 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-14
+:CAPEC-14 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-147
+:CAPEC-147 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-15
+:CAPEC-15 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-78 ,
+                                           :CWE-93 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-153
+:CAPEC-153 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-16
+:CAPEC-16 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-307 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-169
+:CAPEC-169 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-17
+:CAPEC-17 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-178
+:CAPEC-178 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-601 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-18
+:CAPEC-18 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-80 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-182
+:CAPEC-182 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-19
+:CAPEC-19 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-191
+:CAPEC-191 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-798 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-193
+:CAPEC-193 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-80 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-197
+:CAPEC-197 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-209
+:CAPEC-209 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-79 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-21
+:CAPEC-21 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-215
+:CAPEC-215 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-209 ,
+                                            :CWE-532 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-22
+:CAPEC-22 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-200 ,
+                                           :CWE-290 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-221
+:CAPEC-221 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-611 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-224
+:CAPEC-224 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-229
+:CAPEC-229 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-23
+:CAPEC-23 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-230
+:CAPEC-230 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-231
+:CAPEC-231 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-24
+:CAPEC-24 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-250
+:CAPEC-250 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-74 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-261
+:CAPEC-261 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-267
+:CAPEC-267 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-73 ,
+                                            :CWE-74 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-273
+:CAPEC-273 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-436 ,
+                                            :CWE-74 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-28
+:CAPEC-28 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-285
+:CAPEC-285 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-287
+:CAPEC-287 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-290
+:CAPEC-290 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-291
+:CAPEC-291 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-292
+:CAPEC-292 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-293
+:CAPEC-293 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-294
+:CAPEC-294 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-295
+:CAPEC-295 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-296
+:CAPEC-296 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-297
+:CAPEC-297 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-298
+:CAPEC-298 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-299
+:CAPEC-299 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-3
+:CAPEC-3 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-74 ,
+                                          :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-300
+:CAPEC-300 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-301
+:CAPEC-301 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-302
+:CAPEC-302 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-303
+:CAPEC-303 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-304
+:CAPEC-304 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-305
+:CAPEC-305 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-306
+:CAPEC-306 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-307
+:CAPEC-307 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-308
+:CAPEC-308 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-309
+:CAPEC-309 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-31
+:CAPEC-31 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-310
+:CAPEC-310 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-312
+:CAPEC-312 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-313
+:CAPEC-313 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-317
+:CAPEC-317 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-318
+:CAPEC-318 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-319
+:CAPEC-319 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-32
+:CAPEC-32 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-80 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-320
+:CAPEC-320 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-321
+:CAPEC-321 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-322
+:CAPEC-322 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-323
+:CAPEC-323 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-324
+:CAPEC-324 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-325
+:CAPEC-325 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-326
+:CAPEC-326 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-327
+:CAPEC-327 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-328
+:CAPEC-328 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-329
+:CAPEC-329 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-330
+:CAPEC-330 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-34
+:CAPEC-34 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-436 ,
+                                           :CWE-74 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-37
+:CAPEC-37 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-312 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-39
+:CAPEC-39 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-402
+:CAPEC-402 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-42
+:CAPEC-42 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-43
+:CAPEC-43 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-78 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-441
+:CAPEC-441 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-45
+:CAPEC-45 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-285 ,
+                                           :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-459
+:CAPEC-459 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-46
+:CAPEC-46 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-461
+:CAPEC-461 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-462
+:CAPEC-462 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-352 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-463
+:CAPEC-463 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-209 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-467
+:CAPEC-467 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-352 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-469
+:CAPEC-469 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-47
+:CAPEC-47 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-470
+:CAPEC-470 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-89 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-472
+:CAPEC-472 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-473
+:CAPEC-473 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-290 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-474
+:CAPEC-474 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-476
+:CAPEC-476 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-478
+:CAPEC-478 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-479
+:CAPEC-479 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-482
+:CAPEC-482 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-486
+:CAPEC-486 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-487
+:CAPEC-487 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-488
+:CAPEC-488 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-489
+:CAPEC-489 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-49
+:CAPEC-49 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-307 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-490
+:CAPEC-490 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-491
+:CAPEC-491 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-493
+:CAPEC-493 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-494
+:CAPEC-494 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-495
+:CAPEC-495 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-496
+:CAPEC-496 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-497
+:CAPEC-497 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-5
+:CAPEC-5 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-50
+:CAPEC-50 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-502
+:CAPEC-502 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-503
+:CAPEC-503 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-508
+:CAPEC-508 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-509
+:CAPEC-509 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-51
+:CAPEC-51 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-285 ,
+                                           :CWE-74 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-52
+:CAPEC-52 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-528
+:CAPEC-528 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-770 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-53
+:CAPEC-53 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-536
+:CAPEC-536 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-54
+:CAPEC-54 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-209 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-546
+:CAPEC-546 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-550
+:CAPEC-550 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-551
+:CAPEC-551 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 ,
+                                            :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-552
+:CAPEC-552 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-555
+:CAPEC-555 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-556
+:CAPEC-556 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-558
+:CAPEC-558 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-560
+:CAPEC-560 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-307 ,
+                                            :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-561
+:CAPEC-561 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-562
+:CAPEC-562 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-563
+:CAPEC-563 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-564
+:CAPEC-564 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-565
+:CAPEC-565 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-307 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-573
+:CAPEC-573 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-574
+:CAPEC-574 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-575
+:CAPEC-575 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-576
+:CAPEC-576 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-577
+:CAPEC-577 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-578
+:CAPEC-578 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-284 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-588
+:CAPEC-588 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-79 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-59
+:CAPEC-59 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-200 ,
+                                           :CWE-285 ,
+                                           :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-591
+:CAPEC-591 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-79 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-592
+:CAPEC-592 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-79 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-6
+:CAPEC-6 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-74 ,
+                                          :CWE-78 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-60
+:CAPEC-60 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-200 ,
+                                           :CWE-285 ,
+                                           :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-600
+:CAPEC-600 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-307 ,
+                                            :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-616
+:CAPEC-616 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-62
+:CAPEC-62 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-352 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-63
+:CAPEC-63 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-79 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-64
+:CAPEC-64 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-22 ,
+                                           :CWE-73 ,
+                                           :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-643
+:CAPEC-643 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-644
+:CAPEC-644 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-645
+:CAPEC-645 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-646
+:CAPEC-646 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-647
+:CAPEC-647 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-651
+:CAPEC-651 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-200 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-652
+:CAPEC-652 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-307 ,
+                                            :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-653
+:CAPEC-653 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-307 ,
+                                            :CWE-522 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-66
+:CAPEC-66 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-89 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-664
+:CAPEC-664 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-918 ,
+                                            :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-665
+:CAPEC-665 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-862 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-667
+:CAPEC-667 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-668
+:CAPEC-668 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-67
+:CAPEC-67 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-7
+:CAPEC-7 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-209 ,
+                                          :CWE-74 ,
+                                          :CWE-89 ,
+                                          :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-70
+:CAPEC-70 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-798 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-71
+:CAPEC-71 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-72
+:CAPEC-72 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-73 ,
+                                           :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-73
+:CAPEC-73 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-76
+:CAPEC-76 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-22 ,
+                                           :CWE-23 ,
+                                           :CWE-285 ,
+                                           :CWE-73 ,
+                                           :CWE-74 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-77
+:CAPEC-77 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-78
+:CAPEC-78 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-22 ,
+                                           :CWE-73 ,
+                                           :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-79
+:CAPEC-79 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-200 ,
+                                           :CWE-22 ,
+                                           :CWE-73 ,
+                                           :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-8
+:CAPEC-8 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-74 ,
+                                          :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-80
+:CAPEC-80 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-73 ,
+                                           :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-81
+:CAPEC-81 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-93 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-83
+:CAPEC-83 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-84
+:CAPEC-84 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-74 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-85
+:CAPEC-85 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-79 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-86
+:CAPEC-86 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-80 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-87
+:CAPEC-87 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-285 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-88
+:CAPEC-88 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-78 ,
+                                           :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-9
+:CAPEC-9 rdf:type owl:NamedIndividual ,
+                  :Attack_Pattern ;
+         :attack_pattern_targets_weakness :CWE-74 ,
+                                          :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-94
+:CAPEC-94 rdf:type owl:NamedIndividual ,
+                   :Attack_Pattern ;
+          :attack_pattern_targets_weakness :CWE-290 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2020-36085
+:CVE-2020-36085 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2021-41719
+:CVE-2021-41719 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-598 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2021-42718
+:CVE-2021-42718 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-922 ;
+                :hasCVSSScore "4.9" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2023-38693
+:CVE-2023-38693 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-611 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-10705
+:CVE-2024-10705 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-10721
+:CVE-2024-10721 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-11042
+:CVE-2024-11042 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-73 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-11146
+:CVE-2024-11146 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-639 ;
+                :hasCVSSScore "6.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-11831
+:CVE-2024-11831 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-11913
+:CVE-2024-11913 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-12237
+:CVE-2024-12237 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "4.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-12365
+:CVE-2024-12365 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-862 ;
+                :hasCVSSScore "8.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13360
+:CVE-2024-13360 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13450
+:CVE-2024-13450 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "3.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13535
+:CVE-2024-13535 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-22 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13536
+:CVE-2024-13536 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-209 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13537
+:CVE-2024-13537 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-209 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13538
+:CVE-2024-13538 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-22 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13539
+:CVE-2024-13539 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-209 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13540
+:CVE-2024-13540 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-209 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13695
+:CVE-2024-13695 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "6.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13697
+:CVE-2024-13697 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "4.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13698
+:CVE-2024-13698 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-862 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13741
+:CVE-2024-13741 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13834
+:CVE-2024-13834 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13838
+:CVE-2024-13838 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13857
+:CVE-2024-13857 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13879
+:CVE-2024-13879 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13904
+:CVE-2024-13904 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13905
+:CVE-2024-13905 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13907
+:CVE-2024-13907 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "4.9" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13924
+:CVE-2024-13924 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-34398
+:CVE-2024-34398 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-80 ;
+                :hasCVSSScore "4.2" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-35144
+:CVE-2024-35144 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-540 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-35145
+:CVE-2024-35145 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42168
+:CVE-2024-42168 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-918 ;
+                :hasCVSSScore "8.9" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172
+:CVE-2024-42172 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-522 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-53356
+:CVE-2024-53356 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-798 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-54449
+:CVE-2024-54449 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-23 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-55570
+:CVE-2024-55570 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-266 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-55971
+:CVE-2024-55971 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "10.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56199
+:CVE-2024-56199 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.2" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56332
+:CVE-2024-56332 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-770 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902
+:CVE-2024-56902 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-200 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-57241
+:CVE-2024-57241 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-601 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-6155
+:CVE-2024-6155 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-79 ;
+               :hasCVSSScore "6.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0054
+:CVE-2025-0054 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-79 ;
+               :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0057
+:CVE-2025-0057 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-434 ;
+               :hasCVSSScore "4.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0071
+:CVE-2025-0071 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-532 ;
+               :hasCVSSScore "4.9" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0422
+:CVE-2025-0422 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-20 ;
+               :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0423
+:CVE-2025-0423 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-20 ;
+               :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0424
+:CVE-2025-0424 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-20 ;
+               :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-1043
+:CVE-2025-1043 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-918 ;
+               :hasCVSSScore "6.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-1662
+:CVE-2025-1662 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-918 ;
+               :hasCVSSScore "6.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-1888
+:CVE-2025-1888 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-79 ;
+               :hasCVSSScore "4.6" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-20183
+:CVE-2025-20183 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-20 ;
+                :hasCVSSScore "5.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-20211
+:CVE-2025-20211 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-2081
+:CVE-2025-2081 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-547 ;
+               :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-21104
+:CVE-2025-21104 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-601 ;
+                :hasCVSSScore "4.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-21502
+:CVE-2025-21502 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-863 ;
+                :hasCVSSScore "4.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-21550
+:CVE-2025-21550 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-352 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-21624
+:CVE-2025-21624 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-434 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22139
+:CVE-2025-22139 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22143
+:CVE-2025-22143 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22596
+:CVE-2025-22596 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22597
+:CVE-2025-22597 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "8.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22598
+:CVE-2025-22598 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "8.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22599
+:CVE-2025-22599 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22600
+:CVE-2025-22600 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22613
+:CVE-2025-22613 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22614
+:CVE-2025-22614 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22615
+:CVE-2025-22615 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22616
+:CVE-2025-22616 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22617
+:CVE-2025-22617 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22618
+:CVE-2025-22618 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22619
+:CVE-2025-22619 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22622
+:CVE-2025-22622 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "4.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22623
+:CVE-2025-22623 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-22624
+:CVE-2025-22624 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23027
+:CVE-2025-23027 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-312 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23030
+:CVE-2025-23030 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23031
+:CVE-2025-23031 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23032
+:CVE-2025-23032 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23033
+:CVE-2025-23033 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23034
+:CVE-2025-23034 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23035
+:CVE-2025-23035 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23036
+:CVE-2025-23036 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23037
+:CVE-2025-23037 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23038
+:CVE-2025-23038 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23042
+:CVE-2025-23042 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-285 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23218
+:CVE-2025-23218 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23219
+:CVE-2025-23219 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23220
+:CVE-2025-23220 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23227
+:CVE-2025-23227 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24013
+:CVE-2025-24013 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-436 ;
+                :hasCVSSScore "5.3" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24020
+:CVE-2025-24020 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-601 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24367
+:CVE-2025-24367 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-144 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24387
+:CVE-2025-24387 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-352 ;
+                :hasCVSSScore "4.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24806
+:CVE-2025-24806 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-307 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24867
+:CVE-2025-24867 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24892
+:CVE-2025-24892 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "3.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24897
+:CVE-2025-24897 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-352 ;
+                :hasCVSSScore "8.2" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899
+:CVE-2025-24899 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-200 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24901
+:CVE-2025-24901 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24902
+:CVE-2025-24902 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24905
+:CVE-2025-24905 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24906
+:CVE-2025-24906 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-2494
+:CVE-2025-2494 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-434 ;
+               :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24957
+:CVE-2025-24957 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24958
+:CVE-2025-24958 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24962
+:CVE-2025-24962 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-74 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24966
+:CVE-2025-24966 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24967
+:CVE-2025-24967 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968
+:CVE-2025-24968 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-284 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-25184
+:CVE-2025-25184 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-93 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-25245
+:CVE-2025-25245 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-25478
+:CVE-2025-25478 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-73 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26058
+:CVE-2025-26058 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-598 ;
+                :hasCVSSScore "4.2" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26605
+:CVE-2025-26605 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26606
+:CVE-2025-26606 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26607
+:CVE-2025-26607 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26608
+:CVE-2025-26608 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26609
+:CVE-2025-26609 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26610
+:CVE-2025-26610 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26611
+:CVE-2025-26611 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26612
+:CVE-2025-26612 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26613
+:CVE-2025-26613 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-78 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26614
+:CVE-2025-26614 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26615
+:CVE-2025-26615 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-22 ;
+                :hasCVSSScore "10.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26616
+:CVE-2025-26616 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-22 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26617
+:CVE-2025-26617 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-26659
+:CVE-2025-26659 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27088
+:CVE-2025-27088 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "8.2" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27092
+:CVE-2025-27092 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-22 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27096
+:CVE-2025-27096 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27133
+:CVE-2025-27133 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-89 ;
+                :hasCVSSScore "8.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27140
+:CVE-2025-27140 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-78 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27143
+:CVE-2025-27143 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-601 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27144
+:CVE-2025-27144 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-770 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27417
+:CVE-2025-27417 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27418
+:CVE-2025-27418 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27420
+:CVE-2025-27420 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27499
+:CVE-2025-27499 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "6.1" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27513
+:CVE-2025-27513 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-770 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27515
+:CVE-2025-27515 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-155 ;
+                :hasCVSSScore "9.8" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27518
+:CVE-2025-27518 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27610
+:CVE-2025-27610 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-23 ;
+                :hasCVSSScore "7.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-29782
+:CVE-2025-29782 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-79 ;
+                :hasCVSSScore "5.4" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-29930
+:CVE-2025-29930 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-73 ;
+                :hasCVSSScore "0.0" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-30144
+:CVE-2025-30144 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_classified_by_weakness :CWE-290 ;
+                :hasCVSSScore "6.5" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-144
+:CWE-144 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-155
+:CWE-155 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-200
+:CWE-200 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-209
+:CWE-209 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-22
+:CWE-22 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-23
+:CWE-23 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-266
+:CWE-266 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-284
+:CWE-284 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-285
+:CWE-285 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-290
+:CWE-290 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-307
+:CWE-307 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-312
+:CWE-312 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-352
+:CWE-352 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-434
+:CWE-434 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-436
+:CWE-436 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-522
+:CWE-522 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-532
+:CWE-532 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-540
+:CWE-540 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-547
+:CWE-547 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-598
+:CWE-598 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-601
+:CWE-601 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-611
+:CWE-611 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-639
+:CWE-639 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-73
+:CWE-73 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-74
+:CWE-74 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-770
+:CWE-770 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-78
+:CWE-78 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-79
+:CWE-79 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-798
+:CWE-798 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-80
+:CWE-80 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-862
+:CWE-862 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-863
+:CWE-863 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-89
+:CWE-89 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-918
+:CWE-918 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-922
+:CWE-922 rdf:type owl:NamedIndividual ,
+                  :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CWE-93
+:CWE-93 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#T0
+:T0 rdf:type owl:NamedIndividual ,
+             :Attack_Technique ;
+    :technique_implemented_by_pattern :CAPEC-0 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#T1190
+:T1190 rdf:type owl:NamedIndividual ,
+                :Attack_Technique ;
+       :technique_implemented_by_pattern :CAPEC-1 ,
+                                         :CAPEC-10 ,
+                                         :CAPEC-101 ,
+                                         :CAPEC-102 ,
+                                         :CAPEC-104 ,
+                                         :CAPEC-105 ,
+                                         :CAPEC-108 ,
+                                         :CAPEC-109 ,
+                                         :CAPEC-110 ,
+                                         :CAPEC-111 ,
+                                         :CAPEC-116 ,
+                                         :CAPEC-120 ,
+                                         :CAPEC-125 ,
+                                         :CAPEC-126 ,
+                                         :CAPEC-127 ,
+                                         :CAPEC-13 ,
+                                         :CAPEC-130 ,
+                                         :CAPEC-135 ,
+                                         :CAPEC-136 ,
+                                         :CAPEC-139 ,
+                                         :CAPEC-14 ,
+                                         :CAPEC-147 ,
+                                         :CAPEC-15 ,
+                                         :CAPEC-153 ,
+                                         :CAPEC-16 ,
+                                         :CAPEC-169 ,
+                                         :CAPEC-17 ,
+                                         :CAPEC-178 ,
+                                         :CAPEC-18 ,
+                                         :CAPEC-182 ,
+                                         :CAPEC-19 ,
+                                         :CAPEC-191 ,
+                                         :CAPEC-193 ,
+                                         :CAPEC-197 ,
+                                         :CAPEC-209 ,
+                                         :CAPEC-21 ,
+                                         :CAPEC-215 ,
+                                         :CAPEC-22 ,
+                                         :CAPEC-221 ,
+                                         :CAPEC-224 ,
+                                         :CAPEC-229 ,
+                                         :CAPEC-23 ,
+                                         :CAPEC-230 ,
+                                         :CAPEC-231 ,
+                                         :CAPEC-24 ,
+                                         :CAPEC-250 ,
+                                         :CAPEC-261 ,
+                                         :CAPEC-267 ,
+                                         :CAPEC-273 ,
+                                         :CAPEC-28 ,
+                                         :CAPEC-285 ,
+                                         :CAPEC-287 ,
+                                         :CAPEC-290 ,
+                                         :CAPEC-291 ,
+                                         :CAPEC-292 ,
+                                         :CAPEC-293 ,
+                                         :CAPEC-294 ,
+                                         :CAPEC-295 ,
+                                         :CAPEC-296 ,
+                                         :CAPEC-297 ,
+                                         :CAPEC-298 ,
+                                         :CAPEC-299 ,
+                                         :CAPEC-3 ,
+                                         :CAPEC-300 ,
+                                         :CAPEC-301 ,
+                                         :CAPEC-302 ,
+                                         :CAPEC-303 ,
+                                         :CAPEC-304 ,
+                                         :CAPEC-305 ,
+                                         :CAPEC-306 ,
+                                         :CAPEC-307 ,
+                                         :CAPEC-308 ,
+                                         :CAPEC-309 ,
+                                         :CAPEC-31 ,
+                                         :CAPEC-310 ,
+                                         :CAPEC-312 ,
+                                         :CAPEC-313 ,
+                                         :CAPEC-317 ,
+                                         :CAPEC-318 ,
+                                         :CAPEC-319 ,
+                                         :CAPEC-32 ,
+                                         :CAPEC-320 ,
+                                         :CAPEC-321 ,
+                                         :CAPEC-322 ,
+                                         :CAPEC-323 ,
+                                         :CAPEC-324 ,
+                                         :CAPEC-325 ,
+                                         :CAPEC-326 ,
+                                         :CAPEC-327 ,
+                                         :CAPEC-328 ,
+                                         :CAPEC-329 ,
+                                         :CAPEC-330 ,
+                                         :CAPEC-34 ,
+                                         :CAPEC-37 ,
+                                         :CAPEC-39 ,
+                                         :CAPEC-402 ,
+                                         :CAPEC-42 ,
+                                         :CAPEC-43 ,
+                                         :CAPEC-441 ,
+                                         :CAPEC-45 ,
+                                         :CAPEC-459 ,
+                                         :CAPEC-46 ,
+                                         :CAPEC-461 ,
+                                         :CAPEC-462 ,
+                                         :CAPEC-463 ,
+                                         :CAPEC-467 ,
+                                         :CAPEC-469 ,
+                                         :CAPEC-47 ,
+                                         :CAPEC-470 ,
+                                         :CAPEC-472 ,
+                                         :CAPEC-473 ,
+                                         :CAPEC-474 ,
+                                         :CAPEC-476 ,
+                                         :CAPEC-478 ,
+                                         :CAPEC-479 ,
+                                         :CAPEC-482 ,
+                                         :CAPEC-486 ,
+                                         :CAPEC-487 ,
+                                         :CAPEC-488 ,
+                                         :CAPEC-489 ,
+                                         :CAPEC-49 ,
+                                         :CAPEC-490 ,
+                                         :CAPEC-491 ,
+                                         :CAPEC-493 ,
+                                         :CAPEC-494 ,
+                                         :CAPEC-495 ,
+                                         :CAPEC-496 ,
+                                         :CAPEC-497 ,
+                                         :CAPEC-5 ,
+                                         :CAPEC-50 ,
+                                         :CAPEC-502 ,
+                                         :CAPEC-503 ,
+                                         :CAPEC-508 ,
+                                         :CAPEC-509 ,
+                                         :CAPEC-51 ,
+                                         :CAPEC-52 ,
+                                         :CAPEC-528 ,
+                                         :CAPEC-53 ,
+                                         :CAPEC-536 ,
+                                         :CAPEC-54 ,
+                                         :CAPEC-546 ,
+                                         :CAPEC-550 ,
+                                         :CAPEC-551 ,
+                                         :CAPEC-552 ,
+                                         :CAPEC-555 ,
+                                         :CAPEC-556 ,
+                                         :CAPEC-558 ,
+                                         :CAPEC-560 ,
+                                         :CAPEC-561 ,
+                                         :CAPEC-562 ,
+                                         :CAPEC-563 ,
+                                         :CAPEC-564 ,
+                                         :CAPEC-565 ,
+                                         :CAPEC-573 ,
+                                         :CAPEC-574 ,
+                                         :CAPEC-575 ,
+                                         :CAPEC-576 ,
+                                         :CAPEC-577 ,
+                                         :CAPEC-578 ,
+                                         :CAPEC-588 ,
+                                         :CAPEC-59 ,
+                                         :CAPEC-591 ,
+                                         :CAPEC-592 ,
+                                         :CAPEC-6 ,
+                                         :CAPEC-60 ,
+                                         :CAPEC-600 ,
+                                         :CAPEC-616 ,
+                                         :CAPEC-62 ,
+                                         :CAPEC-63 ,
+                                         :CAPEC-64 ,
+                                         :CAPEC-643 ,
+                                         :CAPEC-644 ,
+                                         :CAPEC-645 ,
+                                         :CAPEC-646 ,
+                                         :CAPEC-647 ,
+                                         :CAPEC-651 ,
+                                         :CAPEC-652 ,
+                                         :CAPEC-653 ,
+                                         :CAPEC-66 ,
+                                         :CAPEC-664 ,
+                                         :CAPEC-665 ,
+                                         :CAPEC-667 ,
+                                         :CAPEC-668 ,
+                                         :CAPEC-67 ,
+                                         :CAPEC-7 ,
+                                         :CAPEC-70 ,
+                                         :CAPEC-71 ,
+                                         :CAPEC-72 ,
+                                         :CAPEC-73 ,
+                                         :CAPEC-76 ,
+                                         :CAPEC-77 ,
+                                         :CAPEC-78 ,
+                                         :CAPEC-79 ,
+                                         :CAPEC-8 ,
+                                         :CAPEC-80 ,
+                                         :CAPEC-81 ,
+                                         :CAPEC-83 ,
+                                         :CAPEC-84 ,
+                                         :CAPEC-85 ,
+                                         :CAPEC-86 ,
+                                         :CAPEC-87 ,
+                                         :CAPEC-88 ,
+                                         :CAPEC-9 ,
+                                         :CAPEC-94 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#TO
+:TO rdf:type owl:NamedIndividual ,
+             :Attack_Technique ;
+    :technique_implemented_by_pattern :CAPEC-0 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/APT28
+:APT28 rdf:type owl:NamedIndividual ,
+                :Threat_Actor ;
+       :hasActorName "Fancy Bear" ;
+       :hasMotivation "Espionage" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CAPEC-242
+:CAPEC-242 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern ;
+           :attack_pattern_targets_weakness :CWE-20 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CAPEC-633
+:CAPEC-633 rdf:type owl:NamedIndividual ,
+                    :Attack_Pattern .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CVE-2023-0669
+:CVE-2023-0669 rdf:type owl:NamedIndividual ,
+                        :Vulnerability ;
+               :vulnerability_classified_by_weakness :CWE-20 ;
+               :hasCVEID "CVE-2023-0669" ;
+               :hasCVSSScore 7.2 ;
+               :hasDescription "Remote Code Execution vulnerability in GoAnywhere MFT" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CVE-2023-41064
+:CVE-2023-41064 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :vulnerability_affects_software :iOS_16 ;
+                :hasCVEID "CVE-2023-41064" ;
+                :hasCVSSScore 8.8 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CVE-2024-21413
+:CVE-2024-21413 rdf:type owl:NamedIndividual ,
+                         :Vulnerability ;
+                :hasCVEID "CVE-2024-21413" ;
+                :hasCVSSScore 9.8 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CWE-20
+:CWE-20 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/CWE-94
+:CWE-94 rdf:type owl:NamedIndividual ,
+                 :Weakness .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Journalists_Sector
+:Journalists_Sector rdf:type owl:NamedIndividual ,
+                             :Identity .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/LockBit_Group
+:LockBit_Group rdf:type owl:NamedIndividual ,
+                        :Threat_Actor ;
+               :actor_uses_technique :T1059 ;
+               :hasActorName "LockBit 3.0" ;
+               :hasMotivation "Financial Gain" .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Patch_Update_iOS_16_1
+:Patch_Update_iOS_16_1 rdf:type owl:NamedIndividual ,
+                                :Course_of_Action .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/Pegasus_Spyware
+:Pegasus_Spyware rdf:type owl:NamedIndividual ,
+                          :Malware ;
+                 :malware_exploits_vulnerability :CVE-2023-41064 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/T1059
+:T1059 rdf:type owl:NamedIndividual ,
+                :Attack_Technique ;
+       :technique_implemented_by_pattern :CAPEC-242 .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/T1566
+:T1566 rdf:type owl:NamedIndividual ,
+                :Attack_Technique ;
+       :isDetectionPossible "true"^^xsd:boolean .
+
+
+###  http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/iOS_16
+:iOS_16 rdf:type owl:NamedIndividual ,
+                 :Software_Asset .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:a rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:t rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:p rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:w rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:v rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Threat_Actor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :actor_uses_technique ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :t
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :technique_implemented_by_pattern ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :t ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :p
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :attack_pattern_targets_weakness ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :p ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :w
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :vulnerability_classified_by_weakness ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :v ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :w
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :actor_can_exploit ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :v
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
