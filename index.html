@@ -14,7 +14,7 @@
 
     <header class="cyber-header">
         <div class="header-title">
-            <span class="glitch" data-text=\"CYBER-INTEL_ONTOLOGY\">CYBER-INTEL_ONTOLOGY</span>
+            <span class="glitch" data-text="CYBER-INTEL_ONTOLOGY">CYBER-INTEL_ONTOLOGY</span>
             <div class="status-indicator">
                 <span class="pulse-dot"></span>
                 <span class="status-text">REASONER: PELLET_ACTIVE</span>
@@ -25,115 +25,115 @@
 
     <main class="dashboard-container">
         <nav class="cyber-sidebar">
-            <button class="nav-btn active" data-target="tab-resume">📊 SYSTEM RESUME</button>
-            <button class="nav-btn" data-target="tab-actors">🥷 THREAT ACTORS</button>
-            <button class="nav-btn" data-target="tab-malware">☣️ MALWARE METRICS</button>
-            <button class="nav-btn" data-target="tab-software">🛠️ LEGIT SOFTWARE</button>
-            <button class="nav-btn" data-target="tab-vulnerabilities">🔓 VULNERABILITIES (CVE)</button>
+            <button class="nav-btn active" data-target="tab-actors">☠️ Threat Actors</button>
+            <button class="nav-btn" data-target="tab-malware">☣️ Cargas Ofensivas</button>
+            <button class="nav-btn" data-target="tab-software">🛠️ Inventario Software</button>
+            <button class="nav-btn" data-target="tab-patterns">🎯 Patrones de Ataque</button>
+            <button class="nav-btn" data-target="tab-vulnerabilities">🛡️ Mitigaciones & COA</button>
         </nav>
 
         <section class="cyber-content">
             
-            <div id="tab-resume" class="tab-content active">
-                <div class="section-title">[0x01] RESUMEN COMPLEMENTARIO DEL GRAFO</div>
-                <p class="section-desc">Métricas absolutas cargadas desde la ontología tras la resolución de axiomas con el motor de inferencia semántica.</p>
-                
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-title">Clases e Instancias Totales</div>
-                        <div class="metric-value text-blue" id="count-total-entities">943</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Actores de Alto Riesgo (SWRL)</div>
-                        <div class="metric-value text-red" id="count-high-actors">0</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Vulnerabilidades Críticas</div>
-                        <div class="metric-value text-amber" id="count-critical-cve">0</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Relaciones Inferidas (Pellet)</div>
-                        <div class="metric-value text-green" id="count-inferred-triples">+0</div>
-                    </div>
+            <div class="metrics-grid">
+                <div class="metric-card border-red">
+                    <div class="metric-title">ACTORES ALTO RIESGO</div>
+                    <div class="metric-value text-red" id="count-high-actors">0</div>
+                    <div class="metric-footer">[Inferencia SWRL Core Activa]</div>
                 </div>
-
-                <div class="cyber-card" style="margin-top: 25px;">
-                    <h3>Mecanismo de Inteligencia Semántica Artificial</h3>
-                    <p>Este Dashboard no lee una base de datos estática tradicional SQL. Consume los resultados del motor de razonamiento lógico descriptivo Pellet y reglas SWRL definidos en Protégé, mostrando de forma interactiva la explotación en cascada:</p>
-                    <div class="tech-path">
-                        Threat Actor ➔ Software / Malware ➔ Attack Technique ➔ CWE (Weakness) ➔ CVE (Vulnerability)
-                    </div>
+                <div class="metric-card border-amber">
+                    <div class="metric-title">VULNERABILIDADES CRÍTICAS</div>
+                    <div class="metric-value text-amber" id="count-critical-cve">0</div>
+                    <div class="metric-footer">[Axiomas de Severidad Inyectados]</div>
+                </div>
+                <div class="metric-card border-blue">
+                    <div class="metric-title">ELEMENTOS VINCULADOS</div>
+                    <div class="metric-value text-blue" id="count-inferred-triples">+0</div>
+                    <div class="metric-footer">[Grafo Semántico de Conocimiento]</div>
                 </div>
             </div>
 
-            <div id="tab-actors" class="tab-content">
-                <div class="section-title">[0x02] AMENAZAS PERSISTENTES AVANZADAS (APT)</div>
-                <div class="table-actions">
-                    <input type="text" id="search-actors" class="cyber-input" placeholder="🔍 Filtrar actor por alias o ID corporativo...">
+            <div id="tab-actors" class="tab-content active">
+                <div class="table-header-wrapper">
+                    <h2>Auditoría de Actores de Amenazas</h2>
+                    <input type="text" id="search-actors" class="cyber-input" placeholder="🔍 Filtrar actor por nombre...">
                 </div>
                 <div class="table-responsive">
                     <table class="cyber-table" id="table-actors">
                         <thead>
                             <tr>
-                                <th style="width: 20%;">Nombre del Actor</th>
-                                <th style="width: 45%;">Arsenal Tecnológico (Software y Técnicas MITRE)</th>
-                                <th style="width: 15%;">CVEs Explotados (Inferencia Chain)</th>
-                                <th style="width: 12%;">Clasificación Ontológica</th>
-                                <th style="width: 8%;">Acción</th>
+                                <th>Actor / Grupo</th>
+                                <th>Recursos que Emplea (Software y Técnicas)</th>
+                                <th>Línea de Explotación (CVEs directos)</th>
+                                <th>Clasificación Semántica</th>
+                                <th>Trazabilidad</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
 
             <div id="tab-malware" class="tab-content">
-                <div class="section-title">[0x03] ARTEFACTOS MALICIOSOS E INYECTORES</div>
+                <h2>Catálogo de Malware Relacionado</h2>
                 <div class="table-responsive">
                     <table class="cyber-table" id="table-malware">
                         <thead>
                             <tr>
-                                <th>Firma de Malware</th>
-                                <th>Tipo de Carga Útil</th>
-                                <th>Técnicas Concurrentes</th>
-                                <th>CVEs Mapeados</th>
-                                <th>Acción</th>
+                                <th>Identificador Malware</th>
+                                <th>Categoría Taxonómica</th>
+                                <th>Técnicas MITRE Mapeadas</th>
+                                <th>Vulnerabilidades que Explota</th>
+                                <th>Grafo</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
 
             <div id="tab-software" class="tab-content">
-                <div class="section-title">[0x04] SOFTWARE LEGÍTIMO Y HERRAMIENTAS ADVERSARIAS (LOLBAS)</div>
+                <h2>Inventario de Activos de Software</h2>
                 <div class="table-responsive">
                     <table class="cyber-table" id="table-software">
                         <thead>
                             <tr>
-                                <th>Binario / Ejecutable</th>
-                                <th>Actores que lo Emplean</th>
+                                <th>Nombre del Software</th>
+                                <th>Asociado a Actor</th>
                                 <th>Técnicas Relacionadas</th>
-                                <th>Vulnerabilidades Vinculadas</th>
-                                <th>Acción</th>
+                                <th>Vulnerabilidades Conocidas</th>
+                                <th>Grafo</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-patterns" class="tab-content">
+                <h2>Patrones de Ataque y Técnicas Asociadas</h2>
+                <div class="table-responsive">
+                    <table class="cyber-table" id="table-patterns">
+                        <thead>
+                            <tr>
+                                <th>Patrón de Ataque</th>
+                                <th>Descripción / Ámbito</th>
+                                <th>Técnica que Implementa</th>
+                                <th>Vulnerabilidades Objetivo (Targets)</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
 
             <div id="tab-vulnerabilities" class="tab-content">
-                <div class="section-title">[0x05] REGISTRO DE VULNERABILIDADES DE SEGURIDAD (CVE)</div>
-                <div class="table-actions">
+                <div class="table-header-wrapper">
+                    <h2>Matriz de Vulnerabilidades y Mitigaciones (Course of Action)</h2>
                     <select id="filter-cve-severity" class="cyber-input">
-                        <option value="ALL">-- Ver Todas las Severidades --</option>
-                        <option value="Critical_Vulnerability">Critical_Vulnerability (CVSS ➔ 9.0+)</option>
-                        <option value="High_Risk_Vulnerability">High_Risk_Vulnerability (CVSS 7.0 - 8.9)</option>
-                        <option value="Medium_Risk_Vulnerability">Medium_Risk_Vulnerability (CVSS ➔ Menor 7.0)</option>
+                        <option value="ALL">-- Ver Todas (Ordenadas por Severidad) --</option>
+                        <option value="Critical_Vulnerability">Critical (Score >= 9.0)</option>
+                        <option value="High_Risk_Vulnerability">High (7.0 <= Score < 9.0)</option>
+                        <option value="Medium_Risk_Vulnerability">Medium / Low (Score < 7.0)</option>
                     </select>
                 </div>
                 <div class="table-responsive">
@@ -141,14 +141,14 @@
                         <thead>
                             <tr>
                                 <th>Código CVE</th>
-                                <th>Resumen de Explotabilidad</th>
-                                <th>Puntuación CVSSv3</th>
+                                <th>Análisis de Impacto</th>
+                                <th>Severidad CVSS</th>
                                 <th>Causa Raíz (CWE)</th>
+                                <th>Plan de Mitigación (Course of Action)</th>
                                 <th>Estado de Mitigación</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
@@ -164,17 +164,14 @@
             </div>
             <div class="modal-body">
                 <p class="accent-text">Axiomas y cadena de traza calculados por el Razonador Pellet (Caja Blanca):</p>
-                <div class="trace-box" id="modal-trace">
-                    </div>
-                <div class="modal-details" id="modal-details-content">
-                    </div>
+                <div class="trace-box" id="modal-trace"></div>
             </div>
         </div>
     </div>
 
     <footer class="cyber-footer">
         <div>Trabajo de Fin de Grado - Ingeniería Informática</div>
-        <div class="text-green">SECURITY-ONTOLOGY-FRAMEWORK // VER 2.0.26</div>
+        <div class="text-green">SECURITY-ONTOLOGY-FRAMEWORK // VER 2.5.26</div>
     </footer>
 
     <script src="js/script.js"></script>
