@@ -1,160 +1,66 @@
-// AUTO-GENERATED DATA FROM ONTOLOGY EXTRACTOR
-const ontologyData = {
-    actors: [{'id': 'APT1', 'name': 'APT1', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1036.005', 'T1057', 'T1135', 'T1550.002'], 'cves': []}, {'id': 'APT18', 'name': 'APT18', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1082', 'T1083', 'T1133'], 'cves': []}, {'id': 'APT19', 'name': 'APT19', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1082', 'T1543.003'], 'cves': []}, {'id': 'APT28', 'name': 'APT28', 'motivation': 'Espionage', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1036.005', 'T1057', 'T1078', 'T1083', 'T1110.001', 'T1110.003', 'T1120', 'T1133', 'T1550.002'], 'cves': []}, {'id': 'APT29', 'name': 'APT29', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1078', 'T1110.001', 'T1110.003', 'T1133', 'T1546.008', 'T1550.003'], 'cves': []}, {'id': 'APT3', 'name': 'APT3', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1027', 'T1033', 'T1057', 'T1082', 'T1083', 'T1543.003', 'T1546.008', 'T1552.001'], 'cves': []}, {'id': 'APT32', 'name': 'APT32', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1033', 'T1036.005', 'T1046', 'T1082', 'T1083', 'T1135', 'T1543.003', 'T1550.002', 'T1550.003', 'T1552.002'], 'cves': []}, {'id': 'APT33', 'name': 'APT33', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1110.003', 'T1552.001'], 'cves': []}, {'id': 'APT37', 'name': 'APT37', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027', 'T1033', 'T1057', 'T1082', 'T1120'], 'cves': []}, {'id': 'APT38', 'name': 'APT38', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1057', 'T1082', 'T1083', 'T1135', 'T1543.003', 'T1565.002'], 'cves': []}, {'id': 'APT39', 'name': 'APT39', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1033', 'T1036.005', 'T1046', 'T1078', 'T1083', 'T1135'], 'cves': []}, {'id': 'APT41', 'name': 'APT41', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1027', 'T1033', 'T1036.005', 'T1046', 'T1078', 'T1082', 'T1083', 'T1133', 'T1135', 'T1543.003', 'T1546.008', 'T1550.002', 'T1553.002'], 'cves': []}, {'id': 'APT42', 'name': 'APT42', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1082', 'T1111', 'T1539', 'T1547'], 'cves': []}, {'id': 'APT5', 'name': 'APT5', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1057', 'T1083'], 'cves': []}, {'id': 'APT_C_36', 'name': 'APT C 36', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027', 'T1036.005', 'T1133'], 'cves': []}, {'id': 'Agrius', 'name': 'Agrius', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1046', 'T1110.003', 'T1543.003'], 'cves': []}, {'id': 'Akira', 'name': 'Akira', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1036.005', 'T1078', 'T1133', 'T1558'], 'cves': []}, {'id': 'Andariel', 'name': 'Andariel', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1057'], 'cves': []}, {'id': 'Aoqin_Dragon', 'name': 'Aoqin Dragon', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1083'], 'cves': []}, {'id': 'Aquatic_Panda', 'name': 'Aquatic Panda', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1021.002', 'T1033', 'T1036.005', 'T1082', 'T1087', 'T1543.003', 'T1550.002'], 'cves': []}, {'id': 'Axiom', 'name': 'Axiom', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1546.008'], 'cves': []}, {'id': 'BRONZE_BUTLER', 'name': 'BRONZE BUTLER', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1036.005', 'T1080', 'T1083', 'T1124', 'T1550.003'], 'cves': []}, {'id': 'BackdoorDiplomacy', 'name': 'BackdoorDiplomacy', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027', 'T1036.005', 'T1046', 'T1120'], 'cves': []}, {'id': 'BlackByte', 'name': 'BlackByte', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1046', 'T1078', 'T1082', 'T1135', 'T1543.003'], 'cves': []}, {'id': 'BlackOasis', 'name': 'BlackOasis', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027'], 'cves': []}, {'id': 'BlackTech', 'name': 'BlackTech', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1046'], 'cves': []}, {'id': 'Blue_Mockingbird', 'name': 'Blue Mockingbird', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1036.005', 'T1082', 'T1543.003'], 'cves': []}, {'id': 'CURIUM', 'name': 'CURIUM', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1082', 'T1124'], 'cves': []}, {'id': 'Carbanak', 'name': 'Carbanak', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1078', 'T1543.003'], 'cves': []}, {'id': 'Chimera', 'name': 'Chimera', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1021.002', 'T1033', 'T1036.005', 'T1046', 'T1057', 'T1078', 'T1083', 'T1110.003', 'T1110.004', 'T1111', 'T1124', 'T1133', 'T1135', 'T1550.002'], 'cves': []}, {'id': 'Cinnamon_Tempest', 'name': 'Cinnamon Tempest', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1078', 'T1080', 'T1543.003'], 'cves': []}, {'id': 'Cleaver', 'name': 'Cleaver', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1557.002'], 'cves': []}, {'id': 'Cobalt_Group', 'name': 'Cobalt Group', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1046', 'T1543.003'], 'cves': []}, {'id': 'Confucius', 'name': 'Confucius', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1083'], 'cves': []}, {'id': 'Contagious_Interview', 'name': 'Contagious Interview', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1082', 'T1083'], 'cves': []}, {'id': 'CopyKittens', 'name': 'CopyKittens', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1553.002'], 'cves': []}, {'id': 'Daggerfly', 'name': 'Daggerfly', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1082', 'T1553.002'], 'cves': []}, {'id': 'DarkVishnya', 'name': 'DarkVishnya', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1046', 'T1135', 'T1543.003'], 'cves': []}, {'id': 'Dark_Caracal', 'name': 'Dark Caracal', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1083'], 'cves': []}, {'id': 'Darkhotel', 'name': 'Darkhotel', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1057', 'T1080', 'T1082', 'T1083', 'T1124', 'T1553.002'], 'cves': []}, {'id': 'Deep_Panda', 'name': 'Deep Panda', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1057', 'T1546.008'], 'cves': []}, {'id': 'Dragonfly', 'name': 'Dragonfly', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1033', 'T1078', 'T1083', 'T1133', 'T1135'], 'cves': []}, {'id': 'Earth_Lusca', 'name': 'Earth Lusca', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1027', 'T1033', 'T1036.005', 'T1057', 'T1543.003'], 'cves': []}, {'id': 'Ember_Bear', 'name': 'Ember Bear', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1036.005', 'T1046', 'T1078.001', 'T1110.003', 'T1133', 'T1550.002', 'T1552.001'], 'cves': []}, {'id': 'Equation', 'name': 'Equation', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1120'], 'cves': []}, {'id': 'Evilnum', 'name': 'Evilnum', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1539'], 'cves': []}, {'id': 'FIN10', 'name': 'FIN10', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1078'], 'cves': []}, {'id': 'FIN13', 'name': 'FIN13', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1036.005', 'T1046', 'T1078.001', 'T1082', 'T1083', 'T1087', 'T1133', 'T1135', 'T1550.002', 'T1552.001', 'T1556'], 'cves': []}, {'id': 'FIN4', 'name': 'FIN4', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078'], 'cves': []}, {'id': 'FIN5', 'name': 'FIN5', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1078', 'T1133'], 'cves': []}, {'id': 'FIN6', 'name': 'FIN6', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1046', 'T1078', 'T1553.002'], 'cves': []}, {'id': 'FIN7', 'name': 'FIN7', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1036.005', 'T1057', 'T1078', 'T1082', 'T1124', 'T1543.003', 'T1553.002', 'T1558.003'], 'cves': []}, {'id': 'FIN8', 'name': 'FIN8', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1033', 'T1078', 'T1082'], 'cves': []}, {'id': 'Ferocious_Kitten', 'name': 'Ferocious Kitten', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005'], 'cves': []}, {'id': 'Fox_Kitten', 'name': 'Fox Kitten', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1036.005', 'T1046', 'T1078', 'T1083', 'T1546.008', 'T1552.001'], 'cves': []}, {'id': 'GALLIUM', 'name': 'GALLIUM', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1027', 'T1033', 'T1078', 'T1133', 'T1550.002', 'T1553.002'], 'cves': []}, {'id': 'GOLD_SOUTHFIELD', 'name': 'GOLD SOUTHFIELD', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1133'], 'cves': []}, {'id': 'Gallmaker', 'name': 'Gallmaker', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027'], 'cves': []}, {'id': 'Gamaredon_Group', 'name': 'Gamaredon Group', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027', 'T1033', 'T1036.005', 'T1057', 'T1080', 'T1082', 'T1083', 'T1120'], 'cves': []}, {'id': 'Generic_Web_Adversary', 'name': 'Generic Web Adversary', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1491', 'T1498.001', 'T1498.002', 'T1499.002', 'T1499.003', 'T1543', 'T1546.016', 'T1547.006', 'T1553.004', 'T1562.008', 'T1562.009', 'T1574.007', 'T1574.010', 'T1595'], 'cves': []}, {'id': 'HAFNIUM', 'name': 'HAFNIUM', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1033', 'T1057', 'T1083', 'T1110.003', 'T1590'], 'cves': []}, {'id': 'HEXANE', 'name': 'HEXANE', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1033', 'T1057', 'T1082', 'T1110.003'], 'cves': []}, {'id': 'Higaisa', 'name': 'Higaisa', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1057', 'T1082', 'T1124'], 'cves': []}, {'id': 'INC_Ransom', 'name': 'INC Ransom', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1046', 'T1078', 'T1135'], 'cves': []}, {'id': 'Inception', 'name': 'Inception', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1057', 'T1082', 'T1083'], 'cves': []}, {'id': 'Indrik_Spider', 'name': 'Indrik Spider', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1036.005', 'T1078', 'T1552.001', 'T1558.003', 'T1590'], 'cves': []}, {'id': 'Ke3chang', 'name': 'Ke3chang', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1021.002', 'T1027', 'T1033', 'T1036.005', 'T1057', 'T1078', 'T1082', 'T1083', 'T1133', 'T1543.003'], 'cves': []}, {'id': 'Kimsuky', 'name': 'Kimsuky', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1027', 'T1033', 'T1036.005', 'T1057', 'T1082', 'T1083', 'T1111', 'T1124', 'T1133', 'T1539', 'T1543.003', 'T1546.001', 'T1550.002', 'T1552.001', 'T1552.004', 'T1553.002'], 'cves': []}, {'id': 'Lazarus_Group', 'name': 'Lazarus Group', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1033', 'T1036.005', 'T1046', 'T1057', 'T1078', 'T1082', 'T1083', 'T1110.003', 'T1124', 'T1543.003', 'T1553.002'], 'cves': []}, {'id': 'Leafminer', 'name': 'Leafminer', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1046', 'T1083', 'T1110.003', 'T1552.001'], 'cves': []}, {'id': 'Leviathan', 'name': 'Leviathan', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1133', 'T1553.002'], 'cves': []}, {'id': 'LockBit_Group', 'name': 'LockBit Group', 'motivation': 'Financial Gain', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1059'], 'cves': []}, {'id': 'Lotus_Blossom', 'name': 'Lotus Blossom', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1046', 'T1083', 'T1539', 'T1543.003'], 'cves': []}, {'id': 'LuminousMoth', 'name': 'LuminousMoth', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1036.005', 'T1083', 'T1539', 'T1553.002', 'T1557.002'], 'cves': []}, {'id': 'Machete', 'name': 'Machete', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005'], 'cves': []}, {'id': 'Magic_Hound', 'name': 'Magic Hound', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1033', 'T1036.005', 'T1046', 'T1057', 'T1078.001', 'T1082', 'T1083'], 'cves': []}, {'id': 'Malteiro', 'name': 'Malteiro', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1082'], 'cves': []}, {'id': 'Medusa_Group', 'name': 'Medusa Group', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1033', 'T1046', 'T1057', 'T1078', 'T1082', 'T1083', 'T1135', 'T1543.003', 'T1553.002'], 'cves': []}, {'id': 'MirrorFace', 'name': 'MirrorFace', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1021.002', 'T1033', 'T1057', 'T1082', 'T1083', 'T1553.002'], 'cves': []}, {'id': 'Molerats', 'name': 'Molerats', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1057', 'T1553.002'], 'cves': []}, {'id': 'Moonstone_Sleet', 'name': 'Moonstone Sleet', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027', 'T1033', 'T1082'], 'cves': []}, {'id': 'Moses_Staff', 'name': 'Moses Staff', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1082', 'T1553.002'], 'cves': []}, {'id': 'MuddyWater', 'name': 'MuddyWater', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1036.005', 'T1057', 'T1082', 'T1083', 'T1552.001'], 'cves': []}, {'id': 'Mustang_Panda', 'name': 'Mustang Panda', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1027', 'T1036.005', 'T1046', 'T1057', 'T1082', 'T1083', 'T1553.002'], 'cves': []}, {'id': 'Mustard_Tempest', 'name': 'Mustard Tempest', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1082'], 'cves': []}, {'id': 'Naikon', 'name': 'Naikon', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1036.005', 'T1046'], 'cves': []}, {'id': 'OilRig', 'name': 'OilRig', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1033', 'T1036.005', 'T1046', 'T1057', 'T1078', 'T1082', 'T1120', 'T1133', 'T1543.003', 'T1552.001', 'T1553.002'], 'cves': []}, {'id': 'Orangeworm', 'name': 'Orangeworm', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002'], 'cves': []}, {'id': 'POLONIUM', 'name': 'POLONIUM', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078'], 'cves': []}, {'id': 'PROMETHIUM', 'name': 'PROMETHIUM', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1543.003', 'T1553.002'], 'cves': []}, {'id': 'Patchwork', 'name': 'Patchwork', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1036.005', 'T1082', 'T1083', 'T1553.002'], 'cves': []}, {'id': 'Persistence-focusedAdversary', 'name': 'Persistence-focusedAdversary', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': [], 'cves': []}, {'id': 'PittyTiger', 'name': 'PittyTiger', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078'], 'cves': []}, {'id': 'Play', 'name': 'Play', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1057', 'T1078', 'T1082', 'T1083', 'T1133'], 'cves': []}, {'id': 'Poseidon_Group', 'name': 'Poseidon Group', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1036.005', 'T1057'], 'cves': []}, {'id': 'Reconnaissance-focusedAdversary', 'name': 'Reconnaissance-focusedAdversary', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': [], 'cves': []}, {'id': 'RedCurl', 'name': 'RedCurl', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027', 'T1036.005', 'T1046', 'T1080', 'T1082', 'T1083', 'T1552.001', 'T1552.002'], 'cves': []}, {'id': 'Rocke', 'name': 'Rocke', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1027', 'T1036.005', 'T1046', 'T1057', 'T1082', 'T1552.004'], 'cves': []}, {'id': 'Saint_Bear', 'name': 'Saint Bear', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1553.002'], 'cves': []}, {'id': 'Sandworm_Team', 'name': 'Sandworm Team', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1027', 'T1033', 'T1036.005', 'T1078', 'T1082', 'T1083', 'T1133', 'T1499', 'T1539'], 'cves': []}, {'id': 'Scattered_Spider', 'name': 'Scattered Spider', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1078', 'T1082', 'T1083', 'T1087', 'T1133', 'T1539', 'T1552.001', 'T1552.004', 'T1553.002'], 'cves': []}, {'id': 'Sea_Turtle', 'name': 'Sea Turtle', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1133', 'T1584.002'], 'cves': []}, {'id': 'SideCopy', 'name': 'SideCopy', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1082'], 'cves': []}, {'id': 'Sidewinder', 'name': 'Sidewinder', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1036.005', 'T1057', 'T1082', 'T1083', 'T1124'], 'cves': []}, {'id': 'Silence', 'name': 'Silence', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1036.005', 'T1078', 'T1553.002'], 'cves': []}, {'id': 'Silent_Librarian', 'name': 'Silent Librarian', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1110.003'], 'cves': []}, {'id': 'Sowbug', 'name': 'Sowbug', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1082', 'T1083', 'T1135'], 'cves': []}, {'id': 'Star_Blizzard', 'name': 'Star Blizzard', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1539', 'T1550.004'], 'cves': []}, {'id': 'Stealth_Falcon', 'name': 'Stealth Falcon', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1057', 'T1082'], 'cves': []}, {'id': 'Storm_0501', 'name': 'Storm 0501', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1057', 'T1082', 'T1552.004'], 'cves': []}, {'id': 'Storm_1811', 'name': 'Storm 1811', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1033', 'T1036.005'], 'cves': []}, {'id': 'Suckfly', 'name': 'Suckfly', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1046', 'T1078', 'T1553.002'], 'cves': []}, {'id': 'TA2541', 'name': 'TA2541', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1082'], 'cves': []}, {'id': 'TA505', 'name': 'TA505', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1552.001', 'T1553.002'], 'cves': []}, {'id': 'TeamTNT', 'name': 'TeamTNT', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1036.005', 'T1046', 'T1057', 'T1082', 'T1083', 'T1120', 'T1133', 'T1543.003', 'T1552.001', 'T1552.004'], 'cves': []}, {'id': 'The_White_Company', 'name': 'The White Company', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1124'], 'cves': []}, {'id': 'Threat_Group_1314', 'name': 'Threat Group 1314', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002'], 'cves': []}, {'id': 'Threat_Group_3390', 'name': 'Threat Group 3390', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1033', 'T1046', 'T1078', 'T1133', 'T1543.003'], 'cves': []}, {'id': 'ToddyCat', 'name': 'ToddyCat', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1036.005', 'T1057', 'T1083'], 'cves': []}, {'id': 'Tonto_Team', 'name': 'Tonto Team', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1135'], 'cves': []}, {'id': 'Transparent_Tribe', 'name': 'Transparent Tribe', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005'], 'cves': []}, {'id': 'Tropic_Trooper', 'name': 'Tropic Trooper', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1036.005', 'T1046', 'T1057', 'T1082', 'T1083', 'T1135', 'T1543.003'], 'cves': []}, {'id': 'Turla', 'name': 'Turla', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1021.002', 'T1036.005', 'T1057', 'T1082', 'T1083', 'T1120', 'T1124', 'T1615'], 'cves': []}, {'id': 'UNC3886', 'name': 'UNC3886', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1057', 'T1078', 'T1078.001', 'T1083', 'T1124'], 'cves': []}, {'id': 'UnknownThreatActor', 'name': 'UnknownThreatActor', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': [], 'cves': []}, {'id': 'VOID_MANTICORE', 'name': 'VOID MANTICORE', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005', 'T1078', 'T1082', 'T1110.001', 'T1110.004', 'T1133', 'T1552.002'], 'cves': []}, {'id': 'Velvet_Ant', 'name': 'Velvet Ant', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1021.002', 'T1036.005', 'T1083', 'T1133'], 'cves': []}, {'id': 'Volt_Typhoon', 'name': 'Volt Typhoon', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1018', 'T1033', 'T1036.005', 'T1046', 'T1057', 'T1078', 'T1083', 'T1120', 'T1124', 'T1133', 'T1552.004', 'T1590'], 'cves': []}, {'id': 'WIRTE', 'name': 'WIRTE', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005'], 'cves': []}, {'id': 'Whitefly', 'name': 'Whitefly', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1036.005'], 'cves': []}, {'id': 'Windigo', 'name': 'Windigo', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1082', 'T1083'], 'cves': []}, {'id': 'Windshift', 'name': 'Windshift', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1027', 'T1033', 'T1057', 'T1082'], 'cves': []}, {'id': 'Winnti_Group', 'name': 'Winnti Group', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1057', 'T1083', 'T1553.002'], 'cves': []}, {'id': 'Winter_Vivern', 'name': 'Winter Vivern', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1082', 'T1083'], 'cves': []}, {'id': 'Wizard_Spider', 'name': 'Wizard Spider', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1021.002', 'T1033', 'T1078', 'T1082', 'T1133', 'T1135', 'T1543.003', 'T1550.002', 'T1553.002', 'T1558.003'], 'cves': []}, {'id': 'ZIRCONIUM', 'name': 'ZIRCONIUM', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1033', 'T1082', 'T1124'], 'cves': []}, {'id': 'menuPass', 'name': 'menuPass', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1018', 'T1036.005', 'T1046', 'T1078', 'T1083', 'T1553.002'], 'cves': []}, {'id': 'http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/LAPSUS$', 'name': 'http://www.tfg-ciberseguridad.org/ontologia/tfg ontologia ciberseguridad/LAPSUS$', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1078', 'T1111', 'T1133', 'T1584.002'], 'cves': []}, {'id': 'http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad/admin@338', 'name': 'http://www.tfg-ciberseguridad.org/ontologia/tfg ontologia ciberseguridad/admin@338', 'motivation': 'No especificada', 'isHighRisk': false, 'softwares': [], 'techniques': ['T1007', 'T1036.005', 'T1082', 'T1083'], 'cves': []}],
-    malware: [
-        { name: "Cobalt Strike", type: "Trojan_Horse", techniques: "T1071, T1055", cves: "CVE-2023-38831", trace: "Cobalt_Strike ➔ malware_is_deployed_by_actor ➔ Inferencia Pellet" },
-        { name: "Ryuk", type: "Ransomware", techniques: "T1486", cves: "CVE-2021-34527", trace: "Ryuk ➔ malware_is_deployed_by_actor ➔ Inferencia Pellet" }
-    ],
-    software: [
-        { name: "PsExec.exe", actor: "APT29", techniques: "T1059", cves: "CVE-2021-31860", trace: "PsExec.exe ➔ software_is_used_by_actor ➔ Inferencia" },
-        { name: "Mimikatz", actor: "APT28", techniques: "T1003", cves: "CVE-2022-26925", trace: "Mimikatz ➔ software_is_used_by_actor ➔ Inferencia" }
-    ],
-    vulnerabilities: []
-};
-
-// INITIALIZATION & TAB NAVIGATION LOGIC
-document.addEventListener("DOMContentLoaded", () => {
-    initDashboardMetrics();
-    renderAllTables();
-    setupNavigation();
-    setupFilters();
-    setupModalClose();
-});
-
-function setupNavigation() {
-    const navButtons = document.querySelectorAll(".nav-btn");
-    const tabContents = document.querySelectorAll(".tab-content");
-
-    navButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const targetId = btn.getAttribute("data-target");
-            navButtons.forEach(b => b.classList.remove("active"));
-            tabContents.forEach(tc => tc.classList.remove("active"));
-            btn.classList.add("active");
-            document.getElementById(targetId).classList.add("active");
+const loadBtn = document.getElementById("loadBtn");
         });
-    });
-}
 
-function initDashboardMetrics() {
-    const highRiskActors = ontologyData.actors.filter(a => a.isHighRisk).length;
-    const criticalCves = ontologyData.vulnerabilities.filter(v => v.severity >= 9.0).length;
-    const inferredCount = ontologyData.vulnerabilities.length + ontologyData.actors.length;
+        classesCount.textContent = classes.size;
+        individualsCount.textContent = individuals.size;
 
-    document.getElementById("count-high-actors").innerText = highRiskActors;
-    document.getElementById("count-critical-cve").innerText = criticalCves;
-    document.getElementById("count-inferred-triples").innerText = `+${inferredCount * 8}`;
-}
+        showIndividuals(store);
 
-function renderAllTables() {
-    renderActorsTable(ontologyData.actors);
-    renderMalwareTable(ontologyData.malware);
-    renderSoftwareTable(ontologyData.software);
-    renderVulnerabilitiesTable(ontologyData.vulnerabilities);
-}
+    } catch (error) {
 
-function renderActorsTable(data) {
-    const tbody = document.querySelector("#table-actors tbody");
-    tbody.innerHTML = "";
-    data.forEach(actor => {
-        const softTexto = actor.softwares.length > 0 ? actor.softwares.join(", ") : "Ninguno detectado";
-        const techTexto = actor.techniques.length > 0 ? actor.techniques.join(", ") : "Ninguna";
-        const cvesTexto = actor.cves.length > 0 ? actor.cves.join(", ") : "Ninguno";
-        
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-            <td><strong>${actor.name}</strong></td>
-            <td>
-                <div><small style='color:var(--neon-blue)'>🛠️ SW:</small> ${softTexto}</div>
-                <div><small style='color:var(--neon-amber)'>⚡ Tec:</small> ${techTexto}</div>
-            </td>
-            <td><span class="text-blue">${cvesTexto}</span></td>
-            <td>${actor.isHighRisk ? '<span class="badge badge-red">High_Risk_Threat_Actor</span>' : '<span class="badge badge-metal">Threat_Actor (Base)</span>'}</td>
-            <td><button class="action-btn" onclick="openTraceModal('Actor: ' + '${actor.id}', 'Regla SWRL calculada por Pellet:\nThreat_Actor(?a) ^ actor_uses_technique(?a, ?t) ^ High_Impact_Technique(?t) -> High_Risk_Threat_Actor(?a)')">Ver Regla</button></td>
+        console.error(error);
+
+        resultsDiv.innerHTML = `
+            <div class="individual-card">
+                <h3>Error</h3>
+                <p>No se pudo cargar la ontología.</p>
+                <p>${error}</p>
+            </div>
         `;
-        tbody.appendChild(tr);
-    });
+    }
 }
 
-function renderMalwareTable(data) {
-    const tbody = document.querySelector("#table-malware tbody");
-    tbody.innerHTML = "";
-    data.forEach(m => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-            <td><span class="text-red">☣️ ${m.name}</span></td>
-            <td><span class="badge badge-amber">${m.type}</span></td>
-            <td><span class="text-yellow">${m.techniques}</span> (Inferido)</td>
-            <td><span class="text-blue">${m.cves}</span></td>
-            <td><button class="action-btn" onclick="openTraceModal('${m.name}', '${m.trace}')">Trazar Grafo</button></td>
-        `;
-        tbody.appendChild(tr);
-    });
-}
+function showIndividuals(store) {
 
-function renderSoftwareTable(data) {
-    const tbody = document.querySelector("#table-software tbody");
-    tbody.innerHTML = "";
-    data.forEach(s => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-            <td><span class="text-blue">🛠️ ${s.name}</span></td>
-            <td>${s.actor}</td>
-            <td>${s.techniques}</td>
-            <td><span class="text-red">${s.cves}</span> (Inferido)</td>
-            <td><button class="action-btn" onclick="openTraceModal('${s.name}', '${s.trace}')">Trazar Grafo</button></td>
-        `;
-        tbody.appendChild(tr);
-    });
-}
+    resultsDiv.innerHTML = "";
 
-function renderVulnerabilitiesTable(data) {
-    const tbody = document.querySelector("#table-vulnerabilities tbody");
-    tbody.innerHTML = "";
-    data.forEach(v => {
-        let badgeClass = "badge-blue";
-        if (v.type === "Critical_Vulnerability") badgeClass = "badge-red";
-        else if (v.type === "High_Risk_Vulnerability") badgeClass = "badge-amber";
+    const rdfType = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-            <td><strong>${v.cve}</strong></td>
-            <td style="max-width: 300px; font-size:12px; color: #8a99ad;">${v.desc}</td>
-            <td><span class="badge ${badgeClass}">${v.severity} (${v.type.split('_')[0]})</span></td>
-            <td><span class="text-yellow">${v.cwe}</span></td>
-            <td>${v.mitigated ? '<span class="badge badge-green">Mitigated_Vulnerability</span>' : '<span class="badge badge-metal">No Mitigada</span>'}</td>
-        `;
-        tbody.appendChild(tr);
-    });
-}
+    const shown = new Set();
 
-function setupFilters() {
-    document.getElementById("search-actors").addEventListener("input", (e) => {
-        const val = e.target.value.toLowerCase();
-        const filtered = ontologyData.actors.filter(a => a.name.toLowerCase().includes(val));
-        renderActorsTable(filtered);
-    });
+    store.statements.forEach(statement => {
 
-    document.getElementById("filter-cve-severity").addEventListener("change", (e) => {
-        const val = e.target.value;
-        if (val === "ALL") {
-            renderVulnerabilitiesTable(ontologyData.vulnerabilities);
-        } else {
-            const filtered = ontologyData.vulnerabilities.filter(v => v.type === val);
-            renderVulnerabilitiesTable(filtered);
+        if (statement.predicate.value === rdfType) {
+
+            const subject = statement.subject.value;
+            const object = statement.object.value;
+
+            const individualName = extractName(subject);
+            const className = extractName(object);
+
+            if (!shown.has(subject)) {
+
+                shown.add(subject);
+
+                const card = document.createElement("div");
+                card.classList.add("individual-card");
+
+                card.innerHTML = `
+                    <h3>${individualName}</h3>
+                    <p><strong>Clase:</strong> ${className}</p>
+                `;
+
+                resultsDiv.appendChild(card);
+            }
         }
     });
 }
 
-function openTraceModal(title, traceMessage) {
-    document.getElementById("modal-title").innerText = `[AUDITORÍA SEMÁNTICA]: ` + title.toUpperCase();
-    document.getElementById("modal-trace").innerText = traceMessage;
-    const modal = document.getElementById("cyber-modal");
-    modal.classList.add("active");
-}
+function extractName(uri) {
 
-function setupModalClose() {
-    const modal = document.getElementById("cyber-modal");
-    document.getElementById("close-modal-btn").addEventListener("click", () => modal.classList.remove("active"));
-    window.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("active"); });
+    if (uri.includes("#")) {
+        return uri.split("#").pop();
+    }
+
+    return uri.split("/").pop();
 }
