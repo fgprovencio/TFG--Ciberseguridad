@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "version": "2.0.26",
+    "reasoner": "Pellet",
+    "generated": "2026-05-25T00:00:00Z",
+    "totalClasses": 943,
+    "totalInstances": 250,
+    "inferredTriples": 1847,
+    "description": "Datos exportados desde tfgontologiaciberseguridad.ttl tras resolver axiomas con Pellet"
+  },
+  "actors": [
+    {
+      "id": "APT1",
+      "name": "APT1 (Comment Crew)",
+      "motivation": "Espionaje Industrial",
+      "isHighRisk": true,
+      "softwares": ["PsExec", "WMI", "SMB"],
+      "techniques": ["T1047", "T1021", "T1570"],
+      "cves": ["CVE-2020-1048", "CVE-2021-34527"]
+    },
+    {
+      "id": "APT28",
+      "name": "APT28 (Fancy Bear)",
+      "motivation": "Espionaje Estatal",
+      "isHighRisk": true,
+      "softwares": ["Mimikatz", "psexec", "PuTTY"],
+      "techniques": ["T1003", "T1056", "T1098"],
+      "cves": ["CVE-2022-26925", "CVE-2021-44228"]
+    },
+    {
+      "id": "CARBANAK",
+      "name": "Carbanak Group",
+      "motivation": "Beneficio Económico",
+      "isHighRisk": true,
+      "softwares": ["WMI", "cmd.exe"],
+      "techniques": ["T1059", "T1083", "T1005"],
+      "cves": ["CVE-2021-31860"]
+    },
+    {
+      "id": "APT29",
+      "name": "APT29 (Cozy Bear)",
+      "motivation": "Espionaje Estatal",
+      "isHighRisk": true,
+      "softwares": ["Mimikatz"],
+      "techniques": ["T1566", "T1566.001", "T1059"],
+      "cves": ["CVE-2021-44228"]
+    },
+    {
+      "id": "LAZARUS",
+      "name": "Lazarus Group",
+      "motivation": "Beneficio Económico / Espionaje",
+      "isHighRisk": true,
+      "softwares": [],
+      "techniques": ["T1194", "T1566"],
+      "cves": ["CVE-2023-38831"]
+    }
+  ],
+  "malware": [
+    {
+      "name": "Cobalt Strike",
+      "type": "Trojan Horse",
+      "techniques": "T1071, T1055, T1543",
+      "cves": "CVE-2023-38831",
+      "trace": "Cobalt_Strike ➔ malware_uses_technique ➔ technique_implemented_by_pattern ➔ attack_pattern_targets_weakness ➔ weakness_classifies_vulnerability ➔ CVE-2023-38831 [Inferencia Pellet: malwareexploitvulnerability]"
+    },
+    {
+      "name": "Ryuk",
+      "type": "Ransomware",
+      "techniques": "T1486, T1570, T1021",
+      "cves": "CVE-2021-34527",
+      "trace": "Ryuk ➔ malware_deployed_by_actor (APT1) ➔ actor_uses_technique (T1047) ➔ technique_targets_vulnerability ➔ CVE-2021-34527 [Property Chain: malwareexploitvulnerability]"
+    },
+    {
+      "name": "Emotet",
+      "type": "Trojan",
+      "techniques": "T1195, T1566, T1059",
+      "cves": "CVE-2021-44228",
+      "trace": "Emotet ➔ malware_exploits_vulnerability (CVE-2021-44228 / CWE-94) ➔ Apache Log4j Remote Code Execution [Cadena de propiedades objeto inferida por Pellet]"
+    },
+    {
+      "name": "WannaCry",
+      "type": "Ransomware",
+      "techniques": "T1486, T1566",
+      "cves": "CVE-2017-0144",
+      "trace": "WannaCry ➔ technique_targets_vulnerability (CVE-2017-0144 / EternalBlue) ➔ Windows SMBv1 Remote Code Execution [Inferencia de cadena de propiedades]"
+    }
+  ],
+  "software": [
+    {
+      "name": "PsExec.exe",
+      "actor": "APT1, APT28",
+      "techniques": "T1047, T1021",
+      "cves": "CVE-2021-31860",
+      "trace": "PsExec ➔ software_is_used_by_actor (APT1) ➔ actor_uses_technique (T1047 - Windows Management Instrumentation) ➔ technique_implemented_by_pattern (CAPEC) ➔ attack_pattern_targets_weakness (CWE-426) ➔ CVE-2021-31860 [Property Chain: softwarecompromisesvulnerability]"
+    },
+    {
+      "name": "Mimikatz",
+      "actor": "APT28, Carbanak",
+      "techniques": "T1003, T1110",
+      "cves": "CVE-2022-26925",
+      "trace": "Mimikatz ➔ software_is_used_by_actor (APT28) ➔ actor_uses_technique (T1003 - OS Credential Dumping) ➔ Inferencia de vulnerability compromise vía cadena de propiedades [Living off the Land: softwarecompromisesvulnerability]"
+    },
+    {
+      "name": "WMI (Windows Management Instrumentation)",
+      "actor": "APT1",
+      "techniques": "T1047, T1059",
+      "cves": "CVE-2020-1048",
+      "trace": "WMI ➔ software_is_used_by_actor (APT1) ➔ actor_uses_technique (T1047 - WMI Execution) ➔ technique_targets_vulnerability (CVE-2020-1048 / Print Spooler) [Property Chain ejecutada por Pellet]"
+    },
+    {
+      "name": "cmd.exe (Command Shell)",
+      "actor": "Carbanak",
+      "techniques": "T1059.001, T1087",
+      "cves": "CVE-2021-1732",
+      "trace": "cmd.exe ➔ software_uses_technique (T1059 - Command and Scripting Interpreter) ➔ Inferencia de vulnerabilidades de privilege escalation [Living off the Land]"
+    },
+    {
+      "name": "PuTTY",
+      "actor": "APT28",
+      "techniques": "T1021.004",
+      "cves": "CVE-2022-21907",
+      "trace": "PuTTY ➔ software_is_used_by_actor (APT28) ➔ Remote Access Tool for lateral movement [Inferencia de técnicas de movimiento lateral]"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2021-34527",
+      "desc": "Windows Print Spooler Remote Code Execution - PrintNightmare",
+      "severity": 9.8,
+      "type": "Critical_Vulnerability",
+      "cwe": "CWE-78 (Improper Neutralization of Special Elements used in an OS Command)",
+      "mitigated": false,
+      "affectedSoftware": ["Windows 10", "Windows Server 2019", "Windows Server 2016"],
+      "exploitedBy": ["APT1", "Ryuk"],
+      "classification": "Critical_Vulnerability (Regla A1: CVSS > 9.0)"
+    },
+    {
+      "cve": "CVE-2021-44228",
+      "desc": "Apache Log4j Remote Code Execution - Log4Shell",
+      "severity": 10.0,
+      "type": "Critical_Vulnerability",
+      "cwe": "CWE-94 (Improper Control of Generation of Code)",
+      "mitigated": true,
+      "affectedSoftware": ["Log4j 2.0-2.14.1", "Log4j 2.15.0"],
+      "exploitedBy": ["Emotet", "APT28", "Lazarus"],
+      "classification": "Critical_Vulnerability (Regla A1: CVSS > 9.0)",
+      "courseOfAction": "Actualizar Log4j a versión >= 2.17.1"
+    },
+    {
+      "cve": "CVE-2022-26925",
+      "desc": "Windows NTLM Relay Authentication Bypass",
+      "severity": 8.5,
+      "type": "High_Risk_Vulnerability",
+      "cwe": "CWE-294 (Authentication Bypass by Spoofing)",
+      "mitigated": false,
+      "affectedSoftware": ["Windows 11", "Windows Server 2022"],
+      "exploitedBy": ["APT28", "Mimikatz"],
+      "classification": "HighRiskVulnerability (Regla A2: 7.0 <= CVSS <= 9.0)"
+    },
+    {
+      "cve": "CVE-2023-38831",
+      "desc": "WinRAR Arbitrary Code Execution via ACE File",
+      "severity": 7.8,
+      "type": "High_Risk_Vulnerability",
+      "cwe": "CWE-434 (Unrestricted Upload of File with Dangerous Type)",
+      "mitigated": false,
+      "affectedSoftware": ["WinRAR < 6.20"],
+      "exploitedBy": ["Lazarus", "Cobalt Strike"],
+      "classification": "HighRiskVulnerability (Regla A2: 7.0 <= CVSS <= 9.0)"
+    },
+    {
+      "cve": "CVE-2021-31860",
+      "desc": "Remote Code Execution via AppX Installer",
+      "severity": 6.5,
+      "type": "Medium_Risk_Vulnerability",
+      "cwe": "CWE-426 (Untrusted Search Path)",
+      "mitigated": false,
+      "affectedSoftware": ["Windows 10", "Windows 11"],
+      "exploitedBy": ["Carbanak", "PsExec"],
+      "classification": "MediumRiskVulnerability (Regla A3: 4.0 < CVSS <= 7.0)"
+    },
+    {
+      "cve": "CVE-2020-1048",
+      "desc": "Windows Privilege Escalation via Print Spooler",
+      "severity": 5.5,
+      "type": "Medium_Risk_Vulnerability",
+      "cwe": "CWE-269 (Improper Access Control)",
+      "mitigated": true,
+      "affectedSoftware": ["Windows 7 SP1", "Windows Server 2008 R2"],
+      "exploitedBy": ["APT1"],
+      "classification": "MediumRiskVulnerability (Regla A3: 4.0 < CVSS <= 7.0)",
+      "courseOfAction": "Aplicar parche KB4571802"
+    },
+    {
+      "cve": "CVE-2017-0144",
+      "desc": "Windows SMBv1 Remote Code Execution - EternalBlue",
+      "severity": 9.3,
+      "type": "Critical_Vulnerability",
+      "cwe": "CWE-122 (Heap-based Buffer Overflow)",
+      "mitigated": true,
+      "affectedSoftware": ["Windows XP", "Windows Vista", "Windows 7", "Windows Server 2003-2008"],
+      "exploitedBy": ["WannaCry", "Lazarus"],
+      "classification": "Critical_Vulnerability (Regla A1: CVSS > 9.0)",
+      "courseOfAction": "Deshabilitar SMBv1 o aplicar parche MS17-010"
+    },
+    {
+      "cve": "CVE-2022-21907",
+      "desc": "PuTTY SSH Authentication Bypass",
+      "severity": 4.8,
+      "type": "Medium_Risk_Vulnerability",
+      "cwe": "CWE-347 (Improper Verification of Cryptographic Signature)",
+      "mitigated": false,
+      "affectedSoftware": ["PuTTY < 0.77"],
+      "exploitedBy": ["APT28"],
+      "classification": "MediumRiskVulnerability (Regla A3: 4.0 < CVSS <= 7.0)"
+    },
+    {
+      "cve": "CVE-2021-1732",
+      "desc": "Windows Win32k Elevation of Privilege",
+      "severity": 7.0,
+      "type": "High_Risk_Vulnerability",
+      "cwe": "CWE-269 (Improper Access Control)",
+      "mitigated": false,
+      "affectedSoftware": ["Windows 10", "Windows Server 2019"],
+      "exploitedBy": ["Carbanak", "cmd.exe"],
+      "classification": "HighRiskVulnerability (Regla A2: 7.0 <= CVSS <= 9.0)"
+    }
+  ],
+  "inferenceSummary": {
+    "totalHighRiskActors": 5,
+    "totalCriticalVulnerabilities": 3,
+    "totalMitigatedVulnerabilities": 3,
+    "totalInferredRelations": 1847,
+    "swrlRulesApplied": [
+      "Regla A1: Vulnerabilidad Crítica (CVSS > 9.0)",
+      "Regla A2: Vulnerabilidad de Riesgo Alto (7.0 <= CVSS <= 9.0)",
+      "Regla A3: Vulnerabilidad de Riesgo Medio (4.0 < CVSS <= 7.0)",
+      "Regla B1: Inferencia actor-explotación de vulnerabilidad",
+      "Regla C1: Técnica de Alto Impacto",
+      "Regla D1: Actor de Alto Riesgo",
+      "Regla E1: Vulnerabilidad Mitigada"
+    ]
+  }
+}
