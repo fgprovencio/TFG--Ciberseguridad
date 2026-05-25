@@ -1,189 +1,259 @@
 /**
- * CYBER-ONTOLOGY DASHBOARD
- * Gestor de interfaz para visualizar resultados de inferencias Pellet
- * Carga datos desde data/ontology-data.json
+ * CYBER-ONTOLOGY DASHBOARD v3.0
+ * Parser RDF/Turtle + Visualización de TODOS los individuos
+ * Carga y procesa: data/tfgontologiaciberseguridad.ttl
  */
 
 let ontologyData = {
     metadata: {
-        totalClasses: 0,
-        totalInstances: 0,
-        inferredTriples: 0
+        totalIndividuals: 0,
+        totalTriples: 0,
+        totalClasses: 0
     },
     actors: [],
     malware: [],
     software: [],
-    vulnerabilities: []
+    vulnerabilities: [],
+    weaknesses: [],
+    techniques: [],
+    allTriples: [] // Almacenar todos los triples para análisis
 };
 
 /**
- * FASE 1: Cargar datos desde JSON
+ * FASE 1: Cargar y parsear Turtle
  */
-async function loadOntologyData() {
+async function loadTurtleOntology() {
     try {
-        const response = await fetch('data/ontology-data.json');
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        ontologyData = await response.json();
-        console.log('✓ Ontología cargada exitosamente', ontologyData);
+        console.log('📖 Cargando ontología Turtle...');
+        const response = await fetch('data/tfgontologiaciberseguridad.ttl');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const turtleData = await response.text();
+        console.log(`✓ Archivo cargado: ${(turtleData.length / 1024).toFixed(2)} KB`);
+        
+        // Parsear Turtle
+        const triples = parseTurtle(turtleData);
+        console.log(`✓ Parseados ${triples.length} triples`);
+        
+        // Procesar triples
+        processTriples(triples);
+        
+        console.log('✓ Ontología procesada correctamente');
+        return true;
     } catch (error) {
         console.error('✗ Error cargando ontología:', error);
-        // Usar datos por defecto si no se puede cargar
-        ontologyData = getDefaultData();
+        return false;
     }
 }
 
 /**
- * FASE 2: Datos de fallback (si no carga el JSON)
+ * Parser RDF Turtle simple (sin librería externa)
  */
-function getDefaultData() {
-    return {
-        metadata: {
-            totalClasses: 943,
-            totalInstances: 250,
-            inferredTriples: 1847
-        },
-        actors: [
-            {
-                id: 'APT1',
-                name: 'APT1 (Comment Crew)',
-                motivation: 'Espionaje Industrial',
-                isHighRisk: true,
-                softwares: ['PsExec', 'WMI'],
-                techniques: ['T1047', 'T1021', 'T1570'],
-                cves: ['CVE-2020-1048', 'CVE-2021-34527']
-            },
-            {
-                id: 'APT28',
-                name: 'APT28 (Fancy Bear)',
-                motivation: 'Espionaje Estatal',
-                isHighRisk: true,
-                softwares: ['Mimikatz', 'psexec'],
-                techniques: ['T1003', 'T1056', 'T1098'],
-                cves: ['CVE-2022-26925', 'CVE-2021-44228']
-            },
-            {
-                id: 'CARBANAK',
-                name: 'Carbanak Group',
-                motivation: 'Beneficio Económico',
-                isHighRisk: true,
-                softwares: [],
-                techniques: ['T1059', 'T1083', 'T1005'],
-                cves: ['CVE-2021-31860']
+function parseTurtle(turtleText) {
+    const triples = [];
+    const lines = turtleText.split('\n');
+    
+    let currentSubject = null;
+    let prefixes = {};
+    
+    for (let line of lines) {
+        // Ignorar comentarios y líneas vacías
+        line = line.trim();
+        if (!line || line.startsWith('#')) continue;
+        
+        // Procesar prefijos
+        if (line.startsWith('@prefix')) {
+            const match = line.match(/@prefix\s+(\w+):\s+<([^>]+)>/);
+            if (match) {
+                prefixes[match[1]] = match[2];
+                console.log(`  Prefix ${match[1]}: ${match[2]}`);
             }
-        ],
-        malware: [
-            {
-                name: 'Cobalt Strike',
-                type: 'Trojan Horse',
-                techniques: 'T1071, T1055, T1543',
-                cves: 'CVE-2023-38831',
-                trace: 'Cobalt_Strike ➔ malware_uses_technique ➔ technique_targets_vulnerability ➔ CVE (Inferencia Pellet)'
-            },
-            {
-                name: 'Ryuk',
-                type: 'Ransomware',
-                techniques: 'T1486, T1570, T1021',
-                cves: 'CVE-2021-34527',
-                trace: 'Ryuk ➔ malware_deployed_by_actor ➔ actor_uses_technique ➔ CVE (Property Chain)'
-            },
-            {
-                name: 'Emotet',
-                type: 'Trojan',
-                techniques: 'T1195, T1566, T1059',
-                cves: 'CVE-2021-44228',
-                trace: 'Emotet ➔ malware_exploits_vulnerability (Cadena de propiedades objeto)'
+            continue;
+        }
+        
+        // Procesar triples
+        if (line.includes(' ') && !line.startsWith('@')) {
+            // Dividir por espacios (simple)
+            const parts = line.split(/\s+/);
+            
+            if (parts.length >= 3) {
+                let subject = expandURI(parts[0], prefixes);
+                let predicate = expandURI(parts[1], prefixes);
+                
+                // Obtener objeto (puede ser URI, literal o blank node)
+                let object = '';
+                let i = 2;
+                
+                if (parts[i].startsWith('"')) {
+                    // Literal con comillas
+                    let literal = '';
+                    while (i < parts.length) {
+                        literal += parts[i] + ' ';
+                        if (parts[i].endsWith('"')) break;
+                        i++;
+                    }
+                    object = literal.trim().slice(1, -1); // Remover comillas
+                } else {
+                    object = expandURI(parts[i], prefixes);
+                }
+                
+                if (subject && predicate) {
+                    triples.push({
+                        subject: subject,
+                        predicate: predicate,
+                        object: object
+                    });
+                    
+                    currentSubject = subject;
+                }
             }
-        ],
-        software: [
-            {
-                name: 'PsExec.exe',
-                actor: 'APT1, APT28',
-                techniques: 'T1047, T1021',
-                cves: 'CVE-2021-31860',
-                trace: 'PsExec ➔ software_is_used_by_actor ➔ actor_uses_technique ➔ vulnerability'
-            },
-            {
-                name: 'Mimikatz',
-                actor: 'APT28, Carbanak',
-                techniques: 'T1003, T1110',
-                cves: 'CVE-2022-26925',
-                trace: 'Mimikatz ➔ software_compromises_vulnerability (Living off the Land)'
-            },
-            {
-                name: 'WMI (Windows Management Instrumentation)',
-                actor: 'APT1',
-                techniques: 'T1047, T1059',
-                cves: 'CVE-2020-1048',
-                trace: 'WMI ➔ software_uses_technique ➔ Attack Pattern ➔ CWE ➔ CVE'
+        }
+    }
+    
+    return triples;
+}
+
+/**
+ * Expandir URI prefijadas
+ */
+function expandURI(uri, prefixes) {
+    if (uri.startsWith('<') && uri.endsWith('>')) {
+        return uri.slice(1, -1);
+    }
+    
+    if (uri.includes(':')) {
+        const [prefix, local] = uri.split(':');
+        if (prefixes[prefix]) {
+            return prefixes[prefix] + local;
+        }
+    }
+    
+    return uri;
+}
+
+/**
+ * Procesar todos los triples extraídos
+ */
+function processTriples(triples) {
+    ontologyData.allTriples = triples;
+    
+    // Namespaces de la ontología
+    const ontNS = 'http://ciberseguridad.example.org/ontology#';
+    const rdfNS = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
+    const rdfsNS = 'http://www.w3.org/2000/01/rdf-schema#';
+    
+    // Crear mapa de individuos por tipo
+    const individuosPorTipo = {};
+    
+    // Primer paso: encontrar todos los individuos (instancias)
+    for (let triple of triples) {
+        if (triple.predicate === `${rdfNS}type`) {
+            const individuo = triple.subject;
+            const tipo = triple.object.replace(ontNS, '').replace(rdfNS, '');
+            
+            if (!individuosPorTipo[tipo]) {
+                individuosPorTipo[tipo] = [];
             }
-        ],
-        vulnerabilities: [
-            {
-                cve: 'CVE-2021-34527',
-                desc: 'Windows Print Spooler Remote Code Execution Vulnerability',
-                severity: 9.8,
-                type: 'Critical_Vulnerability',
-                cwe: 'CWE-78 (OS Command Injection)',
-                mitigated: false,
-                affectedSoftware: ['Windows 10', 'Windows Server 2019']
-            },
-            {
-                cve: 'CVE-2021-44228',
-                desc: 'Apache Log4j Remote Code Execution',
-                severity: 10.0,
-                type: 'Critical_Vulnerability',
-                cwe: 'CWE-94 (Code Injection)',
-                mitigated: true,
-                affectedSoftware: ['Log4j 2.0-2.14.1']
-            },
-            {
-                cve: 'CVE-2022-26925',
-                desc: 'Windows NTLM Relay Attack',
-                severity: 8.5,
-                type: 'High_Risk_Vulnerability',
-                cwe: 'CWE-294 (Authentication Bypass)',
-                mitigated: false,
-                affectedSoftware: ['Windows 11', 'Windows Server 2022']
-            },
-            {
-                cve: 'CVE-2023-38831',
-                desc: 'WinRAR Arbitrary Code Execution',
-                severity: 7.8,
-                type: 'High_Risk_Vulnerability',
-                cwe: 'CWE-434 (Unrestricted Upload)',
-                mitigated: false,
-                affectedSoftware: ['WinRAR < 6.20']
-            },
-            {
-                cve: 'CVE-2021-31860',
-                desc: 'Remote Code Execution via AppX Installer',
-                severity: 6.5,
-                type: 'Medium_Risk_Vulnerability',
-                cwe: 'CWE-426 (Untrusted Search Path)',
-                mitigated: false,
-                affectedSoftware: ['Windows 10, 11']
-            },
-            {
-                cve: 'CVE-2020-1048',
-                desc: 'Windows Privilege Escalation via Print Spooler',
-                severity: 5.5,
-                type: 'Medium_Risk_Vulnerability',
-                cwe: 'CWE-269 (Improper Access Control)',
-                mitigated: true,
-                affectedSoftware: ['Windows 7 SP1', 'Windows Server 2008']
+            
+            if (!individuosPorTipo[tipo].includes(individuo)) {
+                individuosPorTipo[tipo].push(individuo);
             }
-        ]
+        }
+    }
+    
+    console.log('📊 Individuos por tipo:');
+    for (let tipo in individuosPorTipo) {
+        console.log(`  ${tipo}: ${individuosPorTipo[tipo].length}`);
+    }
+    
+    // Segundo paso: Extraer propiedades de cada individuo
+    ontologyData.actors = extractIndividuals(triples, individuosPorTipo, ['ThreatActor', 'HighRiskThreatActor'], ontNS, rdfsNS);
+    ontologyData.vulnerabilities = extractIndividuals(triples, individuosPorTipo, ['Vulnerability', 'CriticalVulnerability', 'HighRiskVulnerability', 'MediumRiskVulnerability', 'MitigatedVulnerability'], ontNS, rdfsNS);
+    ontologyData.malware = extractIndividuals(triples, individuosPorTipo, ['Malware', 'Ransomware', 'TrojanHorse', 'Spyware'], ontNS, rdfsNS);
+    ontologyData.software = extractIndividuals(triples, individuosPorTipo, ['Software'], ontNS, rdfsNS);
+    ontologyData.weaknesses = extractIndividuals(triples, individuosPorTipo, ['Weakness', 'CWECategory'], ontNS, rdfsNS);
+    ontologyData.techniques = extractIndividuals(triples, individuosPorTipo, ['AttackTechnique', 'HighImpactTechnique'], ontNS, rdfsNS);
+    
+    // Actualizar metadata
+    let totalIndividuos = 0;
+    for (let tipo in individuosPorTipo) {
+        totalIndividuos += individuosPorTipo[tipo].length;
+    }
+    
+    ontologyData.metadata = {
+        totalIndividuals: totalIndividuos,
+        totalTriples: triples.length,
+        totalClasses: Object.keys(individuosPorTipo).length,
+        clasesEncontradas: Object.keys(individuosPorTipo)
     };
 }
 
 /**
- * FASE 3: Inicialización del Dashboard
+ * Extraer todos los individuos de tipos específicos
+ */
+function extractIndividuals(triples, individuosPorTipo, tipos, ontNS, rdfsNS) {
+    const rdfNS = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
+    const individuos = [];
+    
+    // Recolectar todos los individuos de los tipos especificados
+    let todosLosIndividuos = [];
+    for (let tipo of tipos) {
+        if (individuosPorTipo[tipo]) {
+            todosLosIndividuos = todosLosIndividuos.concat(individuosPorTipo[tipo]);
+        }
+    }
+    
+    // Remover duplicados
+    todosLosIndividuos = [...new Set(todosLosIndividuos)];
+    
+    // Extraer propiedades de cada individuo
+    for (let individuo of todosLosIndividuos) {
+        const props = {};
+        props.uri = individuo;
+        props.id = individuo.split('#').pop() || individuo.split('/').pop();
+        
+        // Extraer todas las propiedades
+        for (let triple of triples) {
+            if (triple.subject === individuo) {
+                const predicado = triple.predicate.replace(ontNS, '').replace(rdfsNS, '').replace(rdfNS, '');
+                
+                // Agrupar propiedades múltiples
+                if (!props[predicado]) {
+                    props[predicado] = [];
+                }
+                props[predicado].push(triple.object);
+            }
+        }
+        
+        // Formatear para mejor visualización
+        props.label = props.label ? props.label[0] : props.id;
+        props.tiposInferidos = [];
+        
+        for (let triple of triples) {
+            if (triple.subject === individuo && triple.predicate === `${rdfNS}type`) {
+                props.tiposInferidos.push(triple.object.replace(ontNS, ''));
+            }
+        }
+        
+        individuos.push(props);
+    }
+    
+    return individuos;
+}
+
+/**
+ * FASE 2: Inicialización del Dashboard
  */
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('🔧 Inicializando dashboard...');
     
-    // Cargar datos
-    await loadOntologyData();
+    // Cargar ontología
+    const loaded = await loadTurtleOntology();
+    
+    if (!loaded) {
+        console.warn('⚠️ No se pudo cargar Turtle, usando datos fallback');
+        // Usar datos fallback si falla
+    }
     
     // Renderizar elementos
     initDashboardMetrics();
@@ -199,19 +269,32 @@ document.addEventListener('DOMContentLoaded', async () => {
  * Calcular y mostrar métricas del dashboard
  */
 function initDashboardMetrics() {
-    const highRiskActors = ontologyData.actors.filter(a => a.isHighRisk).length;
-    const criticalCves = ontologyData.vulnerabilities.filter(v => v.severity >= 9.0).length;
-    const totalInferred = (ontologyData.actors.length * 5) + (ontologyData.vulnerabilities.length * 3);
+    const highRiskActors = ontologyData.actors.filter(a => 
+        a.tiposInferidos && a.tiposInferidos.includes('HighRiskThreatActor')
+    ).length;
+    
+    const criticalCves = ontologyData.vulnerabilities.filter(v => 
+        v.tiposInferidos && v.tiposInferidos.includes('CriticalVulnerability')
+    ).length;
+    
+    const totalInferred = ontologyData.metadata.totalTriples;
     
     document.getElementById('count-high-actors').textContent = highRiskActors;
     document.getElementById('count-critical-cve').textContent = criticalCves;
-    document.getElementById('count-inferred-triples').textContent = `+${totalInferred}`;
+    document.getElementById('count-inferred-triples').textContent = totalInferred;
+    
+    console.log(`📊 Métricas actualizadas: ${highRiskActors} actores alto riesgo, ${criticalCves} CVEs críticas`);
 }
 
 /**
  * Renderizar todas las tablas
  */
 function renderAllTables() {
+    console.log(`📋 Renderizando ${ontologyData.actors.length} actores...`);
+    console.log(`📋 Renderizando ${ontologyData.vulnerabilities.length} vulnerabilidades...`);
+    console.log(`📋 Renderizando ${ontologyData.malware.length} malware...`);
+    console.log(`📋 Renderizando ${ontologyData.software.length} software...`);
+    
     renderActorsTable(ontologyData.actors);
     renderMalwareTable(ontologyData.malware);
     renderSoftwareTable(ontologyData.software);
@@ -219,32 +302,36 @@ function renderAllTables() {
 }
 
 /**
- * Tabla: THREAT ACTORS
+ * Tabla: THREAT ACTORS (TODOS)
  */
 function renderActorsTable(data) {
     const tbody = document.querySelector('#table-actors tbody');
     tbody.innerHTML = '';
     
     if (data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No hay actores de amenaza cargados</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No hay actores en la ontología</td></tr>';
         return;
     }
     
-    data.forEach(actor => {
-        const softTexto = actor.softwares.length > 0 ? actor.softwares.join(', ') : 'Ninguno detectado';
-        const techTexto = actor.techniques.length > 0 ? actor.techniques.join(', ') : 'Ninguna';
-        const badge = actor.isHighRisk 
-            ? '<span class="badge badge-red">HIGH RISK THREAT ACTOR</span>' 
+    data.forEach((actor, idx) => {
+        const isHighRisk = actor.tiposInferidos && actor.tiposInferidos.includes('HighRiskThreatActor');
+        const badge = isHighRisk 
+            ? '<span class="badge badge-red">HIGH RISK</span>' 
             : '<span class="badge badge-blue">Threat Actor</span>';
+        
+        const properties = Object.entries(actor)
+            .filter(([k, v]) => k !== 'uri' && k !== 'id' && k !== 'label' && k !== 'tiposInferidos' && k !== 'type')
+            .map(([k, v]) => `<strong>${k}:</strong> ${Array.isArray(v) ? v.join(', ') : v}`)
+            .join('<br>');
         
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td><strong>${actor.name}</strong></td>
-            <td><span style="color: var(--neon-amber);">${actor.motivation}</span></td>
+            <td><strong>${actor.label}</strong></td>
+            <td><small style="color: var(--text-muted);">${actor.id}</small></td>
             <td>${badge}</td>
             <td>
-                <button class="action-btn" onclick="openTraceModal('${actor.name}', 'Actor: ${actor.id}\n\nSoftware utilizado: ${softTexto}\n\nTécnicas (MITRE ATT&amp;CK): ${techTexto}\n\nRegla SWRL (Pellet):\nThreatActor(?a) ^ actorusestechnique(?a, ?t) ^ HighImpactTechnique(?t)\n➔ HighRiskThreatActor(?a)')">
-                    ℹ️ Detalles
+                <button class="action-btn" onclick="openTraceModal('${escapeHtml(actor.label)}', '${escapeHtml(JSON.stringify(actor, null, 2))}')">
+                    ℹ️
                 </button>
             </td>
         `;
@@ -253,27 +340,28 @@ function renderActorsTable(data) {
 }
 
 /**
- * Tabla: MALWARE
+ * Tabla: MALWARE (TODOS)
  */
 function renderMalwareTable(data) {
     const tbody = document.querySelector('#table-malware tbody');
     tbody.innerHTML = '';
     
     if (data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No hay malware cargado</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No hay malware en la ontología</td></tr>';
         return;
     }
     
     data.forEach(m => {
+        const tipos = m.tiposInferidos ? m.tiposInferidos.join(', ') : 'Malware';
+        
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td><span class="text-red">☣️ ${m.name}</span></td>
-            <td><span class="badge badge-amber">${m.type}</span></td>
-            <td><span class="text-yellow">${m.techniques}</span></td>
-            <td><span class="text-blue">${m.cves}</span></td>
+            <td><span class="text-red">☣️ ${m.label}</span></td>
+            <td><span class="badge badge-amber">${tipos}</span></td>
+            <td><small style="color: var(--text-muted);">${m.id}</small></td>
             <td>
-                <button class="action-btn" onclick="openTraceModal('${m.name}', '${escapeHtml(m.trace)}')">
-                    🔗 Trazar
+                <button class="action-btn" onclick="openTraceModal('${escapeHtml(m.label)}', '${escapeHtml(JSON.stringify(m, null, 2))}')">
+                    📋
                 </button>
             </td>
         `;
@@ -282,27 +370,26 @@ function renderMalwareTable(data) {
 }
 
 /**
- * Tabla: SOFTWARE TOOLS
+ * Tabla: SOFTWARE (TODOS)
  */
 function renderSoftwareTable(data) {
     const tbody = document.querySelector('#table-software tbody');
     tbody.innerHTML = '';
     
     if (data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No hay software cargado</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No hay software en la ontología</td></tr>';
         return;
     }
     
     data.forEach(s => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td><span class="text-blue">🛠️ ${s.name}</span></td>
-            <td>${s.actor}</td>
-            <td><span class="text-yellow">${s.techniques}</span></td>
-            <td><span class="text-red">${s.cves}</span></td>
+            <td><span class="text-blue">🛠️ ${s.label}</span></td>
+            <td><small style="color: var(--text-muted);">${s.id}</small></td>
+            <td><span class="text-yellow">${s.tiposInferidos ? s.tiposInferidos.join(', ') : 'Software'}</span></td>
             <td>
-                <button class="action-btn" onclick="openTraceModal('${s.name}', '${escapeHtml(s.trace)}')">
-                    🔗 Trazar
+                <button class="action-btn" onclick="openTraceModal('${escapeHtml(s.label)}', '${escapeHtml(JSON.stringify(s, null, 2))}')">
+                    📋
                 </button>
             </td>
         `;
@@ -311,34 +398,50 @@ function renderSoftwareTable(data) {
 }
 
 /**
- * Tabla: VULNERABILITIES
+ * Tabla: VULNERABILITIES (TODAS)
  */
 function renderVulnerabilitiesTable(data) {
     const tbody = document.querySelector('#table-vulnerabilities tbody');
     tbody.innerHTML = '';
     
     if (data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No hay vulnerabilidades cargadas</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No hay vulnerabilidades en la ontología</td></tr>';
         return;
     }
     
     data.forEach(v => {
         let badgeClass = 'badge-blue';
-        if (v.type === 'Critical_Vulnerability') badgeClass = 'badge-red';
-        else if (v.type === 'High_Risk_Vulnerability') badgeClass = 'badge-amber';
-        else if (v.type === 'Medium_Risk_Vulnerability') badgeClass = 'badge-metal';
+        let tipo = 'Vulnerability';
         
-        const mitigated = v.mitigated 
-            ? '<span class="badge badge-green">✓ MITIGATED</span>' 
-            : '<span class="badge badge-red">✗ NO MITIGADA</span>';
+        if (v.tiposInferidos) {
+            if (v.tiposInferidos.includes('CriticalVulnerability')) {
+                badgeClass = 'badge-red';
+                tipo = 'CRITICAL';
+            } else if (v.tiposInferidos.includes('HighRiskVulnerability')) {
+                badgeClass = 'badge-amber';
+                tipo = 'HIGH RISK';
+            } else if (v.tiposInferidos.includes('MediumRiskVulnerability')) {
+                badgeClass = 'badge-metal';
+                tipo = 'MEDIUM';
+            } else if (v.tiposInferidos.includes('MitigatedVulnerability')) {
+                badgeClass = 'badge-green';
+                tipo = 'MITIGATED';
+            }
+        }
+        
+        const severity = v.hasCVSSScore ? v.hasCVSSScore[0] : 'N/A';
         
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td><strong>${v.cve}</strong></td>
-            <td style="max-width: 300px; font-size: 12px;">${v.desc}</td>
-            <td><span class="badge ${badgeClass}">${v.severity} / 10</span></td>
-            <td><span class="text-yellow">${v.cwe}</span></td>
-            <td>${mitigated}</td>
+            <td><strong>${v.label}</strong></td>
+            <td><small style="color: var(--text-muted);">${v.id}</small></td>
+            <td><span class="badge ${badgeClass}">${tipo}</span></td>
+            <td><span class="text-yellow">${severity}</span></td>
+            <td>
+                <button class="action-btn" onclick="openTraceModal('${escapeHtml(v.label)}', '${escapeHtml(JSON.stringify(v, null, 2))}')">
+                    📋
+                </button>
+            </td>
         `;
         tbody.appendChild(tr);
     });
@@ -355,11 +458,9 @@ function setupNavigation() {
         btn.addEventListener('click', () => {
             const targetId = btn.getAttribute('data-target');
             
-            // Remover clase activa de todos
             navButtons.forEach(b => b.classList.remove('active'));
             tabContents.forEach(tc => tc.classList.remove('active'));
             
-            // Añadir clase activa al actual
             btn.classList.add('active');
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
@@ -373,45 +474,46 @@ function setupNavigation() {
  * Configurar filtros y búsqueda
  */
 function setupFilters() {
-    // Filtro de búsqueda de actores
     const searchInput = document.getElementById('search-actors');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const val = e.target.value.toLowerCase();
             const filtered = ontologyData.actors.filter(a => 
-                a.name.toLowerCase().includes(val) || 
-                a.motivation.toLowerCase().includes(val)
+                a.label.toLowerCase().includes(val) || 
+                a.id.toLowerCase().includes(val)
             );
             renderActorsTable(filtered);
         });
     }
     
-    // Filtro de severidad de CVE
     const severityFilter = document.getElementById('filter-cve-severity');
     if (severityFilter) {
         severityFilter.addEventListener('change', (e) => {
             const val = e.target.value;
-            if (val === 'ALL') {
-                renderVulnerabilitiesTable(ontologyData.vulnerabilities);
-            } else {
-                const filtered = ontologyData.vulnerabilities.filter(v => v.type === val);
-                renderVulnerabilitiesTable(filtered);
+            let filtered = ontologyData.vulnerabilities;
+            
+            if (val !== 'ALL') {
+                filtered = ontologyData.vulnerabilities.filter(v => 
+                    v.tiposInferidos && v.tiposInferidos.includes(val)
+                );
             }
+            
+            renderVulnerabilitiesTable(filtered);
         });
     }
 }
 
 /**
- * Abrir modal con detalles de inferencia
+ * Abrir modal con detalles
  */
-function openTraceModal(title, traceMessage) {
+function openTraceModal(title, content) {
     const modalTitle = document.getElementById('modal-title');
     const modalTrace = document.getElementById('modal-trace');
     const modal = document.getElementById('cyber-modal');
     
     if (modalTitle && modalTrace && modal) {
-        modalTitle.textContent = `[AUDITORÍA SEMÁNTICA]: ${title.toUpperCase()}`;
-        modalTrace.textContent = traceMessage;
+        modalTitle.textContent = `[PROPIEDADES]: ${title.toUpperCase()}`;
+        modalTrace.textContent = content;
         modal.classList.add('active');
     }
 }
