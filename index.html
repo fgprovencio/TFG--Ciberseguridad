@@ -14,7 +14,7 @@
 
     <header class="cyber-header">
         <div class="header-title">
-            <span class="glitch" data-text="CYBER-INTEL_ONTOLOGY">CYBER-INTEL_ONTOLOGY</span>
+            <span class="glitch" data-text="CYBER-INTEL_ONTOLOGY">CYBER_ONTOLOGY</span>
             <div class="status-indicator">
                 <span class="pulse-dot"></span>
                 <span class="status-text">REASONER: PELLET_ACTIVE</span>
@@ -30,6 +30,7 @@
             <button class="nav-btn" data-target="tab-software">🛠️ Software Assets</button>
             <button class="nav-btn" data-target="tab-patterns">🎯 Attack Patterns</button>
             <button class="nav-btn" data-target="tab-vulnerabilities">🔓 Vulnerabilities (CVE)</button>
+            <button class="nav-btn" data-target="tab-insights" style="border-top: 2px dashed var(--neon-blue); margin-top: 10px; color: #10b981;">📊 Ontology Insights</button>
         </nav>
 
         <section class="cyber-content">
@@ -45,93 +46,103 @@
                     <div class="metric-footer">[Mapeo de Severidad CVSS >= 9.0]</div>
                 </div>
                 <div class="metric-card card-blue">
-                    <div class="metric-title">INFERRED KNOWLEDGE TRIPLETS</div>
+                    <div class="metric-title">KNOWLEDGE DISCOVERED</div>
                     <div class="metric-value" id="count-inferred-triples">+0</div>
-                    <div class="metric-footer">[Pellet Reasoner Axioms Cache]</div>
+                    <div class="metric-footer">[Resultados del Razonador Pellet]</div>
                 </div>
             </div>
 
             <div id="tab-actors" class="tab-content active">
                 <div class="section-header">
                     <h2>Instancias del Grafo: Threat Actors</h2>
-                    <input type="text" id="search-actors" class="cyber-input" placeholder="🔍 Buscar actor de amenaza por ID...">
+                    <input type="text" id="search-actors" class="cyber-input" placeholder="🔍 Buscar actor por ID...">
                 </div>
                 <div class="table-responsive">
                     <table id="table-actors" class="cyber-table">
                         <thead>
                             <tr>
                                 <th>Nombre del Actor (URI)</th>
-                                <th>Capacidades de Ataque Relacionadas (Grafo)</th>
-                                <th>Explotación Inferred (CVE Directo)</th>
+                                <th>Capacidades de Ataque (Grafo)</th>
+                                <th>Explotación Inferred</th>
                                 <th>Clasificación Semántica</th>
-                                <th>Traza de Justificación</th>
+                                <th>Traza</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
+                </div>
+                <div class="pagination-container" style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding:8px; background:rgba(10,15,30,0.8); border:1px solid var(--neon-blue);">
+                    <button id="btn-prev-actors" class="action-btn">◀ Ant</button>
+                    <span id="page-info-actors" style="font-family:'Fira Code'; color:var(--neon-blue); font-size:12px;">Página 1</span>
+                    <button id="btn-next-actors" class="action-btn">Sig ▶</button>
                 </div>
             </div>
 
             <div id="tab-malware" class="tab-content">
-                <div class="section-header">
-                    <h2>Instancias de Malware Inferidas en el Entorno</h2>
-                </div>
+                <div class="section-header"><h2>Instancias de Malware Inferidas en el Entorno</h2></div>
                 <div class="table-responsive">
                     <table id="table-malware" class="cyber-table">
                         <thead>
                             <tr>
                                 <th>Software Malicioso</th>
-                                <th>Clase Inferida (Taxonomía)</th>
+                                <th>Clase Inferida</th>
                                 <th>Tácticas Relacionadas</th>
                                 <th>Vulnerabilidades que Explota</th>
-                                <th>Auditoría Semántica</th>
+                                <th>Auditoría</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
+                </div>
+                <div class="pagination-container" style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding:8px; background:rgba(10,15,30,0.8); border:1px solid var(--neon-blue);">
+                    <button id="btn-prev-malware" class="action-btn">◀ Ant</button>
+                    <span id="page-info-malware" style="font-family:'Fira Code'; color:var(--neon-blue); font-size:12px;">Página 1</span>
+                    <button id="btn-next-malware" class="action-btn">Sig ▶</button>
                 </div>
             </div>
 
             <div id="tab-software" class="tab-content">
-                <div class="section-header">
-                    <h2>Inventario de Activos (Software Assets) Auditados</h2>
-                </div>
+                <div class="section-header"><h2>Inventario de Activos Auditados</h2></div>
                 <div class="table-responsive">
                     <table id="table-software" class="cyber-table">
                         <thead>
                             <tr>
                                 <th>Nombre del Componente</th>
-                                <th>Actores Asociados (Uso Detectado)</th>
+                                <th>Actores Asociados</th>
                                 <th>Tácticas de Exposición</th>
                                 <th>CVEs Identificados</th>
-                                <th>Auditoría Semántica</th>
+                                <th>Auditoría</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
+                </div>
+                <div class="pagination-container" style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding:8px; background:rgba(10,15,30,0.8); border:1px solid var(--neon-blue);">
+                    <button id="btn-prev-software" class="action-btn">◀ Ant</button>
+                    <span id="page-info-software" style="font-family:'Fira Code'; color:var(--neon-blue); font-size:12px;">Página 1</span>
+                    <button id="btn-next-software" class="action-btn">Sig ▶</button>
                 </div>
             </div>
 
             <div id="tab-patterns" class="tab-content">
-                <div class="section-header">
-                    <h2>Patrones de Ataque (Mapeo CAPEC Relacionado)</h2>
-                </div>
+                <div class="section-header"><h2>Patrones de Ataque (Mapeo CAPEC Relacionado)</h2></div>
                 <div class="table-responsive">
                     <table id="table-patterns" class="cyber-table">
                         <thead>
                             <tr>
                                 <th>Patrón de Ataque (CAPEC)</th>
-                                <th>Descripción Operacional del Axioma</th>
+                                <th>Descripción del Axioma</th>
                                 <th>Técnica que Implementa (MITRE ATT&CK)</th>
                                 <th>Vulnerabilidades Objetivo</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
+                </div>
+                <div class="pagination-container" style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding:8px; background:rgba(10,15,30,0.8); border:1px solid var(--neon-blue);">
+                    <button id="btn-prev-patterns" class="action-btn">◀ Ant</button>
+                    <span id="page-info-patterns" style="font-family:'Fira Code'; color:var(--neon-blue); font-size:12px;">Página 1</span>
+                    <button id="btn-next-patterns" class="action-btn">Sig ▶</button>
                 </div>
             </div>
 
@@ -157,37 +168,57 @@
                                 <th>Estado de Mitigación</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
+                <div class="pagination-container" style="display:flex; justify-content:space-between; align-items:center; margin-top:15px; padding:10px 20px; background:rgba(10,15,30,0.8); border:1px solid var(--neon-blue); border-radius:4px;">
+                    <button id="btn-prev-vulnerabilities" class="action-btn">◀ Anterior</button>
+                    <span id="page-info-vulnerabilities" style="font-family:'Fira Code'; color:var(--neon-blue); font-weight:bold; font-size:13px;">Página 1 de X</span>
+                    <button id="btn-next-vulnerabilities" class="action-btn">Siguiente ▶</button>
+                </div>
+            </div>
 
-                <div class="pagination-container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding: 10px 20px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--neon-blue); border-radius: 4px;">
-                    <button id="btn-prev-page" class="action-btn" style="padding: 6px 15px;">◀ Anterior</button>
-                    <span id="page-info" style="font-family: 'Fira Code', monospace; color: var(--neon-blue); font-weight: bold; font-size: 13px;">Página 1 de X</span>
-                    <button id="btn-next-page" class="action-btn" style="padding: 6px 15px;">Siguiente ▶</button>
+            <div id="tab-insights" class="tab-content">
+                <div class="section-header">
+                    <h2 style="color:#10b981;">📊 Ontology Insights: Conocimiento de Alto Valor Descubierto</h2>
+                </div>
+                <p style="color:#a0aec0; font-size:13px; margin-bottom:20px;">Esta pantalla resume las deducciones críticas realizadas de forma autónoma por el Razonador Pellet a partir de los axiomas de la ontología.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background:rgba(20,25,40,0.9); border:1px solid var(--neon-red); padding:15px; border-radius:4px;">
+                        <h3 style="color:var(--neon-red); margin-top:0; font-family:'Orbitron'; border-bottom:1px solid rgba(239,68,68,0.2); padding-bottom:8px;">☠️ High_Risk_Threat_Actor</h3>
+                        <div id="insights-actors" style="margin-top:10px; max-height:300px; overflow-y:auto;"></div>
+                    </div>
+                    <div style="background:rgba(20,25,40,0.9); border:1px solid var(--neon-amber); padding:15px; border-radius:4px;">
+                        <h3 style="color:var(--neon-amber); margin-top:0; font-family:'Orbitron'; border-bottom:1px solid rgba(245,158,11,0.2); padding-bottom:8px;">⚡ High_Impact_Attack_Technique</h3>
+                        <div id="insights-techs" style="margin-top:10px; max-height:300px; overflow-y:auto;"></div>
+                    </div>
+                    <div style="background:rgba(20,25,40,0.9); border:1px solid var(--neon-green); padding:15px; border-radius:4px;">
+                        <h3 style="color:var(--neon-green); margin-top:0; font-family:'Orbitron'; border-bottom:1px solid rgba(16,185,129,0.2); padding-bottom:8px;">🛡️ Mitigated_Vulnerability</h3>
+                        <div id="insights-vulns" style="margin-top:10px; max-height:300px; overflow-y:auto;"></div>
+                    </div>
                 </div>
             </div>
 
         </section>
     </main>
 
-    <div id=\"cyber-modal\" class=\"modal-overlay\">
-        <div class=\"modal-content\">
-            <div class=\"modal-header\">
-                <h3 id=\"modal-title\">[AUDITORÍA SEMÁNTICA DE INFERENCIA]</h3>
-                <button class=\"close-modal\" id=\"close-modal-btn\">✕</button>
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">[AUDITORÍA SEMÁNTICA DE INFERENCIA]</h3>
+                <button class="close-modal" id="close-modal-btn" onclick="document.getElementById('cyber-modal').classList.remove('active')">✕</button>
             </div>
-            <div class=\"modal-body\">
-                <p class=\"accent-text\">Axiomas y cadena de traza calculados por el Razonador Pellet (Caja Blanca):</p>
-                <div class=\"trace-box\" id=\"modal-trace\"></div>
+            <div class="modal-body">
+                <p class="accent-text">Axiomas y cadena de traza calculados por el Razonador Pellet :</p>
+                <div class="trace-box" id="modal-trace"></div>
             </div>
         </div>
     </div>
 
     <footer class="cyber-footer">
         <div>Trabajo de Fin de Grado - Ingeniería Informática</div>
-        <div class="text-green">SECURITY-ONTOLOGY-FRAMEWORK // VER 2.0.26</div>
+        <div class="text-green">SECURITY-ONTOLOGY-FRAMEWORK // VER 2.1.0</div>
     </footer>
 
     <script src="js/script.js"></script>
