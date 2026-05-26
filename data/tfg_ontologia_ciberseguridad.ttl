@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/paki1/ontologies/2026/4/untitled-ontology-92#"
-     xml:base="http://www.semanticweb.org/paki1/ontologies/2026/4/untitled-ontology-92"
+<rdf:RDF xmlns="http://www.semanticweb.org/paki1/ontologies/2026/4/untitled-ontology-96#"
+     xml:base="http://www.semanticweb.org/paki1/ontologies/2026/4/untitled-ontology-96"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -10,7 +10,7 @@
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:tfg_ontologia_ciberseguridad="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/paki1/ontologies/2026/4/untitled-ontology-92"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/paki1/ontologies/2026/4/untitled-ontology-96"/>
     
 
 
@@ -349,6 +349,15 @@
 
     <owl:DatatypeProperty rdf:about="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#hasMotivation">
         <rdfs:domain rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#Threat_Actor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#hasTechID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#hasTechID">
+        <rdfs:domain rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#Attack_Technique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -35097,6 +35106,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-2494"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24962"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T0000</tfg_ontologia_ciberseguridad:hasTechID>
     </owl:NamedIndividual>
     
 
@@ -45139,6 +45149,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1007</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>System Service Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45152,6 +45163,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T0846</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Remote System Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45164,6 +45176,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-561"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1021.002</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>SMB/Windows Admin Shares</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45184,6 +45197,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-25478"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-29930"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1027</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Obfuscated Files or Information</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45197,6 +45211,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1033</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>System Owner/User Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45210,6 +45225,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1036</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Match Legitimate Resource Name or Location</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45501,6 +45517,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-29930"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-30144"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#Reconnaissance-focusedAdversary"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1046</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Network Service Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45514,6 +45531,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1057</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Process Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45529,6 +45547,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0423"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0424"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-20183"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>Command and Scripting Interpreter</tfg_ontologia_ciberseguridad:hasTechID>
     </owl:NamedIndividual>
     
 
@@ -45541,6 +45560,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24806"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1078</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Valid Accounts</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45554,6 +45574,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-70"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-53356"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1078.001</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Default Accounts</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45566,6 +45587,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-562"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1080</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Taint Shared Content</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45580,6 +45602,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1082</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>System Information Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45595,6 +45618,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23042"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1083</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>File and Directory Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45608,6 +45632,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1087</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Account Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45620,6 +45645,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-49"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24806"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1110.001</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Password Guessing</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45632,6 +45658,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-565"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24806"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1110.003</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Password Spraying</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45645,6 +45672,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24806"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1110.004</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Credential Stuffing</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45658,6 +45686,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1111</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Multi-Factor Authentication Interception</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45671,6 +45700,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1120</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Peripheral Device Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45684,6 +45714,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1124</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>System Time Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45696,6 +45727,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-555"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1133</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>External Remote Services</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45709,6 +45741,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1135</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Network Share Discovery</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45721,6 +45754,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-148"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-30144"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1491</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Defacement</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45735,6 +45769,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27144"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27513"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1498.001</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Direct Network Flood</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45749,6 +45784,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27144"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27513"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1498.002</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Reflection Amplification</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45763,6 +45799,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27144"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27513"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1499.002</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Endpoint Denial of Service</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45780,6 +45817,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27144"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27513"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1499</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Service Exhaustion Flood</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45794,6 +45832,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27144"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-27513"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1499.003</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Application Exhaustion Flood</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45810,6 +45849,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0424"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-20183"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1539</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Steal Web Session Cookie</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45824,6 +45864,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1543.001</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Create or Modify System Process</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45836,6 +45877,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-478"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1543.003</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Windows Service</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45848,6 +45890,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-556"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1546.001</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Change Default File Association</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45860,6 +45903,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-558"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1453</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Accessibility Features</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45872,6 +45916,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-19"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1546.016</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Installer Packages</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45884,6 +45929,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-564"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1547.006</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Boot or Logon Autostart Execution</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45896,6 +45942,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-552"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1547</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Kernel Modules and Extensions</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45908,6 +45955,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-644"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1550.002</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Pass the Hash</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45920,6 +45968,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-645"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1550.003</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Pass the Ticket</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45934,6 +45983,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23042"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1539.004</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Web Session Cookie</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45947,6 +45997,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-191"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-53356"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1552.001</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Credentials In Files</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45959,6 +46010,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-647"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23042"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1552.002</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Credentials in Registry</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45973,6 +46025,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23027"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1552.004</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Private Keys</rdfs:label>
     </owl:NamedIndividual>
     
@@ -45989,6 +46042,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-0424"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-20183"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1553.006</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Code Signing</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46001,6 +46055,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-479"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1553.004</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Install Root Certificate</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46015,6 +46070,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-13698"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-30144"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1556</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Modify Authentication Process</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46027,6 +46083,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-141"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-30144"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1557</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>ARP Cache Poisoning</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46040,6 +46097,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24806"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1558.001</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Steal or Forge Kerberos Tickets</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46052,6 +46110,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-509"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-42172"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1558.003</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Kerberoasting</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46064,6 +46123,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-268"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-25184"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1686</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Disable or Modify Cloud Logs</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46076,6 +46136,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-578"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24968"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1688</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Safe Mode Boot</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46088,6 +46149,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-668"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23042"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1565.002</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Transmitted Data Manipulation</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46097,6 +46159,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#T1566">
         <rdf:type rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#Attack_Technique"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>Phishing</tfg_ontologia_ciberseguridad:hasTechID>
         <tfg_ontologia_ciberseguridad:isDetectionPossible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</tfg_ontologia_ciberseguridad:isDetectionPossible>
     </owl:NamedIndividual>
     
@@ -46120,6 +46183,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-25478"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-29930"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#Persistence-focusedAdversary"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1547.007</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Path Interception by PATH Environment Variable</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46136,6 +46200,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-21624"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-23042"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-2494"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1574.010</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Services File Permissions Weakness</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46148,6 +46213,7 @@
         <tfg_ontologia_ciberseguridad:technique_implemented_by_pattern rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CAPEC-142"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-30144"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1583</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>DNS Server</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46161,6 +46227,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1590</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Gather Victim Network Information</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46174,6 +46241,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1595</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Active Scanning</rdfs:label>
     </owl:NamedIndividual>
     
@@ -46187,6 +46255,7 @@
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2024-56902"/>
         <tfg_ontologia_ciberseguridad:technique_targets_vulnerability rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#CVE-2025-24899"/>
         <tfg_ontologia_ciberseguridad:technique_uses_actor rdf:resource="http://www.tfg-ciberseguridad.org/ontologia/tfg_ontologia_ciberseguridad#UnknownThreatActor"/>
+        <tfg_ontologia_ciberseguridad:hasTechID>T1615</tfg_ontologia_ciberseguridad:hasTechID>
         <rdfs:label>Group Policy Discovery</rdfs:label>
     </owl:NamedIndividual>
     
