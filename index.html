@@ -26,160 +26,168 @@
     <main class="dashboard-container">
         <nav class="cyber-sidebar">
             <button class="nav-btn active" data-target="tab-actors">☠️ Threat Actors</button>
-            <button class="nav-btn" data-target="tab-malware">☣️ Cargas Ofensivas</button>
-            <button class="nav-btn" data-target="tab-software">🛠️ Inventario Software</button>
-            <button class="nav-btn" data-target="tab-patterns">🎯 Patrones de Ataque</button>
-            <button class="nav-btn" data-target="tab-vulnerabilities">🛡️ Mitigaciones & COA</button>
+            <button class="nav-btn" data-target="tab-malware">☣️ Malware Inferred</button>
+            <button class="nav-btn" data-target="tab-software">🛠️ Software Assets</button>
+            <button class="nav-btn" data-target="tab-patterns">🎯 Attack Patterns</button>
+            <button class="nav-btn" data-target="tab-vulnerabilities">🔓 Vulnerabilities (CVE)</button>
         </nav>
 
         <section class="cyber-content">
-            
             <div class="metrics-grid">
-                <div class="metric-card border-red">
-                    <div class="metric-title">ACTORES ALTO RIESGO</div>
-                    <div class="metric-value text-red" id="count-high-actors">0</div>
-                    <div class="metric-footer">[Inferencia SWRL Core Activa]</div>
+                <div class="metric-card card-red">
+                    <div class="metric-title">HIGH RISK ACTORS</div>
+                    <div class="metric-value" id="count-high-actors">0</div>
+                    <div class="metric-footer">[Inferencia SWRL proactiva]</div>
                 </div>
-                <div class="metric-card border-amber">
-                    <div class="metric-title">VULNERABILIDADES CRÍTICAS</div>
-                    <div class="metric-value text-amber" id="count-critical-cve">0</div>
-                    <div class="metric-footer">[Axiomas de Severidad Inyectados]</div>
+                <div class="metric-card card-amber">
+                    <div class="metric-title">CRITICAL VULNERABILITIES</div>
+                    <div class="metric-value" id="count-critical-cve">0</div>
+                    <div class="metric-footer">[Mapeo de Severidad CVSS >= 9.0]</div>
                 </div>
-                <div class="metric-card border-blue">
-                    <div class="metric-title">ELEMENTOS VINCULADOS</div>
-                    <div class="metric-value text-blue" id="count-inferred-triples">+0</div>
-                    <div class="metric-footer">[Grafo Semántico de Conocimiento]</div>
+                <div class="metric-card card-blue">
+                    <div class="metric-title">INFERRED KNOWLEDGE TRIPLETS</div>
+                    <div class="metric-value" id="count-inferred-triples">+0</div>
+                    <div class="metric-footer">[Pellet Reasoner Axioms Cache]</div>
                 </div>
             </div>
 
             <div id="tab-actors" class="tab-content active">
-                <div class="table-header-wrapper">
-                    <h2>Auditoría de Actores de Amenazas</h2>
-                    <input type="text" id="search-actors" class="cyber-input" placeholder="🔍 Filtrar actor por nombre...">
+                <div class="section-header">
+                    <h2>Instancias del Grafo: Threat Actors</h2>
+                    <input type="text" id="search-actors" class="cyber-input" placeholder="🔍 Buscar actor de amenaza por ID...">
                 </div>
                 <div class="table-responsive">
-                    <table class="cyber-table" id="table-actors">
+                    <table id="table-actors" class="cyber-table">
                         <thead>
                             <tr>
-                                <th>Actor / Grupo</th>
-                                <th>Recursos que Emplea (Software y Técnicas)</th>
-                                <th>Línea de Explotación (CVEs directos)</th>
+                                <th>Nombre del Actor (URI)</th>
+                                <th>Capacidades de Ataque Relacionadas (Grafo)</th>
+                                <th>Explotación Inferred (CVE Directo)</th>
                                 <th>Clasificación Semántica</th>
-                                <th>Trazabilidad</th>
+                                <th>Traza de Justificación</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            </tbody>
                     </table>
                 </div>
             </div>
 
             <div id="tab-malware" class="tab-content">
-                <h2>Catálogo de Malware Relacionado</h2>
+                <div class="section-header">
+                    <h2>Instancias de Malware Inferidas en el Entorno</h2>
+                </div>
                 <div class="table-responsive">
-                    <table class="cyber-table" id="table-malware">
+                    <table id="table-malware" class="cyber-table">
                         <thead>
                             <tr>
-                                <th>Identificador Malware</th>
-                                <th>Categoría Taxonómica</th>
-                                <th>Técnicas MITRE Mapeadas</th>
+                                <th>Software Malicioso</th>
+                                <th>Clase Inferida (Taxonomía)</th>
+                                <th>Tácticas Relacionadas</th>
                                 <th>Vulnerabilidades que Explota</th>
-                                <th>Grafo</th>
+                                <th>Auditoría Semántica</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            </tbody>
                     </table>
                 </div>
             </div>
 
             <div id="tab-software" class="tab-content">
-                <h2>Inventario de Activos de Software</h2>
+                <div class="section-header">
+                    <h2>Inventario de Activos (Software Assets) Auditados</h2>
+                </div>
                 <div class="table-responsive">
-                    <table class="cyber-table" id="table-software">
+                    <table id="table-software" class="cyber-table">
                         <thead>
                             <tr>
-                                <th>Nombre del Software</th>
-                                <th>Asociado a Actor</th>
-                                <th>Técnicas Relacionadas</th>
-                                <th>Vulnerabilidades Conocidas</th>
-                                <th>Grafo</th>
+                                <th>Nombre del Componente</th>
+                                <th>Actores Asociados (Uso Detectado)</th>
+                                <th>Tácticas de Exposición</th>
+                                <th>CVEs Identificados</th>
+                                <th>Auditoría Semántica</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            </tbody>
                     </table>
                 </div>
             </div>
 
             <div id="tab-patterns" class="tab-content">
-                <h2>Patrones de Ataque y Técnicas Asociadas</h2>
+                <div class="section-header">
+                    <h2>Patrones de Ataque (Mapeo CAPEC Relacionado)</h2>
+                </div>
                 <div class="table-responsive">
-                    <table class="cyber-table" id="table-patterns">
+                    <table id="table-patterns" class="cyber-table">
                         <thead>
                             <tr>
-                                <th>Patrón de Ataque</th>
-                                <th>Descripción / Ámbito</th>
-                                <th>Técnica que Implementa</th>
-                                <th>Vulnerabilidades Objetivo (Targets)</th>
+                                <th>Patrón de Ataque (CAPEC)</th>
+                                <th>Descripción Operacional del Axioma</th>
+                                <th>Técnica que Implementa (MITRE ATT&CK)</th>
+                                <th>Vulnerabilidades Objetivo</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            </tbody>
                     </table>
                 </div>
             </div>
 
             <div id="tab-vulnerabilities" class="tab-content">
-                <div class="table-header-wrapper">
-                    <h2>Matriz de Vulnerabilidades y Mitigaciones (Course of Action)</h2>
-                    <select id="filter-cve-severity" class="cyber-input">
-                        <option value="ALL">-- Ver Todas (Ordenadas por Severidad) --</option>
-                        <option value="Critical_Vulnerability">Critical (Score >= 9.0)</option>
-                        <option value="High_Risk_Vulnerability">High (7.0 <= Score < 9.0)</option>
-                        <option value="Medium_Risk_Vulnerability">Medium / Low (Score < 7.0)</option>
+                <div class="section-header">
+                    <h2>Vulnerabilidades Registradas y Clasificadas por Riesgo</h2>
+                    <select id="filter-cve-severity" class="cyber-input" style="max-width: 250px;">
+                        <option value="ALL">🔍 Mostrar Todas las Severidades</option>
+                        <option value="Critical_Vulnerability">🔴 Critical_Vulnerability (CVSS >= 9.0)</option>
+                        <option value="High_Risk_Vulnerability">🟡 High_Risk_Vulnerability (CVSS 7.0-8.9)</option>
+                        <option value="Medium_Risk_Vulnerability">🔵 Medium_Risk_Vulnerability (CVSS < 7.0)</option>
                     </select>
                 </div>
                 <div class="table-responsive">
-                    <table class="cyber-table" id="table-vulnerabilities">
+                    <table id="table-vulnerabilities" class="cyber-table">
                         <thead>
                             <tr>
                                 <th>Código CVE</th>
-                                <th>Análisis de Impacto</th>
-                                <th>Severidad CVSS</th>
+                                <th>Descripción del Axioma (Grafo)</th>
+                                <th>Severidad Absoluta (CVSS)</th>
                                 <th>Causa Raíz (CWE)</th>
-                                <th>Plan de Mitigación (Course of Action)</th>
+                                <th>Mitigación Asociada (Course of Action)</th>
                                 <th>Estado de Mitigación</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            </tbody>
                     </table>
                 </div>
 
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; background: rgba(22, 27, 34, 0.7); padding: 10px 20px; border: 1px solid var(--border-color); border-radius: 4px;">
-                    <span id="page-info" style="font-family: 'Fira Code', monospace; color: #8a99ad; font-size: 13px;">Página 1 de 1</span>
-                    <div style="display: flex; gap: 10px;">
-                        <button id="btn-prev-page" class="action-btn" style="padding: 6px 14px;">◀ Anterior</button>
-                        <button id="btn-next-page" class="action-btn" style="padding: 6px 14px;">Siguiente ▶</button>
-                    </div>
+                <div class="pagination-container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding: 10px 20px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--neon-blue); border-radius: 4px;">
+                    <button id="btn-prev-page" class="action-btn" style="padding: 6px 15px;">◀ Anterior</button>
+                    <span id="page-info" style="font-family: 'Fira Code', monospace; color: var(--neon-blue); font-weight: bold; font-size: 13px;">Página 1 de X</span>
+                    <button id="btn-next-page" class="action-btn" style="padding: 6px 15px;">Siguiente ▶</button>
                 </div>
             </div>
 
         </section>
     </main>
 
-    <div id="cyber-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-title">[AUDITORÍA SEMÁNTICA DE INFERENCIA]</h3>
-                <button class="close-modal" id="close-modal-btn">✕</button>
+    <div id=\"cyber-modal\" class=\"modal-overlay\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h3 id=\"modal-title\">[AUDITORÍA SEMÁNTICA DE INFERENCIA]</h3>
+                <button class=\"close-modal\" id=\"close-modal-btn\">✕</button>
             </div>
-            <div class="modal-body">
-                <p class="accent-text">Axiomas y cadena de traza calculados por el Razonador Pellet (Caja Blanca):</p>
-                <div class="trace-box" id="modal-trace"></div>
+            <div class=\"modal-body\">
+                <p class=\"accent-text\">Axiomas y cadena de traza calculados por el Razonador Pellet (Caja Blanca):</p>
+                <div class=\"trace-box\" id=\"modal-trace\"></div>
             </div>
         </div>
     </div>
 
     <footer class="cyber-footer">
         <div>Trabajo de Fin de Grado - Ingeniería Informática</div>
-        <div class="text-green">SECURITY-ONTOLOGY-FRAMEWORK // VER 2.6.0</div>
+        <div class="text-green">SECURITY-ONTOLOGY-FRAMEWORK // VER 2.0.26</div>
     </footer>
 
     <script src="js/script.js"></script>
