@@ -18,7 +18,7 @@ El sistema unifica el conocimiento extraído de estándares de la industria, map
 
 La saturación de alertas y la dispersión de datos sobre amenazas dificultan la prevención de incidentes. Este proyecto propone un enfoque semántico en el que el conocimiento se conecta de forma lógica:
 
-* **Ontología OWL (Abox y Tbox):** Modelado formal y semántico de *Threat Actors*, *Malware*, *Software Assets*, *Attack Patterns* y *Vulnerabilities (CVE)*.
+* **Ontología OWL :** Modelado formal y semántico de *Threat Actors*, *Malware*, *Software Assets*, *Attack Patterns* y *Vulnerabilities (CVE)*.
 * **Secuencia de Procesamiento de Ingesta Automatizado (Python + RDFLib):** Un motor extractor parsea los grafos triplicados en formato Turtle/XML, interactúa con el modelo ontológico y extrae las relaciones complejas e indirectas.
 * **Razonamiento Lógico Automático:** Implementación de reglas de inferencia semántica y axiomas de severidad para clasificar proactivamente el nivel de riesgo en la infraestructura.
 
@@ -40,7 +40,7 @@ El panel de control interactivo traduce la complejidad del grafo semántico en u
 ### 🎯 3. Patrones de Ataque y Técnicas Asociadas (CAPEC / MITRE)
 * Inspección profunda de las tácticas operativas que implementa cada patrón, listando las debilidades objetivo del sistema de información.
 
-### 🛡️ 4. Matriz de Mitigaciones & Planes de Acción (COA)
+### 🛡️ 4. Matriz de Mitigaciones & Planes de Acción
 * Paginación interactiva y filtros por criticidad (CVSS $\ge$ 9.0 *Critical*, High, Medium).
 * Mapeo de planes de contingencia (*Course of Action*) asociados dinámicamente a la causa raíz de la vulnerabilidad (CWE).
 
@@ -87,11 +87,11 @@ La madurez del sistema semántico se ha constatado bajo tres pilares de evaluaci
 Este proyecto concluye el plan de estudios del **Grado en Ingeniería Informática**, demostrando la viabilidad de fusionar las tecnologías de la Web Semántica con la analítica defensiva en ciberseguridad.
 
 ### 🚀 Líneas de Ampliación Futura:
-**Ampliación del modelo ontológico con nuevas fuentes de ciberinteligencia**
+* **Ampliación del modelo ontológico con nuevas fuentes de ciberinteligencia**
 Integrar datsets adicionales que permitan incorporar nuevos tipos de amenazas, malware y vectores de ataque, así como ampliar las capacidades de correlación semántica entre vulnerabilidades, actores y campañas maliciosas.
-**Extensión de clases y relaciones para mejorar el razonamiento automático**
+* **Extensión de clases y relaciones para mejorar el razonamiento automático**
 Incorporacion de nuevas clases, permitiendo generar inferencias más complejas sobre propagación de amenazas, impacto organizacional y priorización de riesgo.
-**Implementación de analisis predictivo y visualización avanzada de amenazas**
+* **Implementación de analisis predictivo y visualización avanzada de amenazas**
 Desarrollar módulos de análisis semántico capaces de detectar patrones recurrentes de ataque y representar gráficamente cadenas de explotación.
 
 ---
