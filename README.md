@@ -18,6 +18,12 @@ El sistema unifica el conocimiento extraído de estándares de la industria, map
 
 La saturación de alertas y la dispersión de datos sobre amenazas dificultan la prevención de incidentes. Este proyecto propone un enfoque semántico en el que el conocimiento se conecta de forma lógica:
 
+### 🎯 Alcance y Selección de Datos
+Para garantizar la viabilidad técnica y un análisis cualitativo profundo, el poblamiento del ABox (individuos de la ontología) no se ha realizado de forma masiva, sino mediante una **selección dirigida y rigurosa de amenazas**:
+* **Foco en Ciberataques Web:** Los datos introducidos se centran específicamente en vectores de ataque dirigidos a aplicaciones y servicios web (como inyecciones de código, quiebras de autenticación, exploits de servidores web, etc.).
+* **Registros Recientes y de Alto Impacto:** Se han priorizado vulnerabilidades de catalogación reciente y con puntuaciones de severidad elevadas en el estándar CVSS, garantizando que el Dashboard analice el panorama de amenazas modernas a las que se enfrentan las organizaciones hoy en día.
+
+### 🏛️ Componentes del Sistema
 * **Ontología OWL :** Modelado formal y semántico de *Threat Actors*, *Malware*, *Software Assets*, *Attack Patterns* y *Vulnerabilities (CVE)*.
 * **Secuencia de Procesamiento de Ingesta Automatizado (Python + RDFLib):** Un motor extractor parsea los grafos triplicados en formato Turtle/XML, interactúa con el modelo ontológico y extrae las relaciones complejas e indirectas.
 * **Razonamiento Lógico Automático:** Implementación de reglas de inferencia semántica y axiomas de severidad para clasificar proactivamente el nivel de riesgo en la infraestructura.
