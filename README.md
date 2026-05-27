@@ -29,7 +29,7 @@ La saturación de alertas y la dispersión de datos sobre amenazas dificultan la
 El panel de control interactivo traduce la complejidad del grafo semántico en una interfaz táctica y visual dividida en módulos:
 
 ### ☠️ 1. Auditoría de Actores de Amenazas (Threat Actors)
-* Visualización de grupos de APTs y los recursos que emplean de forma directa e indirecta.
+* Visualización de grupos que ejecutan Ciberataques y los recursos que emplean de forma directa e indirecta.
 * **Inferencia de propiedades:** Clasificación automatizada de perfiles mediante la etiqueta de alta criticidad (`High_Risk_Threat_Actor`) si emplean técnicas que apunten a brechas severas.
 * Filtro inteligente dinámico por nombre o alias.
 
