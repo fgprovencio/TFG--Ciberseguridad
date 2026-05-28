@@ -75,7 +75,7 @@ Una sección analítica distribuye en *4 columnas paralelas e independientes con
 * <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5"> **HTML5 Semántico:** Estructura modular del panel y rejillas de métricas.
 * <img src="https://img.shields.io/badge/CSS3-Cyberpunk_Theme-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3"> **CSS3 Custom (Cyber-Grid UI):** Diseño oscuro basado en terminal de ciberinteligencia, grillas adaptativas fluidas y layouts unificados de scroll simétrico.
 * <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JS"> **JavaScript Vanila:** Gestión del estado de la paginación global, inyección asíncrona de datos, modales interactivos y renderizado dinámico del DOM.
-* <img src="https://img.shields.io/badge/GitHub_Pages-Deployment-222222?style=flat&logo=github" alt="GitHub Pages"> **GitHub Pages:** Alojamiento y despliegue continuo de la aplicación web en entorno público de producción.
+* <img src="https://img.shields.io/badge/GitHub_Pages-Deployment-222222?style=flat&logo=github" alt="GitHub Pages"> **GitHub Pages:** Alojamiento y despliegue continuo de la aplicación web en entorno público de producción. ENLACE: https://fgprovencio.github.io/TFG--Ciberseguridad/
 
 ---
 
