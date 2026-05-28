@@ -14,7 +14,7 @@
 
     <header class="cyber-header">
         <div class="header-title">
-            <span class="glitch" data-text="CYBER-INTEL_ONTOLOGY">CYBER-INTEL_ONTOLOGY</span>
+            <span class="glitch" data-text="CYBER_ONTOLOGY">CYBER_ONTOLOGY</span>
             <div class="status-indicator">
                 <span class="pulse-dot"></span>
                 <span class="status-text">REASONER: PELLET_ACTIVE</span>
@@ -26,10 +26,10 @@
     <main class="dashboard-container">
         <nav class="cyber-sidebar">
             <button class="nav-btn active" data-target="tab-actors">☠️ Threat Actors</button>
-            <button class="nav-btn" data-target="tab-malware">☣️ Cargas Ofensivas</button>
+            <button class="nav-btn" data-target="tab-malware">☣️ Malware Ofensivo</button>
             <button class="nav-btn" data-target="tab-software">🛠️ Inventario Software</button>
             <button class="nav-btn" data-target="tab-patterns">🎯 Patrones de Ataque</button>
-            <button class="nav-btn" data-target="tab-vulnerabilities">🛡️ Mitigaciones & COA</button>
+            <button class="nav-btn" data-target="tab-vulnerabilities">🛡️ Mitigaciones & Vulnerability</button>
             <button class="nav-btn" data-target="tab-insights" style="border-left: 2px solid var(--neon-amber, #f59e0b);">📈 Resumen e Insights</button>
         </nav>
 
@@ -39,7 +39,7 @@
                 <div class="metric-card border-red">
                     <div class="metric-title">ACTORES ALTO RIESGO</div>
                     <div class="metric-value text-red" id="count-high-actors">0</div>
-                    <div class="metric-footer">[Inferencia SWRL Core Activa]</div>
+                    <div class="metric-footer">[Inferencia Propiedades SWRL]</div>
                 </div>
                 <div class="metric-card border-amber">
                     <div class="metric-title">VULNERABILIDADES CRÍTICAS</div>
@@ -191,7 +191,7 @@
             </div>
 
             <div id="tab-insights" class="tab-content">
-                <h2>Análisis de Razonamiento y Riesgo Residual (Ontology Insights)</h2>
+                <h2>Análisis de Razonamiento y Riesgo (Ontology Insights)</h2>
                 <p style="color: #8a99ad; font-size: 14px; margin-bottom: 20px;">Mapeo dinámico inferido mediante la compilación del grafo y la ejecución de reglas lógicas:</p>
                 
                 <div class="insights-grid" style="display: grid; gap: 15px;">
